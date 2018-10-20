@@ -16,7 +16,7 @@
             </intent-filter>
 
             <intent-filter>
-                <data android:scheme="@string/app_name"/>
+                <data android:scheme="@string/app_name_abbrev"/>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
 
