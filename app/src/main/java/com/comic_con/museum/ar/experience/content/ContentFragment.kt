@@ -1,4 +1,4 @@
-package com.comic_con.museum.ar.launchar
+package com.comic_con.museum.ar.experience.content
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import com.comic_con.museum.ar.R
 
-class LaunchArFragment: Fragment() {
+class ContentFragment: Fragment() {
 
     private var rootView: View? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView = inflater.inflate(R.layout.fragment_launch_ar, container, false)
+        val rootView = inflater.inflate(R.layout.fragment_content, container, false)
         this.rootView = rootView
 
         return rootView

@@ -1,4 +1,4 @@
-package com.comic_con.museum.ar.progress
+package com.comic_con.museum.ar.experience.progress
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

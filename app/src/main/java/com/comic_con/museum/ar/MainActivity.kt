@@ -1,11 +1,10 @@
 package com.comic_con.museum.ar
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
-import com.comic_con.museum.ar.nav.BottomNavListener
+import android.widget.Button
+import com.comic_con.museum.ar.experience.ExperienceActivity
 
 class MainActivity: AppCompatActivity() {
 
@@ -16,24 +15,13 @@ class MainActivity: AppCompatActivity() {
 
         toolbar = supportActionBar
 
-        setContentView(R.layout.content_view)
+        setContentView(R.layout.activity_main)
 
-        val bottomNavBar = findViewById<BottomNavigationView>(R.id.bottomNav)
-        bottomNavBar?.setOnNavigationItemSelectedListener(BottomNavListener(this))
+        findViewById<Button>(R.id.button).setOnClickListener {
 
-    }
 
-    fun switchToFragment(fragment: Fragment, tag: String?) {
-        val transaction = supportFragmentManager?.beginTransaction() ?: return
-        transaction.replace(R.id.content_frame, fragment)
-        transaction.addToBackStack(tag)
-        transaction.commit()
-    }
+            startActivity(ExperienceActivity.createIntent(this))
+        }
 
-    companion object {
-
-        const val CONTENT_TAG = "Content"
-        const val PROGRESS_TAG = "Progress"
-        const val LAUNCH_AR_TAG = "LaunchAr"
     }
 }
