@@ -33,4 +33,5 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     implementation project(":CCMAugmentedReality-release")
+    implementation project(":VuforiaWrapper")
 }
