@@ -2,16 +2,17 @@ package com.comic_con.museum.ar.experience
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.content.ContentFragment
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
-import android.widget.Toast
 import com.comic_con.museum.ar.ar.UnityCompatActivity
 
 

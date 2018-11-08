@@ -7,6 +7,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
             android:text="This is where you will see a loading screen before AR is launched"/>
 
     <Button

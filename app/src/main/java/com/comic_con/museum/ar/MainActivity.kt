@@ -1,12 +1,10 @@
 package com.comic_con.museum.ar
 
-import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
-import android.widget.Button
-import com.comic_con.museum.ar.ar.UnityCompatActivity
-import com.comic_con.museum.ar.experience.ExperienceActivity
+import com.comic_con.museum.ar.overview.OverviewFragment
 
 class MainActivity: AppCompatActivity() {
 
@@ -19,11 +17,13 @@ class MainActivity: AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        findViewById<Button>(R.id.button).setOnClickListener {
+        switchToFragment(OverviewFragment(), "overview")
+    }
 
-
-            startActivity(ExperienceActivity.createIntent(this))
-        }
-
+    fun switchToFragment(fragment: Fragment, tag: String?) {
+        val transaction = supportFragmentManager?.beginTransaction() ?: return
+        transaction.replace(R.id.content_frame, fragment)
+        transaction.addToBackStack(tag)
+        transaction.commit()
     }
 }
