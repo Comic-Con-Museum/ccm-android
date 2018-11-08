@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/progress"
+            android:icon="@drawable/baseline_star_black_48"
+            android:title="@string/nav_progress"/>
+
+    <item
+            android:id="@+id/content"
+            android:icon="@drawable/baseline_view_list_black_48"
+            android:title="@string/nav_content"/>
+
+    <item
+        android:id="@+id/launch_ar"
+        android:icon="@drawable/baseline_camera_black_48"
+        android:title="@string/nav_launch_ar"/>
+
+</menu>
