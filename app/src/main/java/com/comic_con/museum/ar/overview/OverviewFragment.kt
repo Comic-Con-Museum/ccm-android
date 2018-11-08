@@ -5,9 +5,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.ExperienceActivity
+import com.comic_con.museum.ar.views.ExhibitCard
 
 class OverviewFragment: Fragment() {
 
@@ -18,7 +18,7 @@ class OverviewFragment: Fragment() {
         this.rootView = thisView
 
         this.context?.let { thisContext ->
-            thisView?.findViewById<Button>(R.id.button)?.setOnClickListener {
+            thisView?.findViewById<ExhibitCard>(R.id.content_card)?.onContentSelected = {
                 startActivity(ExperienceActivity.createIntent(thisContext))
             }
         }
