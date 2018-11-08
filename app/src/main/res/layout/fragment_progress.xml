@@ -4,10 +4,16 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
+    <com.comic_con.museum.ar.views.ProgressGridView
+            android:id="@+id/progress_grid"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@color/colorPrimary"
-            android:text="This is where you will see your progress"/>
+            android:padding="24dp"
+            android:columnWidth="100dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center"/>
 
 </LinearLayout>
