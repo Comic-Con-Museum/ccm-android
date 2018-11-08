@@ -4,10 +4,17 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-            android:layout_width="match_parent"
+    <com.comic_con.museum.ar.views.ContentCategoryGridView
+            android:id="@+id/category_grid"
             android:layout_height="match_parent"
-            android:textColor="@color/colorPrimary"
-            android:text="This is where you will see content"/>
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:paddingBottom="100dp"
+            android:columnWidth="150dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center"/>
 
 </LinearLayout>
