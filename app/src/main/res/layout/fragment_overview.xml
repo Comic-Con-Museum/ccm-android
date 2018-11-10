@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="24dp">
 
-    <include
-            android:id="@+id/content_card"
-            layout="@layout/component_overview_card"/>
+    <com.yarolegovich.discretescrollview.DiscreteScrollView
+            android:id="@+id/experience_carousel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dsv_orientation="horizontal"/>
 
 </LinearLayout>

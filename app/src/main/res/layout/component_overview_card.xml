@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.comic_con.museum.ar.views.ExhibitCard
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_gravity="center_horizontal"
         android:elevation="2dp">
 
     <ImageView
@@ -32,13 +34,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
                 android:textSize="18sp"
-                android:text="Eisners"/>
+                tools:text="Eisners"/>
 
         <TextView
                 android:id="@+id/body_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="The eisners are an award collection representing the best of the graphic novel industry. Including popular titles such as Monstress, Starman, and The Watchmen."/>
+                tools:text="The eisners are an award collection representing the best of the graphic novel industry. Including popular titles such as Monstress, Starman, and The Watchmen."/>
 
         <RelativeLayout
                 android:layout_width="match_parent"
