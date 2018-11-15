@@ -9,7 +9,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonSyntaxException
 import okhttp3.OkHttpClient
 
-object Repository {
+class Repository {
 
     private val gson by lazy {
         Gson()
@@ -24,7 +24,7 @@ object Repository {
 
         AsyncTask.execute {
             val response = okHttpClient.newCall(request.buildOkHttpRequest()).execute()
-            val rawResponse = response.body().string()
+            val rawResponse = response.body()?.string()
             try {
                 // If success
                 if (response.code() in (200..299)) {
