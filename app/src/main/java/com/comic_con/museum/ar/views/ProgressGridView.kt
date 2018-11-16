@@ -32,12 +32,11 @@ class ProgressGridView(c: Context, a: AttributeSet): GridView(c, a) {
         override fun getItemId(position: Int) = this.getItem(position).progressId.toLong()
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            (convertView as? ProgressView)?.let {
-                return it
-            }
-            val newProgressView = LayoutInflater.from(context).inflate(R.layout.component_progress_view, parent, false) as ProgressView
-            newProgressView.setProgress(getItem(position))
-            return newProgressView
+            val progressView: ProgressView =
+                convertView as? ProgressView ?:
+                LayoutInflater.from(context).inflate(R.layout.component_progress_view, parent, false) as ProgressView
+            progressView.setProgress(getItem(position))
+            return progressView
         }
 
         fun getItemClickListener(): AdapterView.OnItemClickListener {
