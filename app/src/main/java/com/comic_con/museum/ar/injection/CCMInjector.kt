@@ -1,5 +1,6 @@
 package com.comic_con.museum.ar.injection
 
+import com.comic_con.museum.ar.experience.content.ContentViewModel
 import com.comic_con.museum.ar.overview.OverviewViewModel
 import com.comic_con.museum.ar.persistence.Repository
 import dagger.Module
@@ -13,5 +14,11 @@ class CCMInjector(private val repository: Repository) {
     @Singleton
     fun providesOverviewViewModel(): OverviewViewModel {
         return OverviewViewModel(this.repository)
+    }
+
+    @Provides
+    @Singleton
+    fun providesContentViewModel(): ContentViewModel {
+        return ContentViewModel(this.repository)
     }
 }
