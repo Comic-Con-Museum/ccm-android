@@ -15,6 +15,11 @@ class Category(
 
 class Content(
     val contentTitle: String,
-    val contentCategoryId: String,
-    val contentJSON: String
+    val contentCategoryId: List<String>,
+    val contentPairs: List<ContentPair>
+)
+
+class ContentPair(
+    val label: String,
+    val value: String
 )
