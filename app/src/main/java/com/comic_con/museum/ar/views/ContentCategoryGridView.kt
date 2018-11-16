@@ -1,5 +1,6 @@
 package com.comic_con.museum.ar.views
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -9,13 +10,13 @@ import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.GridView
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.experience.content.ContentModel
+import com.comic_con.museum.ar.experience.content.CategoryModel
 
 class ContentCategoryGridView(c: Context, a: AttributeSet): GridView(c, a) {
 
-    fun setUp(contentModel: ContentModel) {
+    fun setUp(categoryModel: CategoryModel) {
         val adapter = ContentCategoryAdapter(context)
-        adapter.contentModel = contentModel
+        adapter.categoryModel = categoryModel
         this.adapter = adapter
 
         this.onItemClickListener = adapter.getItemClickListener()
@@ -23,21 +24,20 @@ class ContentCategoryGridView(c: Context, a: AttributeSet): GridView(c, a) {
 
     inner class ContentCategoryAdapter(private val context: Context): BaseAdapter() {
 
-        lateinit var contentModel: ContentModel
+        lateinit var categoryModel: CategoryModel
 
-        override fun getCount(): Int = contentModel.categories.size
+        override fun getCount(): Int = categoryModel.categories.size
 
-        override fun getItem(position: Int) = contentModel.categories.get(position)
+        override fun getItem(position: Int) = categoryModel.categories.get(position)
 
         override fun getItemId(position: Int) = getItem(position).categoryId.toLong()
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            (convertView as? ContentCategoryView)?.let {
-                return it
-            }
-            val newCategoryView = LayoutInflater.from(context).inflate(R.layout.component_category_view, parent, false) as ContentCategoryView
-            newCategoryView.setCategory(getItem(position))
-            return newCategoryView
+            val categoryView: ContentCategoryView =
+                convertView as? ContentCategoryView ?:
+                LayoutInflater.from(context).inflate(R.layout.component_category_view, parent, false) as ContentCategoryView
+            categoryView.setCategory(getItem(position))
+            return categoryView
         }
 
         fun getItemClickListener(): AdapterView.OnItemClickListener {
