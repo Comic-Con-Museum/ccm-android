@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
+import android.view.KeyEvent
 import android.view.MenuItem
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
@@ -53,6 +54,13 @@ class ExperienceActivity: AppCompatActivity() {
             android.R.id.home -> this.finish()
         }
         return true
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        return if (keyCode == KeyEvent.KEYCODE_BACK) {
+            this.finish()
+            true
+        } else super.onKeyDown(keyCode, event)
     }
 
     fun switchToAR() {
