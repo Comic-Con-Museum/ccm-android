@@ -12,13 +12,18 @@ import android.view.KeyEvent
 import android.view.MenuItem
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
-import com.comic_con.museum.ar.ar.UnityCompatActivity
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
+import com.unity3d.player.UnityPlayer
 
 
 class ExperienceActivity: AppCompatActivity() {
 
     var toolbar: ActionBar? = null
+
+    // The unity player for the AR component
+    val unityPlayer: UnityPlayer by lazy {
+        UnityPlayer(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +31,7 @@ class ExperienceActivity: AppCompatActivity() {
         toolbar = supportActionBar
 
         toolbar?.setDisplayHomeAsUpEnabled(true)
+        toolbar?.show()
 
         setContentView(R.layout.activity_experiences)
 
@@ -63,9 +69,9 @@ class ExperienceActivity: AppCompatActivity() {
         } else super.onKeyDown(keyCode, event)
     }
 
-    fun switchToAR() {
-        val arIntent = Intent(this, UnityCompatActivity::class.java)
-        startActivity(arIntent)
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        unityPlayer.windowFocusChanged(hasFocus)
     }
 
     companion object {
