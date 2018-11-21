@@ -2,16 +2,24 @@ package com.comic_con.museum.ar
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import com.comic_con.museum.ar.overview.OverviewFragment
+import com.comic_con.museum.ar.overview.OverviewViewModel
+import javax.inject.Inject
 
 class MainActivity: AppCompatActivity() {
+
+    @Inject
+    lateinit var overviewViewModel: OverviewViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        CCMApplication.getApplication().injectorComponent.inject(this)
+
         setContentView(R.layout.activity_main)
+
+        overviewViewModel.addExhibitModel(resources.openRawResource(R.raw.experience_eisners))
 
         switchToFragment(OverviewFragment(), "overview")
     }

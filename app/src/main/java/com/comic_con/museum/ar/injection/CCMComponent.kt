@@ -1,5 +1,6 @@
 package com.comic_con.museum.ar.injection
 
+import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.experience.content.ContentFragment
 import com.comic_con.museum.ar.loading.LoadingScreenFragment
 import com.comic_con.museum.ar.overview.OverviewFragment
@@ -15,4 +16,6 @@ interface CCMComponent {
     fun inject(f: ContentFragment)
 
     fun inject(f: LoadingScreenFragment)
+
+    fun inject(f: MainActivity)
 }

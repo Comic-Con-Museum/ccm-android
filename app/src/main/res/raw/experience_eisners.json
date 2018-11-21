@@ -1,3 +1,73 @@
 {
-
+  "exhibitTitle": "Eisners",
+  "exhibitId": "00001",
+  "exhibitDescription": "The eisners are an award collection representing the best of the graphic novel industry. Including popular titles such as Monstress, Starman, and The Watchmen.",
+  "category": {
+    "categories": [
+      {
+        "categoryTitle": "Best Of",
+        "categoryId": "00001",
+        "categoryDescription": "The best of the eisner awards",
+        "categoryImage": "http://media.comicbook.com/2016/07/eisners-191821.jpg"
+      },
+      {
+        "categoryTitle": "Best Short Story",
+        "categoryId": "00002",
+        "categoryDescription": "The best of the eisner awards",
+        "categoryImage": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg"
+      },
+      {
+        "categoryTitle": "Best New Series",
+        "categoryId": "00003",
+        "categoryDescription": "The best of the eisner awards",
+        "categoryImage": "https://upload.wikimedia.org/wikipedia/en/4/4e/WarofKings-5.jpg"
+      },
+      {
+        "categoryTitle": "Best Writer",
+        "categoryId": "00004",
+        "categoryDescription": "The best of the eisner awards",
+        "categoryImage": "https://imagecomics.com/uploads/releases/Monstress_14-1.png"
+      },
+      {
+        "categoryTitle": "Best Coloring",
+        "categoryId": "00005",
+        "categoryDescription": "The best of the eisner awards",
+        "categoryImage": "https://upload.wikimedia.org/wikipedia/en/6/6d/My_Favorite_Thing_Is_Monsters_cover.jpg"
+      },
+      {
+        "categoryTitle": "Best Digital Comic",
+        "categoryId": "00006",
+        "categoryDescription": "The best of the eisner awards",
+        "categoryImage": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/434069/434069._SX270_CLs%7C270,422%7Ccu/cmx-cu-sash-lg.png%7C0,0,271,423%20158,310,112,112_QL80_TTD_.jpg"
+      },
+      {
+        "categoryTitle": "Best Lettering",
+        "categoryId": "00007",
+        "categoryDescription": "The best of the eisner awards",
+        "categoryImage": "https://d2lzb5v10mb0lj.cloudfront.net/covers/300/30/3000071.jpg"
+      }
+    ]
+  },
+  "content": {
+    "contentItems": [
+      {
+        "contentTitle": "Monstress",
+        "contentId": "00001",
+        "contentCategories": [
+          "00003",
+          "00005"
+        ],
+        "contentPairs": [
+          {
+            "label": "Writer",
+            "value": "Marjorie Liu"
+          },
+          {
+            "label": "Artist",
+            "value": "Sana Takeda"
+          }
+        ]
+      }
+    ]
+  }
 }
