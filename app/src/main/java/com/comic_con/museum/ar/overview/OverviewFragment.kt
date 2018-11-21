@@ -35,7 +35,17 @@ class OverviewFragment: Fragment() {
     private fun initCarousel(exhibits: List<ExhibitModel>?) {
         exhibits ?: return
         val experienceCarousel = this.rootView?.findViewById<DiscreteScrollView>(R.id.experience_carousel) ?: return
+        experienceCarousel.addOnItemChangedListener{ _, pos ->
+            onCarouselPositionChanged(pos)
+        }
         val carouselAdapter = CarouselAdapter(exhibits)
         experienceCarousel.adapter = carouselAdapter
+        // Start at the end of the carousel
+        experienceCarousel.scrollToPosition(exhibits.size)
     }
+
+    private fun onCarouselPositionChanged(newPos: Int) {
+
+    }
+
 }

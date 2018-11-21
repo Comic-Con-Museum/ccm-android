@@ -5,12 +5,12 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="24dp">
+        android:gravity="center">
 
     <com.yarolegovich.discretescrollview.DiscreteScrollView
             android:id="@+id/experience_carousel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:dsv_orientation="horizontal"/>
 
 </LinearLayout>
