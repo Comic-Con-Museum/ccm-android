@@ -1,7 +1,10 @@
 package com.comic_con.museum.ar.views
 
+import android.arch.lifecycle.MutableLiveData
 import android.content.Context
-import android.support.v4.content.ContextCompat
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.util.AttributeSet
 import android.view.View
@@ -13,11 +16,14 @@ import android.util.DisplayMetrics
 import android.widget.ImageView
 import com.comic_con.museum.ar.MainActivity
 import net.cachapa.expandablelayout.ExpandableLayout
+import java.net.URL
 
 
 class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
     private var isInitialMeasure = true
+
+    private val exhibitImageLiveData = MutableLiveData<Bitmap>()
 
     // The percent of the screen this view should take up
     @Suppress("PrivatePropertyName")
@@ -27,6 +33,16 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
         this.findViewById<TextView>(R.id.title_text)?.text = model.exhibitTitle
         this.findViewById<TextView>(R.id.body_text)?.text = model.exhibitDescription
         this.layoutParams.width = getWidthPx()
+
+        AsyncTask.execute {
+            val url = URL(model.exhibitImageUrl)
+            val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+            exhibitImageLiveData.postValue(bmp)
+        }
+        exhibitImageLiveData.observeForever {
+            this.findViewById<ImageView>(R.id.main_image)?.setImageBitmap(it)
+            requestLayout()
+        }
 
         // Set onClick to move to exhibit content
         this.findViewById<View>(R.id.main_image)?.setOnClickListener {
@@ -39,6 +55,8 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
                 this.findViewById<ExpandableLayout>(R.id.expandable_content)?.toggle(true)
             }
         }
+
+        this.findViewById<TextView>(R.id.extra_content)?.text = model.exhibitAdditionDescription
     }
 
     fun setupMoreContent() {
