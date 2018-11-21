@@ -8,7 +8,6 @@ class ContentViewModel @Inject constructor(private val repository: Repository) {
 
     @Suppress("PrivatePropertyName")
     private val CATEGORY_MODEL = CategoryModel(
-        "eisners",
         listOf(
             Category(
                 "1",

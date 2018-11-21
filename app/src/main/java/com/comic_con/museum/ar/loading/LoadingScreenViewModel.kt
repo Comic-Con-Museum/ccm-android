@@ -13,7 +13,7 @@ class LoadingScreenViewModel @Inject constructor(repository: Repository) {
     fun initLoading(): LiveData<Boolean> {
         Handler().postDelayed({
             finishLoading()
-        }, 3000)
+        }, 5000)
         return this.loadingCompletedLiveData
     }
 

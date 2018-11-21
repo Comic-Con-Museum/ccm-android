@@ -38,7 +38,7 @@ class ExperienceFragment: Fragment() {
             LaunchArFragment()
         )
         // Create, setup, and set adapter
-        val adapter = ViewPagerAdapter(activity?.supportFragmentManager)
+        val adapter = ViewPagerAdapter(this.childFragmentManager)
         adapter.fragments = fragmentPages
         viewPager.adapter = adapter
         // Start with the middle page

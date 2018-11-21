@@ -2,6 +2,7 @@ package com.comic_con.museum.ar.experience.content
 
 class ContentModel(
     val contentTitle: String,
+    val contentId: String,
     val contentCategoryId: List<String>,
     val contentPairs: List<ContentPair>
 )
