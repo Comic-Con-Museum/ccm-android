@@ -48,6 +48,14 @@ class ExperienceActivity: AppCompatActivity() {
     }
 
 
+    /**
+     * Called from Unity
+     */
+    @Suppress("unused")
+    fun newCollectionEvent(contentId: String): Int {
+        return 0
+    }
+
     private fun switchToFragment(fragment: Fragment, tag: String?) {
         val transaction = supportFragmentManager?.beginTransaction() ?: return
         transaction.replace(R.id.content_frame, fragment)
