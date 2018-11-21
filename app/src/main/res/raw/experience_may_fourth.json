@@ -1,0 +1,62 @@
+{
+  "exhibitTitle": "May the Fourth",
+  "exhibitId": "00002",
+  "exhibitDescription": "May the Fourth be with you! Take a chance to celebrate the most influential sci-fi title of all time. The museum hosts a special screening of Star wars films and extras, as well as other events.",
+  "category": {
+    "categories": [
+      {
+        "categoryTitle": "Movies",
+        "categoryId": "00001",
+        "categoryDescription": "The most influential films of the generation.",
+        "categoryTags": [
+          "Classics"
+        ],
+        "categoryImage": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_.jpg"
+      },
+      {
+        "categoryTitle": "Books",
+        "categoryId": "00002",
+        "categoryDescription": "Star wars has books too, who knew!?",
+        "categoryTags": [
+          "Classics"
+        ],
+        "categoryImage": "https://nerdist.com/wp-content/uploads/2015/05/Lords-of-the-Sith-Cover-05292015-674x1024.jpg"
+      },
+      {
+        "categoryTitle": "Games",
+        "categoryId": "00003",
+        "categoryDescription": "Top gaming content!",
+        "categoryTags": [
+          "Newly Added"
+        ],
+        "categoryImage": "https://steamcdn-a.akamaihd.net/steam/apps/6060/header.jpg?t=1524018481"
+      }
+    ],
+    "allTags": [
+      "Classics",
+      "Newly Added"
+    ]
+  },
+  "content": {
+    "contentItems": [
+      {
+        "contentTitle": "TODO",
+        "contentId": "00001",
+        "contentCategories": [
+          "00003",
+          "00005"
+        ],
+        "contentPairs": [
+          {
+            "label": "Writer",
+            "value": "Marjorie Liu"
+          },
+          {
+            "label": "Artist",
+            "value": "Sana Takeda"
+          }
+        ]
+      }
+    ]
+  }
+}
