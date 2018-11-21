@@ -8,5 +8,6 @@ class Category(
     val categoryId: String,
     val categoryTitle: String,
     val categoryDescription: String,
+    val categoryTags: List<String>,
     val categoryImage: String
 )

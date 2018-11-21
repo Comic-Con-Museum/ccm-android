@@ -7,43 +7,63 @@
       {
         "categoryTitle": "Best Of",
         "categoryId": "00001",
-        "categoryDescription": "The best of the eisner awards",
+        "categoryDescription": "The best the Eisners have to offer.",
+        "categoryTags": [
+          "Newly Added",
+          "Classics"
+        ],
         "categoryImage": "http://media.comicbook.com/2016/07/eisners-191821.jpg"
       },
       {
         "categoryTitle": "Best Short Story",
         "categoryId": "00002",
-        "categoryDescription": "The best of the eisner awards",
+        "categoryDescription": "The best stories, limited to 30 pages of content.",
+        "categoryTags": [
+          "Classics"
+        ],
         "categoryImage": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg"
       },
       {
         "categoryTitle": "Best New Series",
         "categoryId": "00003",
-        "categoryDescription": "The best of the eisner awards",
+        "categoryDescription": "Novels arcs which didn't exist a year ago.",
+        "categoryTags": [
+          "Newly Added",
+          "Digital"
+        ],
         "categoryImage": "https://upload.wikimedia.org/wikipedia/en/4/4e/WarofKings-5.jpg"
       },
       {
         "categoryTitle": "Best Writer",
         "categoryId": "00004",
-        "categoryDescription": "The best of the eisner awards",
+        "categoryDescription": "The best writing, including dialog, verbiage, and story.",
+        "categoryTags": [
+          "Classics"
+        ],
         "categoryImage": "https://imagecomics.com/uploads/releases/Monstress_14-1.png"
       },
       {
         "categoryTitle": "Best Coloring",
         "categoryId": "00005",
-        "categoryDescription": "The best of the eisner awards",
+        "categoryDescription": "The best choice and use of color.",
+        "categoryTags": [],
         "categoryImage": "https://upload.wikimedia.org/wikipedia/en/6/6d/My_Favorite_Thing_Is_Monsters_cover.jpg"
       },
       {
         "categoryTitle": "Best Digital Comic",
         "categoryId": "00006",
-        "categoryDescription": "The best of the eisner awards",
+        "categoryDescription": "The best of the eisner awards, limited to a digital medium.",
+        "categoryTags": [
+          "Newly Added",
+          "Digital"
+        ],
         "categoryImage": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/434069/434069._SX270_CLs%7C270,422%7Ccu/cmx-cu-sash-lg.png%7C0,0,271,423%20158,310,112,112_QL80_TTD_.jpg"
       },
       {
         "categoryTitle": "Best Lettering",
         "categoryId": "00007",
-        "categoryDescription": "The best of the eisner awards",
+        "categoryDescription": "The best choice and use of type.",
+        "categoryTags": [],
         "categoryImage": "https://d2lzb5v10mb0lj.cloudfront.net/covers/300/30/3000071.jpg"
       }
     ]
