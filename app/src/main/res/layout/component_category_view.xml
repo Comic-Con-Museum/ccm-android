@@ -58,19 +58,7 @@
                 android:foreground="?android:attr/selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
-                android:src="@drawable/ic_share_variant_grey600_48dp"/>
-
-        <ImageView
-                android:id="@+id/info_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleY=".5"
-                android:scaleX=".5"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/ic_information_variant_grey600_48dp"/>
+                android:src="@drawable/ic_share_black_48dp"/>
 
     </LinearLayout>
 

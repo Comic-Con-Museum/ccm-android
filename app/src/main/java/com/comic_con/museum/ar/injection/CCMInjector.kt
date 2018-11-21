@@ -1,6 +1,6 @@
 package com.comic_con.museum.ar.injection
 
-import com.comic_con.museum.ar.experience.content.ContentViewModel
+import com.comic_con.museum.ar.experience.ExperienceViewModel
 import com.comic_con.museum.ar.loading.LoadingScreenViewModel
 import com.comic_con.museum.ar.overview.OverviewViewModel
 import com.comic_con.museum.ar.persistence.Repository
@@ -19,13 +19,12 @@ class CCMInjector(private val repository: Repository) {
 
     @Provides
     @Singleton
-    fun providesContentViewModel(): ContentViewModel {
-        return ContentViewModel(this.repository)
+    fun providesLoadingScreenViewModel(): LoadingScreenViewModel {
+        return LoadingScreenViewModel(this.repository)
     }
 
     @Provides
-    @Singleton
-    fun providesLoadingScreenViewModel(): LoadingScreenViewModel {
-        return LoadingScreenViewModel(this.repository)
+    fun providesExperienceViewModel(): ExperienceViewModel {
+        return ExperienceViewModel(this.repository)
     }
 }

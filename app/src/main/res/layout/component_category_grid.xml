@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/category_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:visibility="gone"
+            tools:text="Category Title"/>
+
+    <com.comic_con.museum.ar.views.ContentCategoryGridView
+            android:id="@+id/category_grid"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:columnWidth="150dp"
+            android:numColumns="auto_fit"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center"/>
+
+</LinearLayout>

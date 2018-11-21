@@ -12,20 +12,49 @@ import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.content.ContentFragment
 import com.comic_con.museum.ar.experience.launchar.LaunchArFragment
 import com.comic_con.museum.ar.experience.progress.ProgressFragment
+import com.comic_con.museum.ar.overview.ExhibitModel
 
 class ExperienceFragment: Fragment() {
 
-    private var viewPager: ViewPager? = null
+    // Fragments rendered on the viewPager
+    private var progressFragment: ProgressFragment? = null
+    private var contentFragment: ContentFragment? = null
+    private var launchArFragment: LaunchArFragment? = null
+
+    // Not injected, but set from the activity
+    lateinit var experienceViewModel: ExperienceViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val viewPager = inflater.inflate(R.layout.fragment_experience, container, false) as? ViewPager
-        this.viewPager = viewPager
+
+        // Setup fragments
+        progressFragment = ProgressFragment()
+        contentFragment = ContentFragment()
+        contentFragment?.experienceViewModel = experienceViewModel
+        launchArFragment = LaunchArFragment()
+
+        setupViewPager(viewPager)
+
         return viewPager
     }
 
     override fun onResume() {
         super.onResume()
-        setupViewPager(this.viewPager)
+
+        experienceViewModel.experienceModelLiveData.observeForever(this::updateFromExhibitModel)
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        experienceViewModel.experienceModelLiveData.removeObservers(this)
+    }
+
+    /**
+     * Updates the fragment from the exhibitModel we received from the overview
+     */
+    private fun updateFromExhibitModel(exhibitModel: ExhibitModel?) {
+
     }
 
     private fun setupViewPager(viewPager: ViewPager?) {
@@ -33,9 +62,9 @@ class ExperienceFragment: Fragment() {
 
         // Determines the order of fragments
         val fragmentPages = listOf(
-            ProgressFragment(),
-            ContentFragment(),
-            LaunchArFragment()
+            progressFragment ?: return,
+            contentFragment ?: return,
+            launchArFragment ?: return
         )
         // Create, setup, and set adapter
         val adapter = ViewPagerAdapter(this.childFragmentManager)
