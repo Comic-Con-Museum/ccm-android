@@ -3,6 +3,7 @@ package com.comic_con.museum.ar.experience
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
@@ -10,6 +11,7 @@ import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.MenuItem
+import android.view.WindowManager
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.nav.BottomNavListener

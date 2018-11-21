@@ -16,6 +16,8 @@ import com.comic_con.museum.ar.overview.ExhibitModel
 
 class ExperienceFragment: Fragment() {
 
+    private var viewPager: ViewPager? = null
+
     // Fragments rendered on the viewPager
     private var progressFragment: ProgressFragment? = null
     private var contentFragment: ContentFragment? = null
@@ -26,14 +28,12 @@ class ExperienceFragment: Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val viewPager = inflater.inflate(R.layout.fragment_experience, container, false) as? ViewPager
-
+        this.viewPager = viewPager
         // Setup fragments
         progressFragment = ProgressFragment()
         contentFragment = ContentFragment()
         contentFragment?.experienceViewModel = experienceViewModel
         launchArFragment = LaunchArFragment()
-
-        setupViewPager(viewPager)
 
         return viewPager
     }
@@ -41,6 +41,7 @@ class ExperienceFragment: Fragment() {
     override fun onResume() {
         super.onResume()
 
+        setupViewPager(viewPager)
         experienceViewModel.experienceModelLiveData.observeForever(this::updateFromExhibitModel)
     }
 

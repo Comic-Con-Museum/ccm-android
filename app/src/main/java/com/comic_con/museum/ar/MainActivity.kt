@@ -21,6 +21,7 @@ class MainActivity: AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
+        overviewViewModel.addExhibitModel(resources.openRawResource(R.raw.experience_may_fourth))
         overviewViewModel.addExhibitModel(resources.openRawResource(R.raw.experience_eisners))
 
         switchToFragment(OverviewFragment(), "overview")

@@ -9,4 +9,7 @@
     <string name="nav_content">Content</string>
     <string name="nav_launch_ar">Launch AR</string>
 
+    <!-- Overview -->
+    <string name="overview_see_more">See More</string>
+
 </resources>

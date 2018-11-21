@@ -11,10 +11,14 @@ class CarouselAdapter(
     private val exhibitModels: List<ExhibitModel>
 ): RecyclerView.Adapter<CarouselAdapter.ViewHolder>() {
 
-    override fun getItemCount() = exhibitModels.size
+    override fun getItemCount() = exhibitModels.size + 1
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        (holder.itemView as? ExhibitCard)?.setup(exhibitModels.get(position))
+        if( position == 0 ) {
+            (holder.itemView as? ExhibitCard)?.setupMoreContent()
+        } else {
+            (holder.itemView as? ExhibitCard)?.setup(exhibitModels.get(position - 1))
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,8 +27,6 @@ class CarouselAdapter(
         return ViewHolder(exhibitCard)
     }
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-
-    }
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
 }

@@ -7,6 +7,8 @@ class ExhibitModel(
     val exhibitTitle: String,
     val exhibitId: String,
     val exhibitDescription: String,
+    val exhibitAdditionDescription: String,
+    val exhibitImageUrl: String,
     val category: CategoryModel,
     val content: ContentModel
 )
