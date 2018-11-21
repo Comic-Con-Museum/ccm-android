@@ -13,4 +13,38 @@
             android:layout_height="match_parent"
             app:dsv_orientation="horizontal"/>
 
+    <LinearLayout
+            android:id="@+id/carousel_counters"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/carousel_counter_inactive"/>
+
+        <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/carousel_counter_inactive"/>
+
+        <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/carousel_counter_inactive"/>
+
+        <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/carousel_counter_active"/>
+
+
+    </LinearLayout>
+
 </LinearLayout>
