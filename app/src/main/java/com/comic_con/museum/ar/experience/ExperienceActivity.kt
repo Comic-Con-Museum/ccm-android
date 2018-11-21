@@ -47,9 +47,8 @@ class ExperienceActivity: AppCompatActivity() {
         viewPager.addOnPageChangeListener(BottomNavOnPageChangeListener(bottomNavBar))
     }
 
-
     /**
-     * Called from Unity
+     * Called from Unity when a new item is collected
      */
     @Suppress("unused")
     fun newCollectionEvent(contentId: String): Int {
