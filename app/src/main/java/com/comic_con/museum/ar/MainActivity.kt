@@ -3,8 +3,10 @@ package com.comic_con.museum.ar
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import com.comic_con.museum.ar.experience.ExperienceActivity
 import com.comic_con.museum.ar.overview.OverviewFragment
 import com.comic_con.museum.ar.overview.OverviewViewModel
+import com.comic_con.museum.ar.views.ExhibitCard
 import javax.inject.Inject
 
 class MainActivity: AppCompatActivity() {
@@ -29,5 +31,11 @@ class MainActivity: AppCompatActivity() {
         transaction.replace(R.id.content_frame, fragment)
         transaction.addToBackStack(tag)
         transaction.commit()
+    }
+
+    fun beginExperienceActivity(experienceId: String) {
+        val newExperienceIntent = ExperienceActivity.createIntent(this)
+        newExperienceIntent.putExtra(ExhibitCard.EXPERIENCE_ID_KEY, experienceId)
+        this.startActivity(newExperienceIntent)
     }
 }

@@ -1,7 +1,8 @@
 package com.comic_con.museum.ar.experience.content
 
 class CategoryModel(
-    val categories: List<Category>
+    val categories: List<Category>,
+    val allTags: List<String>
 )
 
 class Category(

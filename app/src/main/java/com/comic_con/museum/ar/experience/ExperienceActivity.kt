@@ -10,15 +10,26 @@ import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.MenuItem
+import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
+import com.comic_con.museum.ar.overview.OverviewViewModel
+import com.comic_con.museum.ar.views.ExhibitCard
 import com.unity3d.player.UnityPlayer
+import java.lang.IllegalStateException
+import javax.inject.Inject
 
 
 class ExperienceActivity: AppCompatActivity() {
 
     var toolbar: ActionBar? = null
+
+    @Inject
+    lateinit var experienceViewModel: ExperienceViewModel
+
+    @Inject
+    lateinit var overviewViewModel: OverviewViewModel
 
     // The unity player for the AR component
     val unityPlayer: UnityPlayer by lazy {
@@ -28,14 +39,25 @@ class ExperienceActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        toolbar = supportActionBar
+        CCMApplication.getApplication().injectorComponent.inject(this)
 
+        // Get the experience model associated with the selected experience
+        val experienceId = intent?.extras?.getString(ExhibitCard.EXPERIENCE_ID_KEY) ?: throw IllegalStateException("Experience was started with null experienceId")
+        val experienceModel = overviewViewModel.exhibitModelsLiveData.value?.filter { model ->
+            model.exhibitId == experienceId
+        }?.getOrNull(0) ?: throw IllegalStateException("Experience was started with no valid experience model. ExperienceId: $experienceId")
+        experienceViewModel.setExperience(experienceModel)
+
+        // Set up the toolbar
+        toolbar = supportActionBar
         toolbar?.setDisplayHomeAsUpEnabled(true)
         toolbar?.show()
 
         setContentView(R.layout.activity_experiences)
 
-        switchToFragment(ExperienceFragment(), "Experience")
+        val frag = ExperienceFragment()
+        frag.experienceViewModel = experienceViewModel
+        switchToFragment(frag, "Experience")
     }
 
     override fun onResume() {

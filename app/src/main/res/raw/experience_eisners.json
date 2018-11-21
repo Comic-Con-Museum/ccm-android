@@ -9,7 +9,6 @@
         "categoryId": "00001",
         "categoryDescription": "The best the Eisners have to offer.",
         "categoryTags": [
-          "Newly Added",
           "Classics"
         ],
         "categoryImage": "http://media.comicbook.com/2016/07/eisners-191821.jpg"
@@ -19,6 +18,7 @@
         "categoryId": "00002",
         "categoryDescription": "The best stories, limited to 30 pages of content.",
         "categoryTags": [
+          "Newly Added",
           "Classics"
         ],
         "categoryImage": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg"
@@ -66,6 +66,11 @@
         "categoryTags": [],
         "categoryImage": "https://d2lzb5v10mb0lj.cloudfront.net/covers/300/30/3000071.jpg"
       }
+    ],
+    "allTags": [
+      "Classics",
+      "Newly Added",
+      "Digital"
     ]
   },
   "content": {

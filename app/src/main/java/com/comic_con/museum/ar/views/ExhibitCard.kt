@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.overview.ExhibitModel
 import android.util.DisplayMetrics
+import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.experience.ExperienceActivity
 
 
@@ -27,9 +28,7 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
         // Set onClick to move to exhibit content
         this.findViewById<View>(R.id.main_image)?.setOnClickListener {
             // Start the new Experience Activity and pass in the id of the Experience
-            val thisExperienceBundle = Bundle()
-            thisExperienceBundle.putString(EXPERIENCE_ID_KEY, model.exhibitId)
-            (context as? AppCompatActivity)?.startActivity(ExperienceActivity.createIntent(context), thisExperienceBundle)
+            (context as? MainActivity)?.beginExperienceActivity(model.exhibitId)
         }
     }
 

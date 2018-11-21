@@ -1,6 +1,5 @@
 package com.comic_con.museum.ar.views
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -10,13 +9,13 @@ import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.GridView
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.experience.content.CategoryModel
+import com.comic_con.museum.ar.experience.content.Category
 
 class ContentCategoryGridView(c: Context, a: AttributeSet): GridView(c, a) {
 
-    fun setUp(categoryModel: CategoryModel) {
+    fun setUp(categories: List<Category>) {
         val adapter = ContentCategoryAdapter(context)
-        adapter.categoryModel = categoryModel
+        adapter.categories = categories
         this.adapter = adapter
 
         this.onItemClickListener = adapter.getItemClickListener()
@@ -24,11 +23,11 @@ class ContentCategoryGridView(c: Context, a: AttributeSet): GridView(c, a) {
 
     inner class ContentCategoryAdapter(private val context: Context): BaseAdapter() {
 
-        lateinit var categoryModel: CategoryModel
+        lateinit var categories: List<Category>
 
-        override fun getCount(): Int = categoryModel.categories.size
+        override fun getCount(): Int = categories.size
 
-        override fun getItem(position: Int) = categoryModel.categories.get(position)
+        override fun getItem(position: Int) = categories.get(position)
 
         override fun getItemId(position: Int) = getItem(position).categoryId.toLong()
 
