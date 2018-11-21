@@ -46,28 +46,31 @@ class ContentFragment: Fragment() {
         // Remove all old category listings
         holder.removeAllViews()
 
-        // Render all tag categories
-        exhibitModel.category.allTags.forEach { categoryTag ->
-            val theseCategories = exhibitModel.category.categories.filter { category ->
-                categoryTag in category.categoryTags
-            }
-            renderNewTaggedCategoryGrid(holder, categoryTag, theseCategories)
-        }
+        renderNewTaggedCategoryGrid(holder, null, exhibitModel.category.categories)
 
-        // Render all non-tagged categories
-        val untaggedCategories = exhibitModel.category.categories.filter { category ->
-            category.categoryTags.count { tag ->
-                tag !in exhibitModel.category.allTags
-            } == 0
-        }
-        renderNewTaggedCategoryGrid(holder, null, untaggedCategories)
+        // TODO issue #42
+        // Render all tag categories
+//        exhibitModel.category.allTags.forEach { categoryTag ->
+//            val theseCategories = exhibitModel.category.categories.filter { category ->
+//                categoryTag in category.categoryTags
+//            }
+//            renderNewTaggedCategoryGrid(holder, categoryTag, theseCategories)
+//        }
+//
+//        // Render all non-tagged categories
+//        val untaggedCategories = exhibitModel.category.categories.filter { category ->
+//            category.categoryTags.count { tag ->
+//                tag !in exhibitModel.category.allTags
+//            } == 0
+//        }
+//        renderNewTaggedCategoryGrid(holder, null, untaggedCategories)
     }
 
     private fun renderNewTaggedCategoryGrid(holder: ViewGroup, tag: String?, categories: List<Category>) {
         val newCategoryListing = this.inflater?.inflate(R.layout.component_category_grid, holder, false) ?: return
         // Setup content
         newCategoryListing.findViewById<ContentCategoryGridView>(R.id.category_grid)?.setUp(categories)
-        newCategoryListing.findViewById<TextView>(R.id.category_tag)?.text = tag ?: ""
+//        newCategoryListing.findViewById<TextView>(R.id.category_tag)?.text = tag ?: ""
 
         holder.addView(newCategoryListing)
     }
