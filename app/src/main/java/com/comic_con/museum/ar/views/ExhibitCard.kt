@@ -25,6 +25,8 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
     private val exhibitImageLiveData = MutableLiveData<Bitmap>()
 
+    private var clicked = false
+
     // The percent of the screen this view should take up
     @Suppress("PrivatePropertyName")
     private val PERCENT_SCREEN_WIDTH = 80f
@@ -46,8 +48,13 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
         // Set onClick to move to exhibit content
         this.findViewById<View>(R.id.main_image)?.setOnClickListener {
-            // Start the new Experience Activity and pass in the id of the Experience
-            (context as? MainActivity)?.beginExperienceActivity(model.exhibitId)
+            synchronized(this.clicked) {
+                if (!this.clicked) {
+                    this.clicked = true
+                    // Start the new Experience Activity and pass in the id of the Experience
+                    (context as? MainActivity)?.beginExperienceActivity(model.exhibitId)
+                }
+            }
         }
 
         this.findViewById<ImageView>(R.id.more_info)?.let { moreInfoView ->
