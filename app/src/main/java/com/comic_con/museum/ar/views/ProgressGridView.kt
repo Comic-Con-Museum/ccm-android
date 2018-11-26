@@ -35,7 +35,7 @@ class ProgressGridView(c: Context, a: AttributeSet): GridView(c, a) {
             val progressView: ProgressView =
                 convertView as? ProgressView ?:
                 LayoutInflater.from(context).inflate(R.layout.component_progress_view, parent, false) as ProgressView
-            progressView.setProgress(getItem(position))
+            progressView.setProgress(progressModel, getItem(position))
             return progressView
         }
 

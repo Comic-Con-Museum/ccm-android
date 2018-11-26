@@ -39,12 +39,8 @@ class ProgressViewModel @Inject constructor(repository: Repository) {
     fun updateProgress(experienceId: String, contentId: String) {
         val thisExperienceLiveData = progressLiveDataFields.getOrElse(experienceId) { return }
         val thisExperienceModel = thisExperienceLiveData.value
-        // Update the progress with the new content item as achieved
-        thisExperienceModel?.progressItems?.forEach { progressItem ->
-            if( progressItem.contentItems.contains(contentId) &&
-                    !progressItem.achievedContentItems.contains(contentId)) {
-                progressItem.achievedContentItems.add(contentId)
-            }
+        if( thisExperienceModel?.achievedContentItems?.contains(contentId) == false ) {
+            thisExperienceModel.achievedContentItems.add(contentId)
         }
         // Post the value to update the view model
         thisExperienceLiveData.postValue(thisExperienceModel)
