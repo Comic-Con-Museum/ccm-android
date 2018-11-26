@@ -38,9 +38,12 @@ class ProgressFragment: Fragment() {
     }
 
     private fun setUpProgressModel() {
-        experienceId?.let { experienceId ->
-            progressViewModel.getExperienceProgressLiveData(experienceId, null).observeForever(this::updateFromProgressModel)
-        }
+        try {
+            experienceId?.let { experienceId ->
+                progressViewModel.getExperienceProgressLiveData(experienceId, null)
+                    .observeForever(this::updateFromProgressModel)
+            }
+        } catch (e: UninitializedPropertyAccessException) { /* Ignore, as the attempted operation will be completed later */ }
     }
 
     private fun updateFromProgressModel(progressModel: ProgressModel?) {

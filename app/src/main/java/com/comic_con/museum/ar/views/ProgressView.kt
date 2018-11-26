@@ -17,7 +17,7 @@ class ProgressView(c: Context, a: AttributeSet): RelativeLayout(c, a) {
         this.findViewById<TextView>(R.id.progress_text).text = progress?.progressName
 
         val relevantAchievedItems = progressModel.achievedContentItems.filter { achievedContentId ->
-            achievedContentId in progress?.contentItems ?: emptyList()
+            achievedContentId in (progress?.contentItems ?: emptyList())
         }
 
         val progressFill = this.findViewById<ImageView>(R.id.progress_fill)
