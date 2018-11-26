@@ -7,7 +7,9 @@ class ContentModel(
 class ContentItem(
     val contentTitle: String,
     val contentId: String,
-    val contentCategoryId: List<String>,
+    val contentDescription: String,
+    val contentImageURL: String,
+    val contentCategories: List<String>,
     val contentPairs: List<ContentPair>
 )
 

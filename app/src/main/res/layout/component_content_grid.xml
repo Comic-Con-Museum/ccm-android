@@ -14,8 +14,8 @@
             android:visibility="gone"
             tools:text="Category Title"/>
 
-    <com.comic_con.museum.ar.views.ContentCategoryCardGridView
-            android:id="@+id/category_grid"
+    <com.comic_con.museum.ar.views.ContentCardGridView
+            android:id="@+id/content_grid"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:padding="10dp"
