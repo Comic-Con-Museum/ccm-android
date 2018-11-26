@@ -1,13 +1,14 @@
 package com.comic_con.museum.ar.experience.progress
 
+typealias ContentItemId = String
+
 class ProgressModel(
-    val experienceId: String,
-    val progressItems: List<Progress>
+    val progressItems: List<Progress>,
+    val achievedContentItems: MutableList<ContentItemId>
 )
 
 class Progress(
     val progressId: String,
     val progressName: String,
-    val progressMax: Float,
-    val progressAchieved: Float
+    val contentItems: List<ContentItemId>
 )
