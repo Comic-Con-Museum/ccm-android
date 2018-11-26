@@ -10,14 +10,15 @@ import com.comic_con.museum.ar.experience.progress.Progress
 import android.util.TypedValue
 
 
-
 class ProgressView(c: Context, a: AttributeSet): RelativeLayout(c, a) {
 
-    fun setProgress(progress: Progress) {
-        this.findViewById<TextView>(R.id.progress_text).text = progress.progressName
+    fun setProgress(progress: Progress?) {
+        this.findViewById<TextView>(R.id.progress_text).text = progress?.progressName
 
         val progressFill = this.findViewById<ImageView>(R.id.progress_fill)
-        progressFill?.layoutParams?.height = dpToPx(100 * (progress.progressAchieved/progress.progressMax))
+        progressFill?.layoutParams?.height = dpToPx(
+            100 * ((progress?.achievedContentItems?.size ?: 0).toFloat()/(progress?.contentItems?.size ?: Int.MAX_VALUE).toFloat())
+        )
     }
 
     private fun dpToPx(dp: Float): Int {

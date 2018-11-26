@@ -3,6 +3,7 @@ package com.comic_con.museum.ar
 import android.app.Application
 import com.comic_con.museum.ar.injection.CCMComponent
 import com.comic_con.museum.ar.injection.CCMInjector
+import com.comic_con.museum.ar.injection.ContextModule
 import com.comic_con.museum.ar.injection.DaggerCCMComponent
 import com.comic_con.museum.ar.persistence.Repository
 
@@ -17,6 +18,7 @@ class CCMApplication: Application() {
 
         injectorComponent = DaggerCCMComponent.builder()
             .cCMInjector(CCMInjector(Repository()))
+            .contextModule(ContextModule(applicationContext))
             .build()
     }
 

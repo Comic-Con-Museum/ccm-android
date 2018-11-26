@@ -94,6 +94,114 @@
             "value": "Sana Takeda"
           }
         ]
+      },
+      {
+        "contentTitle": "A Life in Comics: The Graphic Adventures of Karen Green",
+        "contentId": "00002",
+        "contentCategories": [
+          "00003",
+          "00005"
+        ],
+        "contentPairs": [
+          {
+            "label": "Author",
+            "value": "Nick Sousanis"
+          }
+        ]
+      },
+      {
+        "contentTitle": "Black Panther: World of Wakanda",
+        "contentId": "00003",
+        "contentCategories": [
+          "00003",
+          "00005"
+        ],
+        "contentPairs": [
+          {
+            "label": "Collaborators",
+            "value": "Roxane Gay, Ta-Nehisi Coates, and Alitha E. Martinez"
+          }
+        ]
+      },
+      {
+        "contentTitle": "The Tea Dragon Society",
+        "contentId": "00004",
+        "contentCategories": [
+          "00003",
+          "00005"
+        ],
+        "contentPairs": [
+          {
+            "label": "Author",
+            "value": "Katie O’Neill (Oni)"
+          }
+        ]
+      },
+      {
+        "contentTitle": "Baking with Kafka",
+        "contentId": "00005",
+        "contentCategories": [
+          "00003",
+          "00005"
+        ],
+        "contentPairs": [
+          {
+            "label": "Author",
+            "value": "Tom Gauld (Drawn & Quarterly)"
+          }
+        ]
+      }
+    ]
+  },
+  "progress": {
+    "progressItems": [
+      {
+        "progressId": "1",
+        "progressName": "This year's winners",
+        "contentItems": [
+          "00001", "00002", "00003", "00004", "00005"
+        ],
+        "achievedContentItems": []
+      },
+      {
+        "progressId": "2",
+        "progressName": "Collect Mostress!",
+        "contentItems": [
+          "00001"
+        ],
+        "achievedContentItems": []
+      },
+      {
+        "progressId": "3",
+        "progressName": "A Child's Secret",
+        "contentItems": [
+          "00004"
+        ],
+        "achievedContentItems": []
+      },
+      {
+        "progressId": "4",
+        "progressName": "Spectacular Art",
+        "contentItems": [
+          "00001", "00002"
+        ],
+        "achievedContentItems": []
+      },
+      {
+        "progressId": "5",
+        "progressName": "Empty Tummy",
+        "contentItems": [
+          "00005"
+        ],
+        "achievedContentItems": []
+      },
+      {
+        "progressId": "6",
+        "progressName": "Collect them all",
+        "contentItems": [
+          "00001", "00002", "00003", "00004", "00005"
+        ],
+        "achievedContentItems": []
       }
     ]
   }

@@ -55,7 +55,7 @@ class ExperienceFragment: Fragment() {
      * Updates the fragment from the exhibitModel we received from the overview
      */
     private fun updateFromExhibitModel(exhibitModel: ExhibitModel?) {
-
+        progressFragment?.experienceId = exhibitModel?.exhibitId
     }
 
     private fun setupViewPager(viewPager: ViewPager?) {
