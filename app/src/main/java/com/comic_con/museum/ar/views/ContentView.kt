@@ -9,13 +9,13 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.ScrollView
 import android.widget.TextView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.content.ContentItem
 import java.net.URL
 
-class ContentView(c: Context, a: AttributeSet): LinearLayout(c, a) {
+class ContentView(c: Context, a: AttributeSet): ScrollView(c, a) {
 
     private val thisImageLiveData = MutableLiveData<Bitmap>()
 
