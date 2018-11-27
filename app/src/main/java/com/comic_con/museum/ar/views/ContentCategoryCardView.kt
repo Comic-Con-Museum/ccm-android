@@ -11,12 +11,13 @@ import com.comic_con.museum.ar.experience.content.Category
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.widget.ImageView
+import com.comic_con.museum.ar.experience.content.ContentFragment
 import java.net.URL
 
 
-class ContentCategoryView(c: Context, a: AttributeSet): LinearLayout(c, a) {
+class ContentCategoryCardView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
-    val thisImageLiveData: MutableLiveData<Bitmap> = MutableLiveData()
+    private val thisImageLiveData: MutableLiveData<Bitmap> = MutableLiveData()
 
     init {
         thisImageLiveData.observeForever { bitmap ->
@@ -25,13 +26,17 @@ class ContentCategoryView(c: Context, a: AttributeSet): LinearLayout(c, a) {
         }
     }
 
-    fun setCategory(category: Category) {
+    fun setCategory(parentFragment: ContentFragment?, category: Category) {
         this.findViewById<TextView>(R.id.title_text)?.text = category.categoryTitle
 
         AsyncTask.execute {
             val url = URL(category.categoryImage)
             val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
             thisImageLiveData.postValue(bmp)
+        }
+
+        this.findViewById<ImageView>(R.id.category_image)?.setOnClickListener {
+            parentFragment?.openContentListingView(category.categoryId)
         }
     }
 }

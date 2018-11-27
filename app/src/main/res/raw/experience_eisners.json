@@ -80,6 +80,8 @@
       {
         "contentTitle": "Monstress",
         "contentId": "00001",
+        "contentDescription": "Set in an alternate matriarchal 1900's Asia, in a richly imagined world of art deco-inflected steam punk, MONSTRESS tells the story of a teenage girl who is struggling to survive the trauma of war, and who shares a mysterious psychic link with a monster of tremendous power, a connection that will transform them both and make them the target of both human and otherworldly powers.",
+        "contentImageURL": "https://cdn.imagecomics.com/assets/i/releases/17446/monstress-14_d65e4af86e.jpg",
         "contentCategories": [
           "00003",
           "00005"
@@ -98,6 +100,8 @@
       {
         "contentTitle": "A Life in Comics: The Graphic Adventures of Karen Green",
         "contentId": "00002",
+        "contentDescription": "How a Butler librarian became Columbia’s first curator for comics and cartoons.",
+        "contentImageURL": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg",
         "contentCategories": [
           "00003",
           "00005"
@@ -112,6 +116,8 @@
       {
         "contentTitle": "Black Panther: World of Wakanda",
         "contentId": "00003",
+        "contentDescription": "The world building of Wakanda continues in a love story where tenderness is matched only by brutality! You know them now as the Midnight Angels, but in this story they are just Ayo and Aneka, young women recruited to become Dora Milaje, an elite task force trained to protect the crown of Wakanda at all costs. Their first assignment will be to protect Queen Shuri... but what happens when your nation needs your hearts and minds, but you already gave them to each other? Meanwhile, former king T'Challa lies with bedfellows so dark, disgrace is inevitable. Plus, explore the true origins of the People's mysterious leader, Zenzi. Black Panther thinks he knows who Zenzi is and how she got her powers - but he only knows part of the story! ",
+        "contentImageURL": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/581767174ecf7/clean.jpg",
         "contentCategories": [
           "00003",
           "00005"
@@ -119,13 +125,19 @@
         "contentPairs": [
           {
             "label": "Collaborators",
-            "value": "Roxane Gay, Ta-Nehisi Coates, and Alitha E. Martinez"
+            "value": "Roxane Gay, Ta-Nehisi Coates"
+          },
+          {
+            "label": "Marvel Representative",
+            "value": "Alitha E. Martinez"
           }
         ]
       },
       {
         "contentTitle": "The Tea Dragon Society",
         "contentId": "00004",
+        "contentDescription": "From the award-winning author of Princess Princess Ever After comes The Tea Dragon Society, a charming all-ages book that follows the story of Greta, a blacksmith apprentice, and the people she meets as she becomes entwined in the enchanting world of tea dragons.\n\nAfter discovering a lost tea dragon in the marketplace, Greta learns about the dying art form of tea dragon care-taking from the kind tea shop owners, Hesekiel and Erik. As she befriends them and their shy ward, Minette, Greta sees how the craft enriches their lives -- and eventually her own.",
+        "contentImageURL": "https://images-na.ssl-images-amazon.com/images/I/510f0H%2B%2BcSL._SX362_BO1,204,203,200_.jpg",
         "contentCategories": [
           "00003",
           "00005"
@@ -140,6 +152,8 @@
       {
         "contentTitle": "Baking with Kafka",
         "contentId": "00005",
+        "contentDescription": "In his inimitable style, British cartoonist Tom Gauld has opened comics to a crossover audience and challenged perceptions of what the medium can be. Noted as a “book-lover’s cartoonist,” Gauld’s weekly strips in The Guardian, Britain’s most well-regarded newspaper, stitch together the worlds of literary criticism and pop culture to create brilliantly executed, concise comics. Simultaneously silly and serious, Gauld adds an undeniable lightness to traditionally highbrow themes. From sarcastic panels about the health hazards of being a best-selling writer to a list of magical items for fantasy writers (such as the Amulet of Attraction, which summons mainstream acceptance, Hollywood money, and fresh coffee), Gauld’s cartoons are timely and droll―his trademark British humour, impeccable timing, and distinctive visual style sets him apart from the rest.\n\nLauded both for his frequent contributions to New Scientist, The Guardian and The New York Times, and his Eisner-nominated graphic novels, Tom Gauld is one of the most celebrated cartoonists working today. In Baking with Kafka, he proves this with one witty, sly, ridiculous comic after another. //REMOVE AFTER THIS ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ",
+        "contentImageURL": "https://images-na.ssl-images-amazon.com/images/I/71b2zP%2Bz7SL.jpg",
         "contentCategories": [
           "00003",
           "00005"

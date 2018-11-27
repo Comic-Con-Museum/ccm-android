@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.comic_con.museum.ar.views.ContentCategoryView
+<com.comic_con.museum.ar.views.ContentCardView
         xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -8,7 +8,7 @@
         android:elevation="2dp">
 
     <TextView
-            android:id="@+id/title_text"
+            android:id="@+id/content_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
@@ -19,13 +19,12 @@
             android:paddingBottom="10dp"
             android:textSize="18sp"
             android:textColor="@color/darkText"
-            tools:text="The eisners"/>
+            tools:text="Monstress"/>
 
     <ImageView
-            android:id="@+id/category_image"
+            android:id="@+id/content_image"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            tools:src="@drawable/eisners_header"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:foreground="?android:attr/selectableItemBackground"
@@ -62,4 +61,4 @@
 
     </LinearLayout>
 
-</com.comic_con.museum.ar.views.ContentCategoryView>
+</com.comic_con.museum.ar.views.ContentCardView>

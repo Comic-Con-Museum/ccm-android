@@ -5,20 +5,22 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.GridView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.content.Category
+import com.comic_con.museum.ar.experience.content.ContentFragment
 
-class ContentCategoryGridView(c: Context, a: AttributeSet): GridView(c, a) {
+class ContentCategoryCardGridView(c: Context, a: AttributeSet): GridView(c, a) {
 
-    fun setUp(categories: List<Category>) {
+    private var contentFragment: ContentFragment? = null
+
+    fun setUp(parentFragment: ContentFragment, categories: List<Category>) {
         val adapter = ContentCategoryAdapter(context)
         adapter.categories = categories
         this.adapter = adapter
 
-        this.onItemClickListener = adapter.getItemClickListener()
+        this.contentFragment = parentFragment
     }
 
     inner class ContentCategoryAdapter(private val context: Context): BaseAdapter() {
@@ -32,17 +34,11 @@ class ContentCategoryGridView(c: Context, a: AttributeSet): GridView(c, a) {
         override fun getItemId(position: Int) = getItem(position).categoryId.toLong()
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-            val categoryView: ContentCategoryView =
-                convertView as? ContentCategoryView ?:
-                LayoutInflater.from(context).inflate(R.layout.component_category_view, parent, false) as ContentCategoryView
-            categoryView.setCategory(getItem(position))
-            return categoryView
-        }
-
-        fun getItemClickListener(): AdapterView.OnItemClickListener {
-            return AdapterView.OnItemClickListener { parent, view, position, id ->
-                // TODO
-            }
+            val categoryCardView: ContentCategoryCardView =
+                convertView as? ContentCategoryCardView ?:
+                LayoutInflater.from(context).inflate(R.layout.component_category_card_view, parent, false) as ContentCategoryCardView
+            categoryCardView.setCategory(this@ContentCategoryCardGridView.contentFragment, getItem(position))
+            return categoryCardView
         }
     }
 }
