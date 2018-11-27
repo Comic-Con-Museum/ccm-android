@@ -3,6 +3,7 @@ package com.comic_con.museum.ar
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.view.KeyEvent
 import com.comic_con.museum.ar.experience.ExperienceActivity
 import com.comic_con.museum.ar.overview.OverviewFragment
 import com.comic_con.museum.ar.overview.OverviewViewModel
@@ -38,5 +39,12 @@ class MainActivity: AppCompatActivity() {
         val newExperienceIntent = ExperienceActivity.createIntent(this)
         newExperienceIntent.putExtra(ExhibitCard.EXPERIENCE_ID_KEY, experienceId)
         this.startActivity(newExperienceIntent)
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        return if (keyCode == KeyEvent.KEYCODE_BACK) {
+            this.finish()
+            true
+        } else super.onKeyDown(keyCode, event)
     }
 }
