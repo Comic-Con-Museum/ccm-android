@@ -22,8 +22,8 @@ class MainActivity: AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        overviewViewModel.addExhibitModel(resources.openRawResource(R.raw.experience_may_fourth))
-        overviewViewModel.addExhibitModel(resources.openRawResource(R.raw.experience_eisners))
+        overviewViewModel.addExhibitModel(R.raw.experience_may_fourth, resources.openRawResource(R.raw.experience_may_fourth))
+        overviewViewModel.addExhibitModel(R.raw.experience_eisners, resources.openRawResource(R.raw.experience_eisners))
 
         switchToFragment(OverviewFragment(), "overview")
     }
@@ -37,7 +37,7 @@ class MainActivity: AppCompatActivity() {
 
     fun beginExperienceActivity(experienceId: String) {
         val newExperienceIntent = ExperienceActivity.createIntent(this)
-        newExperienceIntent.putExtra(ExhibitCard.EXPERIENCE_ID_KEY, experienceId)
+        newExperienceIntent.putExtra(EXPERIENCE_RESOURCE_KEY, overviewViewModel.getResId(experienceId))
         this.startActivity(newExperienceIntent)
     }
 
@@ -46,5 +46,10 @@ class MainActivity: AppCompatActivity() {
             this.finish()
             true
         } else super.onKeyDown(keyCode, event)
+    }
+
+    companion object {
+
+        public final val EXPERIENCE_RESOURCE_KEY = "experinecereskey"
     }
 }

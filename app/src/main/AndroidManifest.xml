@@ -31,7 +31,8 @@
                   android:screenOrientation="portrait"/>
 
         <activity android:name=".experience.ExperienceActivity"
-                  android:screenOrientation="portrait"/>
+                  android:screenOrientation="portrait"
+                  android:process=":UnityBoundProcess"/>
 
     </application>
 
