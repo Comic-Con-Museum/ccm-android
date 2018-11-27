@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.comic_con.museum.ar.CCMApplication
+import com.comic_con.museum.ar.LaunchActivity
 import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
 import javax.inject.Inject
@@ -42,9 +43,7 @@ class LoadingScreenFragment: Fragment() {
 
     private fun completeLoading(isComplete: Boolean?) {
         if( isComplete == true ) {
-            // Move to the main activity
-            val mainActivityIntent = Intent(context, MainActivity::class.java)
-            startActivity(mainActivityIntent)
+            (activity as? LaunchActivity)?.finishLoading()
         }
     }
 }

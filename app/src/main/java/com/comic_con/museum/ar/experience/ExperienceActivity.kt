@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.KeyEvent
 import android.view.MenuItem
 import com.comic_con.museum.ar.CCMApplication
+import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
@@ -18,6 +19,7 @@ import com.comic_con.museum.ar.experience.progress.ProgressViewModel
 import com.comic_con.museum.ar.overview.ExhibitModel
 import com.comic_con.museum.ar.overview.OverviewViewModel
 import com.comic_con.museum.ar.views.ExhibitCard
+import com.google.gson.Gson
 import com.unity3d.player.UnityPlayer
 import java.lang.IllegalStateException
 import javax.inject.Inject
@@ -31,16 +33,13 @@ class ExperienceActivity: AppCompatActivity() {
     lateinit var experienceViewModel: ExperienceViewModel
 
     @Inject
-    lateinit var overviewViewModel: OverviewViewModel
-
-    @Inject
     lateinit var progressViewModel: ProgressViewModel
 
     private var experienceModel: ExhibitModel? = null
 
     // The unity player for the AR component
     val unityPlayer: UnityPlayer by lazy {
-        UnityPlayer(this)
+        UnityPlayer(applicationContext)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,10 +48,8 @@ class ExperienceActivity: AppCompatActivity() {
         CCMApplication.getApplication().injectorComponent.inject(this)
 
         // Get the experience model associated with the selected experience
-        val experienceId = intent?.extras?.getString(ExhibitCard.EXPERIENCE_ID_KEY) ?: throw IllegalStateException("Experience was started with null experienceId")
-        val experienceModel = overviewViewModel.exhibitModelsLiveData.value?.filter { model ->
-            model.exhibitId == experienceId
-        }?.getOrNull(0) ?: throw IllegalStateException("Experience was started with no valid experience model. ExperienceId: $experienceId")
+        val experienceRes = intent?.extras?.getInt(MainActivity.EXPERIENCE_RESOURCE_KEY) ?: throw IllegalStateException("Experience was started with null experienceId")
+        val experienceModel = Gson().fromJson(resources.openRawResource(experienceRes).bufferedReader(), ExhibitModel::class.java)
         experienceViewModel.setExperience(experienceModel)
         this.experienceModel = experienceModel
 
@@ -62,7 +59,7 @@ class ExperienceActivity: AppCompatActivity() {
         toolbar?.show()
 
         // Set up the experience Progress ViewModel with the initial model if needed
-        progressViewModel.getExperienceProgressLiveData(experienceId, experienceModel.progress)
+        progressViewModel.getExperienceProgressLiveData(experienceModel.exhibitId, experienceModel.progress)
 
         setContentView(R.layout.activity_experiences)
 

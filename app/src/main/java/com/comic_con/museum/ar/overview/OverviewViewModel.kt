@@ -14,12 +14,14 @@ class OverviewViewModel @Inject constructor(private val repository: Repository) 
     val exhibitModelsLiveData: MutableLiveData<List<ExhibitModel>> = MutableLiveData()
     // All the exhibits loaded so far
     private val models: MutableList<ExhibitModel> = mutableListOf()
+    // Mapping of models to associated android resource ID
+    private val modelResMap: HashMap<String, Int> = hashMapOf()
     // gson
     private val gson by lazy {
         Gson()
     }
 
-    fun addExhibitModel(inputStream: InputStream) {
+    fun addExhibitModel(resId: Int, inputStream: InputStream) {
         try {
             val exhibitModel = this.gson.fromJson(inputStream.bufferedReader(), ExhibitModel::class.java)
             if(
@@ -30,8 +32,13 @@ class OverviewViewModel @Inject constructor(private val repository: Repository) 
                 models.add(exhibitModel)
             }
             exhibitModelsLiveData.postValue(models)
+            modelResMap[exhibitModel.exhibitId] = resId
         } catch (e: JsonSyntaxException) {
             Log.e("JSON", "Failed to parse JSON object")
         }
+    }
+
+    fun getResId(exhibitId: String): Int? {
+        return modelResMap.getOrElse(exhibitId) { return null }
     }
 }

@@ -99,8 +99,4 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
         (context as? AppCompatActivity)?.windowManager?.defaultDisplay?.getMetrics(displayMetrics)
         return (displayMetrics.widthPixels * (PERCENT_SCREEN_WIDTH/100f)).toInt()
     }
-
-    companion object {
-        const val EXPERIENCE_ID_KEY = "experience_id"
-    }
 }
