@@ -10,6 +10,8 @@ import com.comic_con.museum.ar.experience.ExperienceViewModel
 import com.comic_con.museum.ar.overview.ExhibitModel
 import com.comic_con.museum.ar.views.ContentCardGridView
 import com.comic_con.museum.ar.views.ContentCategoryCardGridView
+import com.comic_con.museum.ar.views.ContentView
+import kotlinx.android.synthetic.main.abc_popup_menu_item_layout.*
 
 class ContentFragment: Fragment() {
 
@@ -80,13 +82,22 @@ class ContentFragment: Fragment() {
             contentItem.contentCategories.contains(categoryId)
         }
 
-        newContentListing.findViewById<ContentCardGridView>(R.id.content_grid)?.setUp(categorizedContent)
+        newContentListing.findViewById<ContentCardGridView>(R.id.content_grid)?.setUp(this, categorizedContent)
 
         holder.addView(newContentListing)
     }
 
-    private fun openContentView(contentId: String) {
+    fun openContentView(contentId: String) {
+        val holder = getContentHolder() ?: return
+        val model = this.experienceViewModel.experienceModelLiveData.value ?: return
+        val contentModel = model.content.contentItems.find { it.contentId == contentId } ?: return
 
+        holder.removeAllViews()
+
+        val newContentView = this.inflater?.inflate(R.layout.component_content_view, holder, false) as? ContentView ?: return
+        newContentView.setUpContent(contentModel)
+
+        holder.addView(newContentView)
     }
 
     private fun getContentHolder() = this.rootView?.findViewById<ViewGroup>(R.id.content_holder)

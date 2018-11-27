@@ -8,11 +8,15 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.GridView
 import com.comic_con.museum.ar.R
+import com.comic_con.museum.ar.experience.content.ContentFragment
 import com.comic_con.museum.ar.experience.content.ContentItem
 
 class ContentCardGridView(c: Context, a: AttributeSet): GridView(c, a) {
 
-    fun setUp(contentItems: List<ContentItem>) {
+    private var parentFragment: ContentFragment? = null
+
+    fun setUp(parentFragment: ContentFragment, contentItems: List<ContentItem>) {
+        this.parentFragment = parentFragment
         val adapter = ContentAdapter(context)
         adapter.contentItems = contentItems
         this.adapter = adapter
@@ -32,7 +36,7 @@ class ContentCardGridView(c: Context, a: AttributeSet): GridView(c, a) {
             val categoryCardView: ContentCardView =
                 convertView as? ContentCardView ?:
                 LayoutInflater.from(context).inflate(R.layout.component_content_card_view, parent, false) as ContentCardView
-            categoryCardView.setContent(getItem(position))
+            categoryCardView.setContent(this@ContentCardGridView.parentFragment, getItem(position))
             return categoryCardView
         }
     }
