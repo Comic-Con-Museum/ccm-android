@@ -27,18 +27,22 @@
                 android:ellipsize="end"
                 tools:text="Collect the 2018 eisner winners"/>
 
-        <RelativeLayout
+        <!-- Weight is used here to fill progress bar proportionally -->
+        <LinearLayout
+                android:id="@+id/progressBarContainer"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:background="@drawable/progress_bar_complete">
+                android:background="@drawable/progress_bar_complete"
+                tools:weightSum="35">
 
             <ImageView
                     android:id="@+id/progressBar"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/progress_bar_incomplete"/>
+                    android:src="@drawable/progress_bar_incomplete"
+                    tools:layout_weight="12"/>
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
                 android:layout_width="match_parent"
