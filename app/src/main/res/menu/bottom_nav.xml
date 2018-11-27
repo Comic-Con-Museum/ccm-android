@@ -3,7 +3,7 @@
 
     <item
             android:id="@+id/progress"
-            android:icon="@drawable/baseline_star_black_48"
+            android:icon="@drawable/ic_trophy_black_48dp"
             android:title="@string/nav_progress"/>
 
     <item
@@ -12,8 +12,8 @@
             android:title="@string/nav_content"/>
 
     <item
-        android:id="@+id/launch_ar"
-        android:icon="@drawable/baseline_camera_black_48"
-        android:title="@string/nav_launch_ar"/>
+            android:id="@+id/launch_ar"
+            android:icon="@drawable/baseline_camera_black_48"
+            android:title="@string/nav_launch_ar"/>
 
 </menu>

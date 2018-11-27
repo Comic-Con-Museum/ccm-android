@@ -1,13 +1,13 @@
 <resources>
 
     <!-- Global app content -->
-    <string name="app_name">Comic-Con Museum AR</string>
+    <string name="app_name">Comic-Con Museum</string>
     <string name="app_name_abbrev">ccm-ar</string>
 
     <!-- Navigation -->
-    <string name="nav_progress">Progress</string>
-    <string name="nav_content">Content</string>
-    <string name="nav_launch_ar">Launch AR</string>
+    <string name="nav_progress">My Progress</string>
+    <string name="nav_content">Gallery</string>
+    <string name="nav_launch_ar">AR</string>
 
     <!-- Overview -->
     <string name="overview_see_more">See More</string>
