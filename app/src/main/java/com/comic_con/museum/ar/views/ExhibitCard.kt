@@ -16,6 +16,7 @@ import android.util.DisplayMetrics
 import android.widget.ImageView
 import com.comic_con.museum.ar.MainActivity
 import net.cachapa.expandablelayout.ExpandableLayout
+import java.io.IOException
 import java.net.URL
 
 
@@ -37,9 +38,11 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
         this.layoutParams.width = getWidthPx()
 
         AsyncTask.execute {
-            val url = URL(model.exhibitImageUrl)
-            val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
-            exhibitImageLiveData.postValue(bmp)
+            try {
+                val url = URL(model.exhibitImageUrl)
+                val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+                exhibitImageLiveData.postValue(bmp)
+            } catch(e: IOException) { /* Some issue with the host */ }
         }
         exhibitImageLiveData.observeForever {
             this.findViewById<ImageView>(R.id.main_image)?.setImageBitmap(it)

@@ -13,6 +13,7 @@ import android.widget.ScrollView
 import android.widget.TextView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.content.ContentItem
+import java.io.IOException
 import java.net.URL
 
 class ContentView(c: Context, a: AttributeSet): ScrollView(c, a) {
@@ -30,9 +31,11 @@ class ContentView(c: Context, a: AttributeSet): ScrollView(c, a) {
         this.findViewById<TextView>(R.id.content_title)?.text = contentItem.contentTitle
         this.findViewById<TextView>(R.id.content_description)?.text = contentItem.contentDescription
         AsyncTask.execute {
-            val url = URL(contentItem.contentImageURL)
-            val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
-            thisImageLiveData.postValue(bmp)
+            try {
+                val url = URL(contentItem.contentImageURL)
+                val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+                thisImageLiveData.postValue(bmp)
+            } catch(e: IOException) { /* Some issue with the host */ }
         }
 
         // Set up key/value dynamics

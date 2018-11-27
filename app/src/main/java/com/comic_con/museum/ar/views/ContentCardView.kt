@@ -13,6 +13,7 @@ import android.view.View
 import android.widget.ImageView
 import com.comic_con.museum.ar.experience.content.ContentFragment
 import com.comic_con.museum.ar.experience.content.ContentItem
+import java.io.IOException
 import java.net.URL
 
 
@@ -31,9 +32,11 @@ class ContentCardView(c: Context, a: AttributeSet): LinearLayout(c, a) {
         this.findViewById<TextView>(R.id.content_title)?.text = content.contentTitle
 
         AsyncTask.execute {
-            val url = URL(content.contentImageURL)
-            val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
-            thisImageLiveData.postValue(bmp)
+            try {
+                val url = URL(content.contentImageURL)
+                val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
+                thisImageLiveData.postValue(bmp)
+            } catch(e: IOException) { /* Some issue with the host */ }
         }
 
         this.findViewById<View>(R.id.content_image)?.setOnClickListener {
