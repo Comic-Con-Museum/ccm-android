@@ -7,12 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.BaseAdapter
-import android.widget.GridView
 import android.widget.ListView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.progress.ProgressModel
 
-class ProgressGridView(c: Context, a: AttributeSet): ListView(c, a) {
+class ProgressListView(c: Context, a: AttributeSet): ListView(c, a) {
 
     fun setUp(progressModel: ProgressModel) {
         val adapter = ProgressAdapter(context)

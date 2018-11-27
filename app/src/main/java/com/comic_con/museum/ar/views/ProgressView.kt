@@ -14,23 +14,20 @@ import com.comic_con.museum.ar.experience.progress.ProgressModel
 class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
     fun setProgress(progressModel: ProgressModel, progress: Progress?) {
-        this.findViewById<TextView>(R.id.progressTitle).text = progress?.progressName
-
+        progress ?: return
+        // Get the achieved items for this progress item
         val relevantAchievedItems = progressModel.achievedContentItems.filter { achievedContentId ->
-            achievedContentId in (progress?.contentItems ?: emptyList())
+            achievedContentId in (progress.contentItems)
         }
+
+        // Set text values
+        this.findViewById<TextView>(R.id.progressTitle)?.text = progress.progressName
+        this.findViewById<TextView>(R.id.achievedProgressNum)?.text = relevantAchievedItems.size.toString()
+        this.findViewById<TextView>(R.id.maxProgressNum)?.text = progress.contentItems.size.toString()
 
         val progressFill = this.findViewById<ImageView>(R.id.progressBar)
         val parentWidth = (progressFill.parent as? View)?.layoutParams?.width ?: 0
-        val fillPercent = (relevantAchievedItems.size.toFloat()/(progress?.contentItems?.size?.toFloat() ?: Float.MAX_VALUE))
+        val fillPercent = (relevantAchievedItems.size.toFloat() / progress.contentItems.size.toFloat())
         progressFill?.layoutParams?.width = (parentWidth * fillPercent).toInt()
     }
-
-//    private fun dpToPx(dp: Float): Int {
-//        return TypedValue.applyDimension(
-//            TypedValue.COMPLEX_UNIT_DIP,
-//            dp,
-//            resources.displayMetrics
-//        ).toInt()
-//    }
 }
