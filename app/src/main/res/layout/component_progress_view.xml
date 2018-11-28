@@ -2,12 +2,12 @@
 <com.comic_con.museum.ar.views.ProgressView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        style="@style/ProgressIncomplete"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:elevation="2dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@drawable/progress_background_incomplete">
 
     <LinearLayout
             android:layout_width="0dp"
@@ -32,7 +32,7 @@
                 android:id="@+id/progressBarContainer"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:background="@drawable/progress_bar_complete"
+                android:background="@drawable/progress_bar_background"
                 tools:weightSum="35">
 
             <ImageView
@@ -47,6 +47,7 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
             <TextView
