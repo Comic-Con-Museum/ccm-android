@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/light_yellow</item>
+        <item name="colorPrimaryDark">@color/dark_yellow</item>
+        <item name="colorAccent">@color/dark_blue</item>
         <item name="actionBarTheme">@style/ActionBarTheme</item>
 
         <item name="android:windowBackground">@color/darkText</item>
@@ -17,7 +17,7 @@
     </style>
 
     <style name="ProgressIncomplete">
-        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/light_yellow</item>
         <item name="android:background">@drawable/progress_background_incomplete</item>
     </style>
 
