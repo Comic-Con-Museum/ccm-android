@@ -29,6 +29,11 @@
         <activity android:name=".MainActivity"
                   android:screenOrientation="portrait"/>
 
+        <!--
+        Upon completion, the unity player kills the process it was running on,
+        so any activity containing an active UnityPlayer must be on a process off of
+        the main process of the app
+        -->
         <activity android:name=".experience.ExperienceActivity"
                   android:screenOrientation="portrait"
                   android:process=":UnityBoundProcess"/>

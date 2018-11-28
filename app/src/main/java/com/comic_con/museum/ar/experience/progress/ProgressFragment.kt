@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.views.ProgressGridView
+import com.comic_con.museum.ar.views.ProgressListView
 import javax.inject.Inject
 
 class ProgressFragment: Fragment() {
@@ -48,7 +48,7 @@ class ProgressFragment: Fragment() {
 
     private fun updateFromProgressModel(progressModel: ProgressModel?) {
         progressModel?.let {
-            rootView?.findViewById<ProgressGridView>(R.id.progress_grid)?.setUp(progressModel)
+            rootView?.findViewById<ProgressListView>(R.id.progress_grid)?.setUp(progressModel)
         }
     }
 }

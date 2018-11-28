@@ -12,4 +12,7 @@
     <!-- Overview -->
     <string name="overview_see_more">See More</string>
 
+    <!-- Progress -->
+    <string name="progress_completed">Done!</string>
+
 </resources>
