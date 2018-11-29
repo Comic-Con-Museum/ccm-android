@@ -1,9 +1,9 @@
 {
-  "exhibitTitle": "Eisners",
-  "exhibitId": "00001",
-  "exhibitDescription": "The eisners are an award collection representing the best of the graphic novel industry. Including popular titles such as Monstress, Starman, and The Watchmen.",
-  "exhibitAdditionDescription": "Take a chance to experience what the eisners have to offer!",
-  "exhibitImageUrl": "https://doomrocket.com/wp-content/uploads/2018/07/eisners-header.png",
+  "experienceTitle": "Eisners",
+  "experienceId": "00001",
+  "experienceDescription": "The eisners are an award collection representing the best of the graphic novel industry. Including popular titles such as Monstress, Starman, and The Watchmen.",
+  "experienceAdditionDescription": "Take a chance to experience what the eisners have to offer!",
+  "experienceImageUrl": "https://doomrocket.com/wp-content/uploads/2018/07/eisners-header.png",
   "category": {
     "categories": [
       {

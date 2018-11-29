@@ -16,9 +16,7 @@ import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
-import com.comic_con.museum.ar.overview.ExhibitModel
-import com.comic_con.museum.ar.overview.OverviewViewModel
-import com.comic_con.museum.ar.views.ExhibitCard
+import com.comic_con.museum.ar.overview.ExperienceModel
 import com.google.gson.Gson
 import com.unity3d.player.UnityPlayer
 import java.lang.IllegalStateException
@@ -35,7 +33,7 @@ class ExperienceActivity: AppCompatActivity() {
     @Inject
     lateinit var progressViewModel: ProgressViewModel
 
-    private var experienceModel: ExhibitModel? = null
+    private var experienceModel: ExperienceModel? = null
 
     // The unity player for the AR component
     val unityPlayer: UnityPlayer by lazy {
@@ -49,7 +47,7 @@ class ExperienceActivity: AppCompatActivity() {
 
         // Get the experience model associated with the selected experience
         val experienceRes = intent?.extras?.getInt(MainActivity.EXPERIENCE_RESOURCE_KEY) ?: throw IllegalStateException("Experience was started with null experienceId")
-        val experienceModel = Gson().fromJson(resources.openRawResource(experienceRes).bufferedReader(), ExhibitModel::class.java)
+        val experienceModel = Gson().fromJson(resources.openRawResource(experienceRes).bufferedReader(), ExperienceModel::class.java)
         experienceViewModel.setExperience(experienceModel)
         this.experienceModel = experienceModel
 
@@ -59,7 +57,7 @@ class ExperienceActivity: AppCompatActivity() {
         toolbar?.show()
 
         // Set up the experience Progress ViewModel with the initial model if needed
-        progressViewModel.getExperienceProgressLiveData(experienceModel.exhibitId, experienceModel.progress)
+        progressViewModel.getExperienceProgressLiveData(experienceModel.experienceId, experienceModel.progress)
 
         setContentView(R.layout.activity_experiences)
 
@@ -91,7 +89,7 @@ class ExperienceActivity: AppCompatActivity() {
      */
     @Suppress("unused")
     fun newCollectionEvent(contentId: String): Int {
-        this.experienceModel?.exhibitId?.let { experienceId ->
+        this.experienceModel?.experienceId?.let { experienceId ->
             // If the contentId is not associated with the experience
             if( experienceModel?.content?.contentItems?.asSequence()?.map{ it.contentId }?.contains(contentId) != true ) {
                 return 501

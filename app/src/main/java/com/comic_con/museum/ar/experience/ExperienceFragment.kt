@@ -12,7 +12,7 @@ import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.content.ContentFragment
 import com.comic_con.museum.ar.experience.launchar.LaunchArFragment
 import com.comic_con.museum.ar.experience.progress.ProgressFragment
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 
 class ExperienceFragment: Fragment() {
 
@@ -42,7 +42,7 @@ class ExperienceFragment: Fragment() {
         super.onResume()
 
         setupViewPager(viewPager)
-        experienceViewModel.experienceModelLiveData.observeForever(this::updateFromExhibitModel)
+        experienceViewModel.experienceModelLiveData.observeForever(this::updateFromExperienceModel)
     }
 
     override fun onPause() {
@@ -52,10 +52,10 @@ class ExperienceFragment: Fragment() {
     }
 
     /**
-     * Updates the fragment from the exhibitModel we received from the overview
+     * Updates the fragment from the experienceModel we received from the overview
      */
-    private fun updateFromExhibitModel(exhibitModel: ExhibitModel?) {
-        progressFragment?.experienceId = exhibitModel?.exhibitId
+    private fun updateFromExperienceModel(experienceModel: ExperienceModel?) {
+        progressFragment?.experienceId = experienceModel?.experienceId
     }
 
     private fun setupViewPager(viewPager: ViewPager?) {

@@ -7,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.ExperienceViewModel
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 import com.comic_con.museum.ar.views.ContentCardGridView
 import com.comic_con.museum.ar.views.ContentCategoryCardGridView
 import com.comic_con.museum.ar.views.ContentView
-import kotlinx.android.synthetic.main.abc_popup_menu_item_layout.*
 
 class ContentFragment: Fragment() {
 
@@ -35,27 +34,27 @@ class ContentFragment: Fragment() {
     /**
      * Sets up the content view
      */
-    private fun setupContent(exhibitModel: ExhibitModel?) {
-        exhibitModel ?: return
+    private fun setupContent(experienceModel: ExperienceModel?) {
+        experienceModel ?: return
         val holder = getContentHolder() ?: return
         // Remove all old category listings
         holder.removeAllViews()
 
-        openCategoryListingView(holder, null, exhibitModel.category.categories)
+        openCategoryListingView(holder, null, experienceModel.category.categories)
 
         // TODO issue #42
         // Render all tag categories
-//        exhibitModel.category.allTags.forEach { categoryTag ->
-//            val theseCategories = exhibitModel.category.categories.filter { category ->
+//        experienceModel.category.allTags.forEach { categoryTag ->
+//            val theseCategories = experienceModel.category.categories.filter { category ->
 //                categoryTag in category.categoryTags
 //            }
 //            openCategoryListingView(holder, categoryTag, theseCategories)
 //        }
 //
 //        // Render all non-tagged categories
-//        val untaggedCategories = exhibitModel.category.categories.filter { category ->
+//        val untaggedCategories = experienceModel.category.categories.filter { category ->
 //            category.categoryTags.count { tag ->
-//                tag !in exhibitModel.category.allTags
+//                tag !in experienceModel.category.allTags
 //            } == 0
 //        }
 //        openCategoryListingView(holder, null, untaggedCategories)
