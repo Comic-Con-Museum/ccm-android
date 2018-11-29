@@ -8,13 +8,13 @@
         </shape>
     </item>
     <item
-            android:height="5dp"
+            android:height="4dp"
             android:left="20dp"
             android:right="20dp">
 
         <shape android:shape="rectangle">
 
-            <solid android:color="@color/dark_blue"/>
+            <solid android:color="@color/light_yellow"/>
 
         </shape>
 
