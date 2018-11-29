@@ -1,6 +1,8 @@
 # Comic-Con Museum Android App
 
-Welcome to the Comic-Con Museum Android app component. The Museum's app is currently comprised of two components:
+The Comic-Con Museum Android App enhances audience experience and access through in-gallery augmented reality, game-based progress tracking, and ability to explore an extensive library of exhibition content.
+
+The Museum's app is currently comprised of two components:
 Native Android, and [Unity/Vuforia AR](TODO). This is the repo for the Native Android component.
 
 Check out our [contribution guidelines](TODO) to get started.
