@@ -17,8 +17,6 @@ import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
 import com.comic_con.museum.ar.overview.ExhibitModel
-import com.comic_con.museum.ar.overview.OverviewViewModel
-import com.comic_con.museum.ar.views.ExhibitCard
 import com.google.gson.Gson
 import com.unity3d.player.UnityPlayer
 import java.lang.IllegalStateException
@@ -108,6 +106,47 @@ class ExperienceActivity: AppCompatActivity() {
             progressViewModel.updateProgress(experienceId, contentId)
             return 0
         }
+        return 500
+    }
+
+    /**
+     * Called (from Unity) when the component has completed loading
+     * @param eventCode Int correlating to the status of the loaded unity component
+     * *Success Codes*
+     * 0:   Unity component loaded successfully
+     * TODO add more
+     * *Error Codes*
+     * 500: Unity component did not load successfully
+     * TODO add more
+     */
+    @Suppress("unused")
+    fun newLoadingCompletedEvent(eventCode: Int) {
+        // TODO display unity
+    }
+
+    /**
+     * Called (from Unity) when the component has crashed
+     * @param eventCode
+     */
+    @Suppress("unused")
+    fun newCrashEvent(eventCode: Int) {
+        // TODO handle crash
+    }
+
+    /**
+     * Called (from Unity) to direct the user to a specific content listing
+     * @param contentId The contentId of the content item collected
+     * @return Int correlating to how the view event was handled
+     * *Success Codes*
+     * 0:   The content was successfully viewed
+     * TODO add more
+     * *Error Codes*
+     * 500: The content was not able to be viewed
+     * TODO add more
+     */
+    @Suppress("unused")
+    fun newViewContentEvent(contentId: String): Int {
+        // TODO bring user to content view
         return 500
     }
 
