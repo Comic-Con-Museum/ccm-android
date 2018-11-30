@@ -2,10 +2,21 @@
 <com.comic_con.museum.ar.views.ContentCardView
         xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
         android:elevation="2dp">
+
+    <ImageView
+            android:id="@+id/content_image"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            tools:background="@color/dark_blue"/>
 
     <TextView
             android:id="@+id/content_title"
@@ -16,49 +27,23 @@
             android:paddingStart="18dp"
             android:paddingEnd="18dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/darkText"
+            android:textSize="16sp"
+            android:textColor="@color/dark_text"
+            android:textAlignment="center"
             tools:text="Monstress"/>
 
-    <ImageView
-            android:id="@+id/content_image"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"/>
-
-    <LinearLayout
+    <TextView
+            android:id="@+id/content_subtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-        <ImageView
-                android:id="@+id/favorite_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleY=".5"
-                android:scaleX=".5"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/ic_heart_outline_grey600_48dp"/>
-
-        <ImageView
-                android:id="@+id/share_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:scaleY=".5"
-                android:scaleX=".5"
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/ic_share_black_48dp"/>
-
-    </LinearLayout>
+            android:paddingTop="6dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="11sp"
+            android:textColor="@color/light_text"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textAlignment="center"
+            tools:text="Jim Harrison, John Smith"/>
 
 </com.comic_con.museum.ar.views.ContentCardView>

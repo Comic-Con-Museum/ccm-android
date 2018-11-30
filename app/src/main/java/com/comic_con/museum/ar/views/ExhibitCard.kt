@@ -33,13 +33,13 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
     private val PERCENT_SCREEN_WIDTH = 80f
 
     fun setup(model: ExhibitModel) {
-        this.findViewById<TextView>(R.id.title_text)?.text = model.exhibitTitle
-        this.findViewById<TextView>(R.id.body_text)?.text = model.exhibitDescription
+        this.findViewById<TextView>(R.id.title_text)?.text = model.title
+        this.findViewById<TextView>(R.id.body_text)?.text = model.description
         this.layoutParams.width = getWidthPx()
 
         AsyncTask.execute {
             try {
-                val url = URL(model.exhibitImageUrl)
+                val url = URL(model.imageUrl)
                 val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
                 exhibitImageLiveData.postValue(bmp)
             } catch(e: IOException) { /* Some issue with the host */ }
@@ -55,7 +55,7 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
                 if (!this.clicked) {
                     this.clicked = true
                     // Start the new Experience Activity and pass in the id of the Experience
-                    (context as? MainActivity)?.beginExperienceActivity(model.exhibitId)
+                    (context as? MainActivity)?.beginExperienceActivity(model.id)
                 }
             }
         }
@@ -66,7 +66,7 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
             }
         }
 
-        this.findViewById<TextView>(R.id.extra_content)?.text = model.exhibitAdditionDescription
+        this.findViewById<TextView>(R.id.extra_content)?.text = model.additionalDescription
     }
 
     fun setupMoreContent() {

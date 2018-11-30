@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.experience.content.ContentFragment
+import com.comic_con.museum.ar.experience.content.ContentBaseFragment
 import com.comic_con.museum.ar.experience.launchar.LaunchArFragment
 import com.comic_con.museum.ar.experience.progress.ProgressFragment
 import com.comic_con.museum.ar.overview.ExhibitModel
@@ -20,7 +20,7 @@ class ExperienceFragment: Fragment() {
 
     // Fragments rendered on the viewPager
     private var progressFragment: ProgressFragment? = null
-    private var contentFragment: ContentFragment? = null
+    private var contentBaseFragment: ContentBaseFragment? = null
     private var launchArFragment: LaunchArFragment? = null
 
     // Not injected, but set from the activity
@@ -31,8 +31,8 @@ class ExperienceFragment: Fragment() {
         this.viewPager = viewPager
         // Setup fragments
         progressFragment = ProgressFragment()
-        contentFragment = ContentFragment()
-        contentFragment?.experienceViewModel = experienceViewModel
+        contentBaseFragment = ContentBaseFragment()
+        contentBaseFragment?.experienceViewModel = experienceViewModel
         launchArFragment = LaunchArFragment()
 
         return viewPager
@@ -55,7 +55,7 @@ class ExperienceFragment: Fragment() {
      * Updates the fragment from the exhibitModel we received from the overview
      */
     private fun updateFromExhibitModel(exhibitModel: ExhibitModel?) {
-        progressFragment?.experienceId = exhibitModel?.exhibitId
+        progressFragment?.experienceId = exhibitModel?.id
     }
 
     private fun setupViewPager(viewPager: ViewPager?) {
@@ -64,7 +64,7 @@ class ExperienceFragment: Fragment() {
         // Determines the order of fragments
         val fragmentPages = listOf(
             progressFragment ?: return,
-            contentFragment ?: return,
+            contentBaseFragment ?: return,
             launchArFragment ?: return
         )
         // Create, setup, and set adapter

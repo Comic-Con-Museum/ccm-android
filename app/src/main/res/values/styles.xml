@@ -12,8 +12,8 @@
     </style>
 
     <style name="ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="colorControlNormal">@color/darkText</item>
-        <item name="android:textColor">@color/darkText</item>
+        <item name="colorControlNormal">@color/dark_text</item>
+        <item name="android:textColor">@color/dark_text</item>
     </style>
 
     <style name="ProgressIncomplete">

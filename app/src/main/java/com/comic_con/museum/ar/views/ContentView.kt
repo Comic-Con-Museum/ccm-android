@@ -12,7 +12,7 @@ import android.widget.ImageView
 import android.widget.ScrollView
 import android.widget.TextView
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.experience.content.ContentItem
+import com.comic_con.museum.ar.overview.ContentItem
 import java.io.IOException
 import java.net.URL
 
@@ -28,11 +28,11 @@ class ContentView(c: Context, a: AttributeSet): ScrollView(c, a) {
 
     fun setUpContent(contentItem: ContentItem) {
         // Set up non-dynamic content
-        this.findViewById<TextView>(R.id.content_title)?.text = contentItem.contentTitle
-        this.findViewById<TextView>(R.id.content_description)?.text = contentItem.contentDescription
+        this.findViewById<TextView>(R.id.content_title)?.text = contentItem.title
+        this.findViewById<TextView>(R.id.content_description)?.text = contentItem.description
         AsyncTask.execute {
             try {
-                val url = URL(contentItem.contentImageURL)
+                val url = URL(contentItem.imageUrl)
                 val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
                 thisImageLiveData.postValue(bmp)
             } catch(e: IOException) { /* Some issue with the host */ }
@@ -41,7 +41,7 @@ class ContentView(c: Context, a: AttributeSet): ScrollView(c, a) {
         // Set up key/value dynamics
         this.findViewById<ViewGroup>(R.id.key_value_holder)?.let { holder ->
             holder.removeAllViews()
-            contentItem.contentPairs.forEach { contentPair ->
+            contentItem.extraPairs?.forEach { contentPair ->
                 val newKeyValue = LayoutInflater.from(context).inflate(R.layout.component_content_key_value_listing, holder, false)
                 newKeyValue?.findViewById<TextView>(R.id.key)?.text = contentPair.label
                 newKeyValue?.findViewById<TextView>(R.id.value)?.text = contentPair.value

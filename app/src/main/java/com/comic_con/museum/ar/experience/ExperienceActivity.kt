@@ -3,6 +3,7 @@ package com.comic_con.museum.ar.experience
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Debug
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
@@ -13,6 +14,7 @@ import android.view.MenuItem
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
+import com.comic_con.museum.ar.experience.content.subfragments.ContentFragment
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
@@ -43,6 +45,9 @@ class ExperienceActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Enable this to stop program until debugger attach
+//        Debug.waitForDebugger()
+
         CCMApplication.getApplication().injectorComponent.inject(this)
 
         // Get the experience model associated with the selected experience
@@ -57,7 +62,7 @@ class ExperienceActivity: AppCompatActivity() {
         toolbar?.show()
 
         // Set up the experience Progress ViewModel with the initial model if needed
-        progressViewModel.getExperienceProgressLiveData(experienceModel.exhibitId, experienceModel.progress)
+        progressViewModel.getExperienceProgressLiveData(experienceModel.id, experienceModel.progress)
 
         setContentView(R.layout.activity_experiences)
 
@@ -89,9 +94,9 @@ class ExperienceActivity: AppCompatActivity() {
      */
     @Suppress("unused")
     fun newCollectionEvent(contentId: String): Int {
-        this.experienceModel?.exhibitId?.let { experienceId ->
+        this.experienceModel?.id?.let { experienceId ->
             // If the contentId is not associated with the experience
-            if( experienceModel?.content?.contentItems?.asSequence()?.map{ it.contentId }?.contains(contentId) != true ) {
+            if( experienceModel?.content?.contentItems?.asSequence()?.map{ it.id }?.contains(contentId) != true ) {
                 return 501
             }
             // If the content item was already collected
@@ -152,14 +157,21 @@ class ExperienceActivity: AppCompatActivity() {
 
     private fun switchToFragment(fragment: Fragment, tag: String?) {
         val transaction = supportFragmentManager?.beginTransaction() ?: return
-        transaction.replace(R.id.content_frame, fragment)
+        transaction.replace(R.id.experience_frame, fragment)
         transaction.addToBackStack(tag)
+        transaction.commit()
+    }
+
+    fun switchToContentFragment(fragment: ContentFragment) {
+        val transaction = supportFragmentManager?.beginTransaction() ?: return
+        transaction.replace(R.id.content_frame, fragment)
+        transaction.addToBackStack(fragment.getContentTag())
         transaction.commit()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when( item.itemId ) {
-            android.R.id.home -> this.finish()
+            android.R.id.home -> supportFragmentManager.popBackStack()
         }
         return true
     }

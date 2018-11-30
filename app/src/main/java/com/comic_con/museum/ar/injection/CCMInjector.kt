@@ -25,6 +25,7 @@ class CCMInjector(private val repository: Repository) {
     fun providesProgressViewModel() = ProgressViewModel(this.repository)
 
     @Provides
+    @Singleton
     fun providesExperienceViewModel() = ExperienceViewModel(this.repository)
 
 }
