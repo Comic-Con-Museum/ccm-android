@@ -3,6 +3,7 @@ package com.comic_con.museum.ar.experience
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
@@ -67,6 +68,10 @@ class ExperienceActivity: AppCompatActivity() {
         progressViewModel.getExperienceProgressLiveData(experienceModel.id, experienceModel.progress)
 
         setContentView(R.layout.activity_experiences)
+
+        Handler().postDelayed({
+            this.newCollectionEvent("00002")
+        }, 5000)
 
         val frag = ExperienceFragment()
         switchToFragment(frag)

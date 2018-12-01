@@ -20,9 +20,6 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
     private val achievedProgressText by lazy {
         this.findViewById<TextView>(R.id.achievedProgressNum)
     }
-    private val maxProgressNum by lazy {
-        this.findViewById<TextView>(R.id.maxProgressNum)
-    }
     private val progressBarContainer by lazy {
         this.findViewById<LinearLayout>(R.id.progressBarContainer)
     }
@@ -49,14 +46,13 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
             titleText.setTextColor(ContextCompat.getColor(this.context, R.color.black))
 
             // Hide/update progress numbers
-            maxProgressNum?.visibility = View.INVISIBLE
             achievedProgressText?.text = this.context.getString(R.string.progress_completed)
             achievedProgressText?.setTextColor(ContextCompat.getColor(this.context, R.color.black))
         }
         // Else progress is not complete
         else {
-            achievedProgressText?.text = relevantAchievedItems.size.toString()
-            maxProgressNum?.text = progress.contentItems.size.toString()
+            val progressNumText = "${relevantAchievedItems.size}/${progress.contentItems.size}"
+            achievedProgressText?.text = progressNumText
 
             // Set progress bar
             progressBarContainer?.weightSum = progress.contentItems.size.toFloat()
