@@ -12,7 +12,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.experience.content.activityfragments.ContentFragment
 import com.comic_con.museum.ar.overview.ContentItem
 import java.io.IOException
 import java.net.URL
@@ -38,7 +37,7 @@ class ContentAdvancedListView(c: Context, a: AttributeSet): LinearLayout(c, a) {
             } catch(e: IOException) { /* Some issue with the host */ }
         }
 
-//        this.findViewById<TextView>(R.id.content_description)?.text = subjectContent.description
+        this.findViewById<TextView>(R.id.content_description)?.text = subjectContent.description
 
         val holder = this.findViewById<ViewGroup>(R.id.content_holder) ?: return
         holder.removeAllViews()

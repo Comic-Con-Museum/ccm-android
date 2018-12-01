@@ -72,7 +72,7 @@
                         android:padding="16dp"
                         android:textSize="14sp"
                         android:lineSpacingExtra="5sp"
-                        android:text="This is a content Description that is long so it goes onto multiple lines so I can test line spacing"/>
+                        tools:text="This is a content Description that is long so it goes onto multiple lines so I can test line spacing"/>
 
                 <View
                         android:layout_width="match_parent"
@@ -90,32 +90,5 @@
         </android.support.v4.widget.NestedScrollView>
 
     </android.support.design.widget.CoordinatorLayout>
-
-    <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="vertical">-->
-
-        <!--<TextView-->
-                <!--android:id="@+id/title_text"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textAlignment="center"-->
-                <!--tools:text="History Spotlight"/>-->
-
-        <!--<TextView-->
-                <!--android:id="@+id/subtitle_text"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:textAlignment="center"-->
-                <!--tools:text="Will Eisner"/>-->
-
-        <!--<LinearLayout-->
-                <!--android:id="@+id/content_holder"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:orientation="vertical"/>-->
-
-    <!--</LinearLayout>-->
 
 </com.comic_con.museum.ar.views.ContentAdvancedListView>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="ripple">#4401A9F4</color>
+
     <!-- Yellow -->
     <color name="light_yellow">#F7EC32</color>
     <color name="dark_yellow">#D1C12A</color>
