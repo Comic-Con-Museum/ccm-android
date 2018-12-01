@@ -19,6 +19,9 @@
         <item name="android:textColor">@color/dark_text</item>
         <item name="android:windowBackground">@color/white</item>
         <item name="colorControlHighlight">@color/ripple</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">

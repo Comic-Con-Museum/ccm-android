@@ -162,13 +162,6 @@ class ExperienceActivity: AppCompatActivity() {
                 .commit()
     }
 
-    fun switchToContentFragment(fragment: ContentFragment) {
-        val transaction = supportFragmentManager?.beginTransaction() ?: return
-        transaction.replace(R.id.content_frame, fragment)
-                .addToBackStack(fragment.getContentTag())
-                .commit()
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when( item.itemId ) {
             android.R.id.home -> supportFragmentManager.popBackStack()
