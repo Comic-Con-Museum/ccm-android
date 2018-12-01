@@ -128,8 +128,8 @@
         ],
         "imageUrl": "https://cdn.imagecomics.com/assets/i/releases/17446/monstress-14_d65e4af86e.jpg",
         "categories": [
-          "00003",
-          "00005"
+          "10003",
+          "10005"
         ],
         "extraPairs": [
           {
@@ -151,8 +151,8 @@
         ],
         "imageUrl": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg",
         "categories": [
-          "00003",
-          "00005"
+          "10003",
+          "10005"
         ],
         "extraPairs": [
           {
@@ -170,8 +170,8 @@
         ],
         "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/581767174ecf7/clean.jpg",
         "categories": [
-          "00003",
-          "00005"
+          "10003",
+          "10005"
         ],
         "extraPairs": [
           {
@@ -193,8 +193,8 @@
         ],
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/510f0H%2B%2BcSL._SX362_BO1,204,203,200_.jpg",
         "categories": [
-          "00003",
-          "00005"
+          "10003",
+          "10005"
         ],
         "extraPairs": [
           {
@@ -212,8 +212,8 @@
         ],
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71b2zP%2Bz7SL.jpg",
         "categories": [
-          "00003",
-          "00005"
+          "10003",
+          "10005"
         ],
         "extraPairs": [
           {
@@ -235,7 +235,7 @@
       },
       {
         "progressId": "2",
-        "progressName": "Collect Mostress!",
+        "progressName": "Collect Monstress!",
         "contentItems": [
           "00001"
         ]

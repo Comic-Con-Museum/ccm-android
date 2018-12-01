@@ -1,33 +1,24 @@
-package com.comic_con.museum.ar.experience.content.subfragments
+package com.comic_con.museum.ar.experience.content
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.Observer
 import android.os.Bundle
-import android.support.v4.app.FragmentActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.ExperienceViewModel
+import com.comic_con.museum.ar.experience.content.activityfragments.ContentFragment
 import com.comic_con.museum.ar.overview.ExhibitModel
-import com.comic_con.museum.ar.views.ContentCardListView
+import com.comic_con.museum.ar.views.ContentSimpleListView
 import javax.inject.Inject
 
 class ContentOverviewFragment: ContentFragment(), Observer<ExhibitModel?> {
 
     private var rootView: View? = null
 
-    private var experienceLiveData: LiveData<ExhibitModel>? = null
-
     @Inject
     lateinit var experienceViewModel: ExperienceViewModel
-
-    fun setExperienceLiveData(activity: FragmentActivity, liveData: LiveData<ExhibitModel>) {
-        this.experienceLiveData?.removeObserver(this)
-        this.experienceLiveData = liveData
-        liveData.observe(activity, this)
-    }
 
     override fun getContentTag(): String {
         return "ContentOverview"
@@ -62,10 +53,8 @@ class ContentOverviewFragment: ContentFragment(), Observer<ExhibitModel?> {
 
         contentRoot.removeAllViews()
         model.contentTags.forEach { thisTag ->
-            val contentList = this.layoutInflater?.inflate(R.layout.component_content_list, contentRoot, false) as? ContentCardListView ?: return@forEach
-            contentList.setUp(
-                this,
-                thisTag,
+            val contentList = this.layoutInflater?.inflate(R.layout.component_content_overview_list, contentRoot, false) as? ContentSimpleListView ?: return@forEach
+            contentList.setUp( thisTag,
                 model.category.categories.union(model.content.contentItems).filter { thisCategory ->
                     thisCategory.tags.contains(thisTag)
                 }

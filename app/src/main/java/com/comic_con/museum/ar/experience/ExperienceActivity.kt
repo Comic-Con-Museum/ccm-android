@@ -3,7 +3,6 @@ package com.comic_con.museum.ar.experience
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Debug
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
@@ -14,7 +13,7 @@ import android.view.MenuItem
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.experience.content.subfragments.ContentFragment
+import com.comic_con.museum.ar.experience.content.activityfragments.ContentFragment
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
@@ -56,6 +55,9 @@ class ExperienceActivity: AppCompatActivity() {
         experienceViewModel.setExperience(experienceModel)
         this.experienceModel = experienceModel
 
+        // Set activity title
+        this.title = experienceModel.title
+
         // Set up the toolbar
         toolbar = supportActionBar
         toolbar?.setDisplayHomeAsUpEnabled(true)
@@ -67,8 +69,7 @@ class ExperienceActivity: AppCompatActivity() {
         setContentView(R.layout.activity_experiences)
 
         val frag = ExperienceFragment()
-        frag.experienceViewModel = experienceViewModel
-        switchToFragment(frag, "Experience")
+        switchToFragment(frag)
     }
 
     override fun onResume() {
@@ -155,18 +156,17 @@ class ExperienceActivity: AppCompatActivity() {
         return 500
     }
 
-    private fun switchToFragment(fragment: Fragment, tag: String?) {
+    private fun switchToFragment(fragment: Fragment) {
         val transaction = supportFragmentManager?.beginTransaction() ?: return
         transaction.replace(R.id.experience_frame, fragment)
-        transaction.addToBackStack(tag)
-        transaction.commit()
+                .commit()
     }
 
     fun switchToContentFragment(fragment: ContentFragment) {
         val transaction = supportFragmentManager?.beginTransaction() ?: return
         transaction.replace(R.id.content_frame, fragment)
-        transaction.addToBackStack(fragment.getContentTag())
-        transaction.commit()
+                .addToBackStack(fragment.getContentTag())
+                .commit()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

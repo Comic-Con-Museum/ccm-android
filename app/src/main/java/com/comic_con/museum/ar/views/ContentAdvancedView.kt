@@ -11,24 +11,25 @@ import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.view.View
 import android.widget.ImageView
-import com.comic_con.museum.ar.experience.content.subfragments.ContentFragment
+import com.comic_con.museum.ar.experience.content.ContentActivity
+import com.comic_con.museum.ar.experience.content.activityfragments.ContentFragment
 import com.comic_con.museum.ar.overview.ContentItem
 import java.io.IOException
 import java.net.URL
 
 
-class ContentCardView(c: Context, a: AttributeSet): LinearLayout(c, a) {
+class ContentAdvancedView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
     private val thisImageLiveData: MutableLiveData<Bitmap> = MutableLiveData()
 
     init {
         thisImageLiveData.observeForever { bitmap ->
-            this.findViewById<ImageView>(R.id.content_image).setImageBitmap(bitmap)
+            this.findViewById<ImageView>(R.id.content_image)?.setImageBitmap(bitmap)
             this.requestLayout()
         }
     }
 
-    fun setContent(parentBaseFragment: ContentFragment?, content: ContentItem) {
+    fun setContent(content: ContentItem) {
         this.findViewById<TextView>(R.id.content_title)?.text = content.title
         this.findViewById<TextView>(R.id.content_subtitle)?.text = getSubtitle(content)
 
@@ -41,7 +42,9 @@ class ContentCardView(c: Context, a: AttributeSet): LinearLayout(c, a) {
         }
 
         this.findViewById<View>(R.id.content_image)?.setOnClickListener {
-//            parentBaseFragment?.openContentView(content.id)
+            this.context?.let { thisContext ->
+                ContentActivity.startContentActivity(thisContext, content.id)
+            }
         }
     }
 
