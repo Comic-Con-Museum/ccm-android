@@ -9,10 +9,11 @@
             android:id="@+id/experience_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
+            android:padding="18dp"
             android:dividerHeight="24dp"
-            android:divider="@android:color/transparent"/>
+            android:divider="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:clipToPadding="false"
+            android:clipChildren="false"/>
 
 </LinearLayout>

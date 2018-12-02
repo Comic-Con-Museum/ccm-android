@@ -4,11 +4,13 @@ import android.arch.lifecycle.MutableLiveData
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
 import android.os.AsyncTask
 import android.util.AttributeSet
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.overview.ExhibitModel
 import java.io.IOException
@@ -28,6 +30,12 @@ class ExperienceView(c: Context, a: AttributeSet): LinearLayout(c,a) {
     fun setup(experience: ExhibitModel) {
         this.findViewById<TextView>(R.id.experience_title)?.text = experience.title
         this.findViewById<TextView>(R.id.experience_description)?.text = experience.description
+        this.clipToOutline = true
+
+        // Add onclick to start experience activity
+        this.findViewById<ImageView>(R.id.experience_image)?.setOnClickListener {
+            (this.context as? MainActivity)?.beginExperienceActivity(experience.id)
+        }
 
         AsyncTask.execute {
             try {
@@ -37,4 +45,5 @@ class ExperienceView(c: Context, a: AttributeSet): LinearLayout(c,a) {
             } catch(e: IOException) { /* Some issue with the host */ }
         }
     }
+
 }
