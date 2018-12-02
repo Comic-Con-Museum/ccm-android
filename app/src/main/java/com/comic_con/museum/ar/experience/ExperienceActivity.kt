@@ -3,6 +3,7 @@ package com.comic_con.museum.ar.experience
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
@@ -19,7 +20,6 @@ import com.comic_con.museum.ar.experience.progress.ProgressViewModel
 import com.comic_con.museum.ar.overview.ExperienceModel
 import com.google.gson.Gson
 import com.unity3d.player.UnityPlayer
-import java.lang.IllegalStateException
 import javax.inject.Inject
 
 
@@ -37,11 +37,14 @@ class ExperienceActivity: AppCompatActivity() {
 
     // The unity player for the AR component
     val unityPlayer: UnityPlayer by lazy {
-        UnityPlayer(applicationContext)
+        UnityPlayer(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Enable this to stop program until debugger attach
+//        Debug.waitForDebugger()
 
         CCMApplication.getApplication().injectorComponent.inject(this)
 
@@ -51,19 +54,26 @@ class ExperienceActivity: AppCompatActivity() {
         experienceViewModel.setExperience(experienceModel)
         this.experienceModel = experienceModel
 
+        // Set activity title
+        this.title = experienceModel.title
+
         // Set up the toolbar
         toolbar = supportActionBar
         toolbar?.setDisplayHomeAsUpEnabled(true)
         toolbar?.show()
 
         // Set up the experience Progress ViewModel with the initial model if needed
-        progressViewModel.getExperienceProgressLiveData(experienceModel.experienceId, experienceModel.progress)
+        progressViewModel.getExperienceProgressLiveData(experienceModel.id, experienceModel.progress)
 
         setContentView(R.layout.activity_experiences)
 
+        // Simulate receiving a collection event from Unity
+        Handler().postDelayed({
+            this.newCollectionEvent("00002")
+        }, 5000)
+
         val frag = ExperienceFragment()
-        frag.experienceViewModel = experienceViewModel
-        switchToFragment(frag, "Experience")
+        switchToFragment(frag)
     }
 
     override fun onResume() {
@@ -89,9 +99,9 @@ class ExperienceActivity: AppCompatActivity() {
      */
     @Suppress("unused")
     fun newCollectionEvent(contentId: String): Int {
-        this.experienceModel?.experienceId?.let { experienceId ->
+        this.experienceModel?.id?.let { experienceId ->
             // If the contentId is not associated with the experience
-            if( experienceModel?.content?.contentItems?.asSequence()?.map{ it.contentId }?.contains(contentId) != true ) {
+            if( experienceModel?.content?.contentItems?.asSequence()?.map{ it.id }?.contains(contentId) != true ) {
                 return 501
             }
             // If the content item was already collected
@@ -150,16 +160,15 @@ class ExperienceActivity: AppCompatActivity() {
         return 500
     }
 
-    private fun switchToFragment(fragment: Fragment, tag: String?) {
+    private fun switchToFragment(fragment: Fragment) {
         val transaction = supportFragmentManager?.beginTransaction() ?: return
-        transaction.replace(R.id.content_frame, fragment)
-        transaction.addToBackStack(tag)
-        transaction.commit()
+        transaction.replace(R.id.experience_frame, fragment)
+                .commit()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when( item.itemId ) {
-            android.R.id.home -> this.finish()
+            android.R.id.home -> supportFragmentManager.popBackStack()
         }
         return true
     }

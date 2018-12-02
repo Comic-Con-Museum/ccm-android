@@ -26,13 +26,13 @@ class OverviewViewModel @Inject constructor(private val repository: Repository) 
             val experienceModel = this.gson.fromJson(inputStream.bufferedReader(), ExperienceModel::class.java)
             if(
                 models.find { thisModel ->
-                    thisModel.experienceId == experienceModel.experienceId
+                    thisModel.id == experienceModel.id
                 } == null
             ) {
                 models.add(experienceModel)
             }
             experienceModelsLiveData.postValue(models)
-            modelResMap[experienceModel.experienceId] = resId
+            modelResMap[experienceModel.id] = resId
         } catch (e: JsonSyntaxException) {
             Log.e("JSON", "Failed to parse JSON object")
         }

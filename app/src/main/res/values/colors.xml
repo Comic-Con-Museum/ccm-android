@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="ripple">#4401A9F4</color>
+    <color name="background">#FAFAFAFA</color>
+
     <!-- Yellow -->
     <color name="light_yellow">#F7EC32</color>
     <color name="dark_yellow">#D1C12A</color>
@@ -16,6 +19,9 @@
     <color name="gray">#AAAAAA</color>
     <color name="dark_gray">#555555</color>
     <color name="light_gray">#CCCCCC</color>
-    <color name="darkText">#3A3F47</color>
+    <color name="very_light_gray">#E9E9E9</color>
+
+    <color name="dark_text">#3A3F47</color>
+    <color name="light_text">#7A7A7A</color>
 
 </resources>

@@ -1,92 +1,137 @@
 {
-  "experienceTitle": "Eisners",
-  "experienceId": "00001",
-  "experienceDescription": "The eisners are an award collection representing the best of the graphic novel industry. Including popular titles such as Monstress, Starman, and The Watchmen.",
-  "experienceAdditionDescription": "Take a chance to experience what the eisners have to offer!",
-  "experienceImageUrl": "https://doomrocket.com/wp-content/uploads/2018/07/eisners-header.png",
+  "title": "Eisners",
+  "id": "00001",
+  "description": "The eisners are an award collection representing the best of the graphic novel industry. Including popular titles such as Monstress, Starman, and The Watchmen.",
+  "additionalDescription": "Take a chance to experience what the eisners have to offer!",
+  "imageUrl": "https://doomrocket.com/wp-content/uploads/2018/07/eisners-header.png",
+  "contentTags": [
+    "Best of the Eisners",
+    "Newly Added",
+    "Digital"
+  ],
   "category": {
     "categories": [
       {
-        "categoryTitle": "Best Of",
-        "categoryId": "00001",
-        "categoryDescription": "The best the Eisners have to offer.",
-        "categoryTags": [
-          "Classics"
+        "title": "History Spotlight",
+        "id": "10001",
+        "description": "The best the Eisners have to offer.",
+        "tags": [
+          "Best of the Eisners"
         ],
-        "categoryImage": "http://media.comicbook.com/2016/07/eisners-191821.jpg"
+        "imageUrl": "https://www.myjewishlearning.com/wp-content/uploads/2015/04/will-eisner_hp1.jpg",
+        "extraPairs": [
+          {
+            "label": "Artist",
+            "value": "Will Eisner"
+          }
+        ]
       },
       {
-        "categoryTitle": "Best Short Story",
-        "categoryId": "00002",
-        "categoryDescription": "The best stories, limited to 30 pages of content.",
-        "categoryTags": [
+        "title": "Best Short Story",
+        "id": "10002",
+        "description": "The best stories, limited to 30 pages of content.",
+        "tags": [
           "Newly Added",
-          "Classics"
+          "Best of the Eisners"
         ],
-        "categoryImage": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg"
+        "imageUrl": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg",
+        "extraPairs": [
+          {
+            "label": "This is an",
+            "value": "Award"
+          }
+        ]
       },
       {
-        "categoryTitle": "Best New Series",
-        "categoryId": "00003",
-        "categoryDescription": "Novels arcs which didn't exist a year ago.",
-        "categoryTags": [
-          "Newly Added",
-          "Digital"
-        ],
-        "categoryImage": "https://upload.wikimedia.org/wikipedia/en/4/4e/WarofKings-5.jpg"
-      },
-      {
-        "categoryTitle": "Best Writer",
-        "categoryId": "00004",
-        "categoryDescription": "The best writing, including dialog, verbiage, and story.",
-        "categoryTags": [
-          "Classics"
-        ],
-        "categoryImage": "https://imagecomics.com/uploads/releases/Monstress_14-1.png"
-      },
-      {
-        "categoryTitle": "Best Coloring",
-        "categoryId": "00005",
-        "categoryDescription": "The best choice and use of color.",
-        "categoryTags": [],
-        "categoryImage": "https://upload.wikimedia.org/wikipedia/en/6/6d/My_Favorite_Thing_Is_Monsters_cover.jpg"
-      },
-      {
-        "categoryTitle": "Best Digital Comic",
-        "categoryId": "00006",
-        "categoryDescription": "The best of the eisner awards, limited to a digital medium.",
-        "categoryTags": [
+        "title": "Best New Series",
+        "id": "10003",
+        "description": "Novels arcs which didn't exist a year ago.",
+        "tags": [
           "Newly Added",
           "Digital"
         ],
-        "categoryImage": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/434069/434069._SX270_CLs%7C270,422%7Ccu/cmx-cu-sash-lg.png%7C0,0,271,423%20158,310,112,112_QL80_TTD_.jpg"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4e/WarofKings-5.jpg",
+        "extraPairs": [
+          {
+            "label": "This is an",
+            "value": "Award"
+          }
+        ]
       },
       {
-        "categoryTitle": "Best Lettering",
-        "categoryId": "00007",
-        "categoryDescription": "The best choice and use of type.",
-        "categoryTags": [],
-        "categoryImage": "https://d2lzb5v10mb0lj.cloudfront.net/covers/300/30/3000071.jpg"
+        "title": "Best Writer",
+        "id": "10004",
+        "description": "The best writing, including dialog, verbiage, and story.",
+        "tags": [
+          "Best of the Eisners"
+        ],
+        "imageUrl": "https://imagecomics.com/uploads/releases/Monstress_14-1.png",
+        "extraPairs": [
+          {
+            "label": "This is an",
+            "value": "Award"
+          }
+        ]
+      },
+      {
+        "title": "Best Coloring",
+        "id": "10005",
+        "description": "The best choice and use of color.",
+        "tags": [],
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6d/My_Favorite_Thing_Is_Monsters_cover.jpg",
+        "extraPairs": [
+          {
+            "label": "This is an",
+            "value": "Award"
+          }
+        ]
+      },
+      {
+        "title": "Best Digital Comic",
+        "id": "10006",
+        "description": "The best of the eisner awards, limited to a digital medium.",
+        "tags": [
+          "Newly Added",
+          "Digital"
+        ],
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/434069/434069._SX270_CLs%7C270,422%7Ccu/cmx-cu-sash-lg.png%7C0,0,271,423%20158,310,112,112_QL80_TTD_.jpg",
+        "extraPairs": [
+          {
+            "label": "This is an",
+            "value": "Award"
+          }
+        ]
+      },
+      {
+        "title": "Best Lettering",
+        "id": "10007",
+        "description": "The best choice and use of type.",
+        "tags": [],
+        "imageUrl": "https://d2lzb5v10mb0lj.cloudfront.net/covers/300/30/3000071.jpg",
+        "extraPairs": [
+          {
+            "label": "This is an",
+            "value": "Award"
+          }
+        ]
       }
-    ],
-    "allTags": [
-      "Classics",
-      "Newly Added",
-      "Digital"
     ]
   },
   "content": {
     "contentItems": [
       {
-        "contentTitle": "Monstress",
-        "contentId": "00001",
-        "contentDescription": "Set in an alternate matriarchal 1900's Asia, in a richly imagined world of art deco-inflected steam punk, MONSTRESS tells the story of a teenage girl who is struggling to survive the trauma of war, and who shares a mysterious psychic link with a monster of tremendous power, a connection that will transform them both and make them the target of both human and otherworldly powers.",
-        "contentImageURL": "https://cdn.imagecomics.com/assets/i/releases/17446/monstress-14_d65e4af86e.jpg",
-        "contentCategories": [
-          "00003",
-          "00005"
+        "title": "Monstress",
+        "id": "00001",
+        "description": "Set in an alternate matriarchal 1900's Asia, in a richly imagined world of art deco-inflected steam punk, MONSTRESS tells the story of a teenage girl who is struggling to survive the trauma of war, and who shares a mysterious psychic link with a monster of tremendous power, a connection that will transform them both and make them the target of both human and otherworldly powers.",
+        "tags": [
+          "Best of the Eisners"
         ],
-        "contentPairs": [
+        "imageUrl": "https://cdn.imagecomics.com/assets/i/releases/17446/monstress-14_d65e4af86e.jpg",
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
           {
             "label": "Writer",
             "value": "Marjorie Liu"
@@ -98,15 +143,18 @@
         ]
       },
       {
-        "contentTitle": "A Life in Comics: The Graphic Adventures of Karen Green",
-        "contentId": "00002",
-        "contentDescription": "How a Butler librarian became Columbia’s first curator for comics and cartoons.",
-        "contentImageURL": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg",
-        "contentCategories": [
-          "00003",
-          "00005"
+        "title": "A Life in Comics: The Graphic Adventures of Karen Green",
+        "id": "00002",
+        "description": "How a Butler librarian became Columbia’s first curator for comics and cartoons.",
+        "tags": [
+          "Best of the Eisners"
         ],
-        "contentPairs": [
+        "imageUrl": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg",
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
           {
             "label": "Author",
             "value": "Nick Sousanis"
@@ -114,15 +162,18 @@
         ]
       },
       {
-        "contentTitle": "Black Panther: World of Wakanda",
-        "contentId": "00003",
-        "contentDescription": "The world building of Wakanda continues in a love story where tenderness is matched only by brutality! You know them now as the Midnight Angels, but in this story they are just Ayo and Aneka, young women recruited to become Dora Milaje, an elite task force trained to protect the crown of Wakanda at all costs. Their first assignment will be to protect Queen Shuri... but what happens when your nation needs your hearts and minds, but you already gave them to each other? Meanwhile, former king T'Challa lies with bedfellows so dark, disgrace is inevitable. Plus, explore the true origins of the People's mysterious leader, Zenzi. Black Panther thinks he knows who Zenzi is and how she got her powers - but he only knows part of the story! ",
-        "contentImageURL": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/581767174ecf7/clean.jpg",
-        "contentCategories": [
-          "00003",
-          "00005"
+        "title": "Black Panther: World of Wakanda",
+        "id": "00003",
+        "description": "The world building of Wakanda continues in a love story where tenderness is matched only by brutality! You know them now as the Midnight Angels, but in this story they are just Ayo and Aneka, young women recruited to become Dora Milaje, an elite task force trained to protect the crown of Wakanda at all costs. Their first assignment will be to protect Queen Shuri... but what happens when your nation needs your hearts and minds, but you already gave them to each other? Meanwhile, former king T'Challa lies with bedfellows so dark, disgrace is inevitable. Plus, explore the true origins of the People's mysterious leader, Zenzi. Black Panther thinks he knows who Zenzi is and how she got her powers - but he only knows part of the story! ",
+        "tags": [
+          "Best of the Eisners"
         ],
-        "contentPairs": [
+        "imageUrl": "https://i.annihil.us/u/prod/marvel/i/mg/4/40/581767174ecf7/clean.jpg",
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
           {
             "label": "Collaborators",
             "value": "Roxane Gay, Ta-Nehisi Coates"
@@ -134,15 +185,18 @@
         ]
       },
       {
-        "contentTitle": "The Tea Dragon Society",
-        "contentId": "00004",
-        "contentDescription": "From the award-winning author of Princess Princess Ever After comes The Tea Dragon Society, a charming all-ages book that follows the story of Greta, a blacksmith apprentice, and the people she meets as she becomes entwined in the enchanting world of tea dragons.\n\nAfter discovering a lost tea dragon in the marketplace, Greta learns about the dying art form of tea dragon care-taking from the kind tea shop owners, Hesekiel and Erik. As she befriends them and their shy ward, Minette, Greta sees how the craft enriches their lives -- and eventually her own.",
-        "contentImageURL": "https://images-na.ssl-images-amazon.com/images/I/510f0H%2B%2BcSL._SX362_BO1,204,203,200_.jpg",
-        "contentCategories": [
-          "00003",
-          "00005"
+        "title": "The Tea Dragon Society",
+        "id": "00004",
+        "description": "From the award-winning author of Princess Princess Ever After comes The Tea Dragon Society, a charming all-ages book that follows the story of Greta, a blacksmith apprentice, and the people she meets as she becomes entwined in the enchanting world of tea dragons.\n\nAfter discovering a lost tea dragon in the marketplace, Greta learns about the dying art form of tea dragon care-taking from the kind tea shop owners, Hesekiel and Erik. As she befriends them and their shy ward, Minette, Greta sees how the craft enriches their lives -- and eventually her own.",
+        "tags": [
+          "Best of the Eisners"
         ],
-        "contentPairs": [
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/510f0H%2B%2BcSL._SX362_BO1,204,203,200_.jpg",
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
           {
             "label": "Author",
             "value": "Katie O’Neill (Oni)"
@@ -150,15 +204,18 @@
         ]
       },
       {
-        "contentTitle": "Baking with Kafka",
-        "contentId": "00005",
-        "contentDescription": "In his inimitable style, British cartoonist Tom Gauld has opened comics to a crossover audience and challenged perceptions of what the medium can be. Noted as a “book-lover’s cartoonist,” Gauld’s weekly strips in The Guardian, Britain’s most well-regarded newspaper, stitch together the worlds of literary criticism and pop culture to create brilliantly executed, concise comics. Simultaneously silly and serious, Gauld adds an undeniable lightness to traditionally highbrow themes. From sarcastic panels about the health hazards of being a best-selling writer to a list of magical items for fantasy writers (such as the Amulet of Attraction, which summons mainstream acceptance, Hollywood money, and fresh coffee), Gauld’s cartoons are timely and droll―his trademark British humour, impeccable timing, and distinctive visual style sets him apart from the rest.\n\nLauded both for his frequent contributions to New Scientist, The Guardian and The New York Times, and his Eisner-nominated graphic novels, Tom Gauld is one of the most celebrated cartoonists working today. In Baking with Kafka, he proves this with one witty, sly, ridiculous comic after another. //REMOVE AFTER THIS ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ",
-        "contentImageURL": "https://images-na.ssl-images-amazon.com/images/I/71b2zP%2Bz7SL.jpg",
-        "contentCategories": [
-          "00003",
-          "00005"
+        "title": "Baking with Kafka",
+        "id": "00005",
+        "description": "In his inimitable style, British cartoonist Tom Gauld has opened comics to a crossover audience and challenged perceptions of what the medium can be. Noted as a “book-lover’s cartoonist,” Gauld’s weekly strips in The Guardian, Britain’s most well-regarded newspaper, stitch together the worlds of literary criticism and pop culture to create brilliantly executed, concise comics. Simultaneously silly and serious, Gauld adds an undeniable lightness to traditionally highbrow themes. From sarcastic panels about the health hazards of being a best-selling writer to a list of magical items for fantasy writers (such as the Amulet of Attraction, which summons mainstream acceptance, Hollywood money, and fresh coffee), Gauld’s cartoons are timely and droll―his trademark British humour, impeccable timing, and distinctive visual style sets him apart from the rest.\n\nLauded both for his frequent contributions to New Scientist, The Guardian and The New York Times, and his Eisner-nominated graphic novels, Tom Gauld is one of the most celebrated cartoonists working today. In Baking with Kafka, he proves this with one witty, sly, ridiculous comic after another. //REMOVE AFTER THIS ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ",
+        "tags": [
+          "Best of the Eisners"
         ],
-        "contentPairs": [
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71b2zP%2Bz7SL.jpg",
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
           {
             "label": "Author",
             "value": "Tom Gauld (Drawn & Quarterly)"
@@ -178,7 +235,7 @@
       },
       {
         "progressId": "2",
-        "progressName": "Collect Mostress!",
+        "progressName": "Collect Monstress!",
         "contentItems": [
           "00001"
         ]

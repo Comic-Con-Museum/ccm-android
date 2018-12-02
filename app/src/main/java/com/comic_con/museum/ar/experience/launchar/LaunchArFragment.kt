@@ -61,7 +61,7 @@ class LaunchArFragment: Fragment() {
 
     override fun onDestroy() {
         super.onDestroy()
-        unityPlayer?.quit()
+//        unityPlayer?.quit()
     }
 
 }

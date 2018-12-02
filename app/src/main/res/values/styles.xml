@@ -8,12 +8,26 @@
         <item name="colorAccent">@color/light_yellow</item>
         <item name="actionBarTheme">@style/ActionBarTheme</item>
 
-        <item name="android:windowBackground">@color/white</item>
+        <item name="colorControlHighlight">@color/ripple</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/light_blue</item>
+        <item name="colorPrimaryDark">@color/dark_blue</item>
+        <item name="colorAccent">@color/light_yellow</item>
+        <item name="android:textColor">@color/dark_text</item>
+
+        <item name="colorControlHighlight">@color/ripple</item>
+        <item name="android:windowBackground">@color/background</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
-        <item name="colorControlNormal">@color/darkText</item>
-        <item name="android:textColor">@color/darkText</item>
+        <item name="colorControlNormal">@color/dark_text</item>
+        <item name="android:textColor">@color/dark_text</item>
     </style>
 
     <style name="ProgressIncomplete">
@@ -24,6 +38,11 @@
     <style name="ProgressComplete">
         <item name="android:textColor">@color/black</item>
         <item name="android:background">@drawable/progress_background_complete</item>
+    </style>
+
+    <style name="HiddenText" parent="AppTheme">
+        <item name="android:textColor">@android:color/transparent</item>
+        <item name="android:textSize">0sp</item>
     </style>
 
 

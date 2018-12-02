@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.comic_con.museum.ar.views.ProgressView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="2dp"
         android:gravity="center"
         android:background="@drawable/progress_background_incomplete">
+
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:src="@drawable/medal"
+                android:background="@color/white"/>
+
+    </LinearLayout>
 
     <LinearLayout
             android:layout_width="0dp"
@@ -20,34 +34,63 @@
                 android:id="@+id/progressTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:textColor="@color/light_yellow"
+                android:textColor="@color/dark_text"
                 android:textSize="16sp"
                 android:maxLines="1"
                 android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
                 tools:text="Collect the 2018 eisner winners"/>
-
-        <!-- Weight is used here to fill progress bar proportionally -->
-        <LinearLayout
-                android:id="@+id/progressBarContainer"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="@drawable/progress_bar_background"
-                tools:weightSum="35">
-
-            <ImageView
-                    android:id="@+id/progressBar"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/progress_bar_incomplete"
-                    tools:layout_weight="12"/>
-
-        </LinearLayout>
 
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+
+            <!-- Weight is used here to fill progress bar proportionally -->
+            <LinearLayout
+                    android:id="@+id/progressBarContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="9dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/progress_bar_background"
+                    android:orientation="horizontal"
+                    android:layout_weight="5"
+                    tools:weightSum="35">
+
+                <ImageView
+                        android:id="@+id/progressBar"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/progress_bar_incomplete"
+                        tools:layout_weight="12"/>
+
+            </LinearLayout>
+
+
+            <ImageView
+                    android:id="@+id/more_info_toggle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/baseline_expand_more_black_48"
+                    android:scaleType="centerCrop"
+                    android:layout_gravity="center_vertical"
+                    android:scaleY=".5"
+                    android:scaleX=".5"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
             <TextView
@@ -55,33 +98,25 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/light_yellow"
-                    tools:text="12"/>
-
-            <TextView
-                    android:id="@+id/maxProgressNum"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textColor="@color/light_yellow"
-                    android:textAlignment="textEnd"
-                    tools:text="35"/>
+                    android:textColor="@color/dark_text"
+                    tools:text="12/35"/>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="3">
+    <!--<LinearLayout-->
+            <!--android:id="@+id/expandable_content"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:el_expanded="false">-->
 
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/baseline_view_list_black_48"
-                android:background="@color/white"/>
+        <!--<LinearLayout-->
+                <!--android:id="@+id/progress_item_holder"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical"/>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
 </com.comic_con.museum.ar.views.ProgressView>

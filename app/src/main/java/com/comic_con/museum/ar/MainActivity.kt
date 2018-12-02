@@ -7,7 +7,6 @@ import android.view.KeyEvent
 import com.comic_con.museum.ar.experience.ExperienceActivity
 import com.comic_con.museum.ar.overview.OverviewFragment
 import com.comic_con.museum.ar.overview.OverviewViewModel
-import com.comic_con.museum.ar.views.ExperienceCard
 import javax.inject.Inject
 
 class MainActivity: AppCompatActivity() {
@@ -22,8 +21,8 @@ class MainActivity: AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        overviewViewModel.addExperienceModel(R.raw.experience_may_fourth, resources.openRawResource(R.raw.experience_may_fourth))
         overviewViewModel.addExperienceModel(R.raw.experience_eisners, resources.openRawResource(R.raw.experience_eisners))
+        overviewViewModel.addExperienceModel(R.raw.experience_may_fourth, resources.openRawResource(R.raw.experience_may_fourth))
 
         switchToFragment(OverviewFragment(), "overview")
     }

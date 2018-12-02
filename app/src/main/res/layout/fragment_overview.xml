@@ -1,50 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+        android:layout_height="match_parent">
 
-    <com.yarolegovich.discretescrollview.DiscreteScrollView
-            android:id="@+id/experience_carousel"
+    <com.comic_con.museum.ar.views.ExperienceListView
+            android:id="@+id/experience_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:dsv_orientation="horizontal"/>
-
-    <LinearLayout
-            android:id="@+id/carousel_counters"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginBottom="50dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:src="@drawable/carousel_counter_inactive"/>
-
-        <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/carousel_counter_inactive"/>
-
-        <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/carousel_counter_inactive"/>
-
-        <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:src="@drawable/carousel_counter_active"/>
-
-
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:dividerHeight="24dp"
+            android:divider="@android:color/transparent"
+            android:listSelector="@android:color/transparent"
+            android:clipToPadding="false"
+            android:clipChildren="false"/>
 
 </LinearLayout>

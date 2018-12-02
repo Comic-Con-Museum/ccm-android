@@ -39,6 +39,11 @@
                   android:screenOrientation="portrait"
                   android:process=":UnityBoundProcess"/>
 
+        <activity android:name=".experience.content.ContentActivity"
+                  android:screenOrientation="portrait"
+                  android:process=":UnityBoundProcess"
+                  android:theme="@style/AppThemeNoActionBar"/>
+
     </application>
 
 </manifest>

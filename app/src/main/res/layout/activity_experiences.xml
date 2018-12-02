@@ -10,7 +10,7 @@
             android:layout_height="match_parent">
 
         <FrameLayout
-                android:id="@+id/content_frame"
+                android:id="@+id/experience_frame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
