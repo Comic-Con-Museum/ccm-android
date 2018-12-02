@@ -5,26 +5,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.views.ExhibitCard
+import com.comic_con.museum.ar.views.ExperienceCard
 
 class CarouselAdapter(
-    private val exhibitModels: List<ExhibitModel>
+    private val experienceModels: List<ExperienceModel>
 ): RecyclerView.Adapter<CarouselAdapter.ViewHolder>() {
 
-    override fun getItemCount() = exhibitModels.size + 1
+    override fun getItemCount() = experienceModels.size + 1
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if( position == 0 ) {
-            (holder.itemView as? ExhibitCard)?.setupMoreContent()
+            (holder.itemView as? ExperienceCard)?.setupMoreContent()
         } else {
-            (holder.itemView as? ExhibitCard)?.setup(exhibitModels.get(position - 1))
+            (holder.itemView as? ExperienceCard)?.setup(experienceModels.get(position - 1))
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val exhibitCard = inflater.inflate(R.layout.component_overview_card, parent, false)
-        return ViewHolder(exhibitCard)
+        val experienceCard = inflater.inflate(R.layout.component_overview_card, parent, false)
+        return ViewHolder(experienceCard)
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)

@@ -30,18 +30,18 @@ class OverviewFragment: Fragment() {
         val thisView = inflater.inflate(R.layout.fragment_overview, container, false)
         this.rootView = thisView
 
-        overviewViewModel.exhibitModelsLiveData.observeForever(this::initCarousel)
+        overviewViewModel.experienceModelsLiveData.observeForever(this::initCarousel)
 
         return thisView
     }
 
-    private fun initCarousel(exhibits: List<ExhibitModel>?) {
-        exhibits ?: return
+    private fun initCarousel(experiences: List<ExperienceModel>?) {
+        experiences ?: return
 
         // Initialize the carousel counter at the bottom of the view
         rootView?.findViewById<ViewGroup>(R.id.carousel_counters)?.let { holder ->
             holder.removeAllViews()
-            (0..exhibits.size).forEach { index ->
+            (0..experiences.size).forEach { index ->
                 val newCounter = ImageView(context ?: return)
                 val params = ViewGroup.LayoutParams(WRAP_CONTENT, MATCH_PARENT)
                 newCounter.layoutParams = params
@@ -66,10 +66,10 @@ class OverviewFragment: Fragment() {
                 }
             }
         }
-        val carouselAdapter = CarouselAdapter(exhibits)
+        val carouselAdapter = CarouselAdapter(experiences)
         experienceCarousel.adapter = carouselAdapter
         // Start at the end of the carousel
-        experienceCarousel.scrollToPosition(exhibits.size)
+        experienceCarousel.scrollToPosition(experiences.size)
     }
 
 }

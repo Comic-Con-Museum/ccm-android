@@ -11,7 +11,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 import android.util.DisplayMetrics
 import android.widget.ImageView
 import com.comic_con.museum.ar.MainActivity
@@ -20,11 +20,11 @@ import java.io.IOException
 import java.net.URL
 
 
-class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
+class ExperienceCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
     private var isInitialMeasure = true
 
-    private val exhibitImageLiveData = MutableLiveData<Bitmap>()
+    private val experienceImageLiveData = MutableLiveData<Bitmap>()
 
     private var clicked = false
 
@@ -32,30 +32,30 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
     @Suppress("PrivatePropertyName")
     private val PERCENT_SCREEN_WIDTH = 80f
 
-    fun setup(model: ExhibitModel) {
-        this.findViewById<TextView>(R.id.title_text)?.text = model.exhibitTitle
-        this.findViewById<TextView>(R.id.body_text)?.text = model.exhibitDescription
+    fun setup(model: ExperienceModel) {
+        this.findViewById<TextView>(R.id.title_text)?.text = model.experienceTitle
+        this.findViewById<TextView>(R.id.body_text)?.text = model.experienceDescription
         this.layoutParams.width = getWidthPx()
 
         AsyncTask.execute {
             try {
-                val url = URL(model.exhibitImageUrl)
+                val url = URL(model.experienceImageUrl)
                 val bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream())
-                exhibitImageLiveData.postValue(bmp)
+                experienceImageLiveData.postValue(bmp)
             } catch(e: IOException) { /* Some issue with the host */ }
         }
-        exhibitImageLiveData.observeForever {
+        experienceImageLiveData.observeForever {
             this.findViewById<ImageView>(R.id.main_image)?.setImageBitmap(it)
             requestLayout()
         }
 
-        // Set onClick to move to exhibit content
+        // Set onClick to move to experience content
         this.findViewById<View>(R.id.main_image)?.setOnClickListener {
             synchronized(this.clicked) {
                 if (!this.clicked) {
                     this.clicked = true
                     // Start the new Experience Activity and pass in the id of the Experience
-                    (context as? MainActivity)?.beginExperienceActivity(model.exhibitId)
+                    (context as? MainActivity)?.beginExperienceActivity(model.experienceId)
                 }
             }
         }
@@ -66,7 +66,7 @@ class ExhibitCard(c: Context, a: AttributeSet): LinearLayout(c, a) {
             }
         }
 
-        this.findViewById<TextView>(R.id.extra_content)?.text = model.exhibitAdditionDescription
+        this.findViewById<TextView>(R.id.extra_content)?.text = model.experienceAdditionDescription
     }
 
     fun setupMoreContent() {
