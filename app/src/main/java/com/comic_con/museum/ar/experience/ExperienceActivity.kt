@@ -168,13 +168,17 @@ class ExperienceActivity: AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when( item.itemId ) {
-            android.R.id.home -> supportFragmentManager.popBackStack()
+            android.R.id.home -> {
+                this.unityPlayer.quit()
+                this.finish()
+            }
         }
         return true
     }
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
         return if (keyCode == KeyEvent.KEYCODE_BACK) {
+            this.unityPlayer.quit()
             this.finish()
             true
         } else super.onKeyDown(keyCode, event)

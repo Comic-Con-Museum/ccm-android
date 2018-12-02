@@ -14,6 +14,7 @@
             android:divider="@android:color/transparent"
             android:listSelector="@android:color/transparent"
             android:clipToPadding="false"
-            android:clipChildren="false"/>
+            android:clipChildren="false"
+            android:scrollbars="none"/>
 
 </LinearLayout>

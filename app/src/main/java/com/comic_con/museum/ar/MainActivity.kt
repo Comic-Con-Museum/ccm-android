@@ -21,9 +21,6 @@ class MainActivity: AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        overviewViewModel.addExperienceModel(R.raw.experience_eisners, resources.openRawResource(R.raw.experience_eisners))
-        overviewViewModel.addExperienceModel(R.raw.experience_may_fourth, resources.openRawResource(R.raw.experience_may_fourth))
-
         switchToFragment(OverviewFragment(), "overview")
     }
 
@@ -34,7 +31,8 @@ class MainActivity: AppCompatActivity() {
         transaction.commit()
     }
 
-    fun beginExperienceActivity(experienceId: String) {
+    fun beginExperienceActivity(experienceId: String?) {
+        experienceId ?: return
         val newExperienceIntent = ExperienceActivity.createIntent(this)
         newExperienceIntent.putExtra(EXPERIENCE_RESOURCE_KEY, overviewViewModel.getResId(experienceId))
         this.startActivity(newExperienceIntent)
