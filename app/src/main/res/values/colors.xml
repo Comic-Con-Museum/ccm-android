@@ -2,6 +2,7 @@
 <resources>
 
     <color name="ripple">#4401A9F4</color>
+    <color name="background">#FAFAFAFA</color>
 
     <!-- Yellow -->
     <color name="light_yellow">#F7EC32</color>

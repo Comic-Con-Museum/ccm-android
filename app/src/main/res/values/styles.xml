@@ -9,7 +9,7 @@
         <item name="actionBarTheme">@style/ActionBarTheme</item>
 
         <item name="colorControlHighlight">@color/ripple</item>
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/background</item>
     </style>
 
     <style name="AppThemeNoActionBar" parent="Theme.AppCompat.NoActionBar">
@@ -17,8 +17,9 @@
         <item name="colorPrimaryDark">@color/dark_blue</item>
         <item name="colorAccent">@color/light_yellow</item>
         <item name="android:textColor">@color/dark_text</item>
-        <item name="android:windowBackground">@color/white</item>
+
         <item name="colorControlHighlight">@color/ripple</item>
+        <item name="android:windowBackground">@color/background</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
