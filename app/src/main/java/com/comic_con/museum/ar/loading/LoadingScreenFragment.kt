@@ -1,6 +1,5 @@
 package com.comic_con.museum.ar.loading
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.LaunchActivity
-import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
 import javax.inject.Inject
 

@@ -20,7 +20,6 @@ import com.comic_con.museum.ar.experience.progress.ProgressViewModel
 import com.comic_con.museum.ar.overview.ExperienceModel
 import com.google.gson.Gson
 import com.unity3d.player.UnityPlayer
-import java.lang.IllegalStateException
 import javax.inject.Inject
 
 

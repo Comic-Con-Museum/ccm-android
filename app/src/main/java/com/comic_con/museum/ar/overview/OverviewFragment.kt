@@ -5,14 +5,9 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewGroup.LayoutParams.MATCH_PARENT
-import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import android.widget.ImageView
-import android.widget.ListView
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.views.ExperienceListView
-import com.yarolegovich.discretescrollview.DiscreteScrollView
 import javax.inject.Inject
 
 class OverviewFragment: Fragment() {

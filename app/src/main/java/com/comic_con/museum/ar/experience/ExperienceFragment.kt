@@ -13,8 +13,8 @@ import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.content.ContentOverviewFragment
 import com.comic_con.museum.ar.experience.launchar.LaunchArFragment
 import com.comic_con.museum.ar.experience.progress.ProgressFragment
-import javax.inject.Inject
 import com.comic_con.museum.ar.overview.ExperienceModel
+import javax.inject.Inject
 
 class ExperienceFragment: Fragment() {
 
