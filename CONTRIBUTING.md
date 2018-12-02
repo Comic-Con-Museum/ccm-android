@@ -21,7 +21,7 @@ If you want to contribute work that is not listed on a project board, first disc
 
 ### Updating AR Component
 
-View the steps to build and pull in the AR build [here](TODO).
+View the steps to build and pull in the AR build [here](https://github.com/Comic-Con-Museum/ccm-augmented-reality/blob/master/CONTRIBUTING.md#android-build-instructions).
 
 ### Code of Conduct
 // TODO
