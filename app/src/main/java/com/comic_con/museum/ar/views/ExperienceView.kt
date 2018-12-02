@@ -4,7 +4,6 @@ import android.arch.lifecycle.MutableLiveData
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.graphics.Canvas
 import android.os.AsyncTask
 import android.util.AttributeSet
 import android.widget.ImageView
@@ -12,7 +11,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 import java.io.IOException
 import java.net.URL
 
@@ -27,7 +26,7 @@ class ExperienceView(c: Context, a: AttributeSet): LinearLayout(c,a) {
         }
     }
 
-    fun setup(experience: ExhibitModel) {
+    fun setup(experience: ExperienceModel) {
         this.findViewById<TextView>(R.id.experience_title)?.text = experience.title
         this.findViewById<TextView>(R.id.experience_description)?.text = experience.description
         this.clipToOutline = true

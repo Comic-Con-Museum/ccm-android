@@ -14,7 +14,6 @@ import com.comic_con.museum.ar.experience.ExperienceViewModel
 import com.comic_con.museum.ar.experience.content.activityfragments.ContentFragment
 import com.comic_con.museum.ar.experience.content.activityfragments.ContentListingFragment
 import com.comic_con.museum.ar.experience.content.activityfragments.ContentSingleFragment
-import com.comic_con.museum.ar.overview.ExhibitModel
 import java.lang.IllegalStateException
 import javax.inject.Inject
 

@@ -2,7 +2,7 @@ package com.comic_con.museum.ar.overview
 
 import com.comic_con.museum.ar.experience.progress.ProgressModel
 
-class ExhibitModel(
+class ExperienceModel(
     val title: String,
     val id: String,
     val description: String,

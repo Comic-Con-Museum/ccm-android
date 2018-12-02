@@ -9,11 +9,11 @@ import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.ExperienceViewModel
 import com.comic_con.museum.ar.experience.content.activityfragments.ContentFragment
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 import com.comic_con.museum.ar.views.ContentSimpleListView
 import javax.inject.Inject
 
-class ContentOverviewFragment: ContentFragment(), Observer<ExhibitModel?> {
+class ContentOverviewFragment: ContentFragment(), Observer<ExperienceModel?> {
 
     private var rootView: View? = null
 
@@ -47,7 +47,7 @@ class ContentOverviewFragment: ContentFragment(), Observer<ExhibitModel?> {
         experienceViewModel.experienceModelLiveData.removeObserver(this)
     }
 
-    override fun onChanged(model: ExhibitModel?) {
+    override fun onChanged(model: ExperienceModel?) {
         model ?: return
         val contentRoot = this.rootView?.findViewById<ViewGroup>(R.id.content_overview_container) ?: return
 

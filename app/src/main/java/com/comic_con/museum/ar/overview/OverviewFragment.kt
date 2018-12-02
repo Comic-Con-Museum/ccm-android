@@ -32,16 +32,16 @@ class OverviewFragment: Fragment() {
         val thisView = inflater.inflate(R.layout.fragment_overview, container, false)
         this.rootView = thisView
 
-        overviewViewModel.exhibitModelsLiveData.observeForever(this::initCarousel)
+        overviewViewModel.experienceModelsLiveData.observeForever(this::initCarousel)
 
         return thisView
     }
 
-    private fun initCarousel(exhibits: List<ExhibitModel>?) {
-        exhibits ?: return
+    private fun initCarousel(experiences: List<ExperienceModel>?) {
+        experiences ?: return
 
         this.rootView?.findViewById<ExperienceListView>(R.id.experience_list)?.let { experienceList ->
-            experienceList.setUp(exhibits)
+            experienceList.setUp(experiences)
         }
     }
 

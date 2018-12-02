@@ -10,11 +10,11 @@ import android.view.ViewGroup
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.ExperienceViewModel
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 import com.comic_con.museum.ar.views.ContentAdvancedListView
 import javax.inject.Inject
 
-class ContentListingFragment: ContentFragment(), Observer<ExhibitModel> {
+class ContentListingFragment: ContentFragment(), Observer<ExperienceModel> {
 
     private var rootView: View? = null
 
@@ -58,7 +58,7 @@ class ContentListingFragment: ContentFragment(), Observer<ExhibitModel> {
         experienceViewModel.experienceModelLiveData.removeObserver(this)
     }
 
-    override fun onChanged(model: ExhibitModel?) {
+    override fun onChanged(model: ExperienceModel?) {
         model ?: return
 
         val contentList = this.rootView?.findViewById<ContentAdvancedListView>(R.id.content_list) ?: return

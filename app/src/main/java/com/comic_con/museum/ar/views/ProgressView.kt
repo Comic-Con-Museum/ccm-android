@@ -3,7 +3,6 @@ package com.comic_con.museum.ar.views
 import android.content.Context
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import android.widget.TextView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.progress.Progress
@@ -12,8 +11,6 @@ import android.widget.LinearLayout
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.experience.ExperienceViewModel
 import com.comic_con.museum.ar.experience.progress.ProgressModel
-import com.comic_con.museum.ar.overview.ExhibitModel
-import net.cachapa.expandablelayout.ExpandableLayout
 import java.util.zip.Inflater
 import javax.inject.Inject
 

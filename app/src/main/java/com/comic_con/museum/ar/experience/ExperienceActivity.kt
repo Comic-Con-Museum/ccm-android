@@ -17,7 +17,7 @@ import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 import com.google.gson.Gson
 import com.unity3d.player.UnityPlayer
 import java.lang.IllegalStateException
@@ -34,7 +34,7 @@ class ExperienceActivity: AppCompatActivity() {
     @Inject
     lateinit var progressViewModel: ProgressViewModel
 
-    private var experienceModel: ExhibitModel? = null
+    private var experienceModel: ExperienceModel? = null
 
     // The unity player for the AR component
     val unityPlayer: UnityPlayer by lazy {
@@ -51,7 +51,7 @@ class ExperienceActivity: AppCompatActivity() {
 
         // Get the experience model associated with the selected experience
         val experienceRes = intent?.extras?.getInt(MainActivity.EXPERIENCE_RESOURCE_KEY) ?: throw IllegalStateException("Experience was started with null experienceId")
-        val experienceModel = Gson().fromJson(resources.openRawResource(experienceRes).bufferedReader(), ExhibitModel::class.java)
+        val experienceModel = Gson().fromJson(resources.openRawResource(experienceRes).bufferedReader(), ExperienceModel::class.java)
         experienceViewModel.setExperience(experienceModel)
         this.experienceModel = experienceModel
 

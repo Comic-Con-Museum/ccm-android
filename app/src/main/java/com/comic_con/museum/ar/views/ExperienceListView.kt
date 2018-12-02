@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ListView
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.overview.ExhibitModel
+import com.comic_con.museum.ar.overview.ExperienceModel
 
 class ExperienceListView(c: Context, a: AttributeSet): ListView(c,a) {
 
-    fun setUp(experienceList: List<ExhibitModel>) {
+    fun setUp(experienceList: List<ExperienceModel>) {
         val adapter = ProgressAdapter(context)
         adapter.experiences = experienceList
         this.adapter = adapter
@@ -20,7 +20,7 @@ class ExperienceListView(c: Context, a: AttributeSet): ListView(c,a) {
 
     inner class ProgressAdapter(private val context: Context): BaseAdapter() {
 
-        lateinit var experiences: List<ExhibitModel>
+        lateinit var experiences: List<ExperienceModel>
 
         override fun getCount(): Int = experiences.size
 

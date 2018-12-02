@@ -10,10 +10,10 @@ import javax.inject.Inject
 
 class OverviewViewModel @Inject constructor(private val repository: Repository) {
 
-    // Live Data for the exhibits
-    val exhibitModelsLiveData: MutableLiveData<List<ExhibitModel>> = MutableLiveData()
-    // All the exhibits loaded so far
-    private val models: MutableList<ExhibitModel> = mutableListOf()
+    // Live Data for the experiences
+    val experienceModelsLiveData: MutableLiveData<List<ExperienceModel>> = MutableLiveData()
+    // All the experiences loaded so far
+    private val models: MutableList<ExperienceModel> = mutableListOf()
     // Mapping of models to associated android resource ID
     private val modelResMap: HashMap<String, Int> = hashMapOf()
     // gson
@@ -21,24 +21,24 @@ class OverviewViewModel @Inject constructor(private val repository: Repository) 
         Gson()
     }
 
-    fun addExhibitModel(resId: Int, inputStream: InputStream) {
+    fun addExperienceModel(resId: Int, inputStream: InputStream) {
         try {
-            val exhibitModel = this.gson.fromJson(inputStream.bufferedReader(), ExhibitModel::class.java)
+            val experienceModel = this.gson.fromJson(inputStream.bufferedReader(), ExperienceModel::class.java)
             if(
                 models.find { thisModel ->
-                    thisModel.id == exhibitModel.id
+                    thisModel.id == experienceModel.id
                 } == null
             ) {
-                models.add(exhibitModel)
+                models.add(experienceModel)
             }
-            exhibitModelsLiveData.postValue(models)
-            modelResMap[exhibitModel.id] = resId
+            experienceModelsLiveData.postValue(models)
+            modelResMap[experienceModel.id] = resId
         } catch (e: JsonSyntaxException) {
             Log.e("JSON", "Failed to parse JSON object")
         }
     }
 
-    fun getResId(exhibitId: String): Int? {
-        return modelResMap.getOrElse(exhibitId) { return null }
+    fun getResId(experienceId: String): Int? {
+        return modelResMap.getOrElse(experienceId) { return null }
     }
 }
