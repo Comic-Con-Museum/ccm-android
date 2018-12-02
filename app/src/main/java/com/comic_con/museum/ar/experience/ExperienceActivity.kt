@@ -14,7 +14,6 @@ import android.view.MenuItem
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
-import com.comic_con.museum.ar.experience.content.activityfragments.ContentFragment
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
@@ -69,6 +68,7 @@ class ExperienceActivity: AppCompatActivity() {
 
         setContentView(R.layout.activity_experiences)
 
+        // Simulate receiving a collection event from Unity
         Handler().postDelayed({
             this.newCollectionEvent("00002")
         }, 5000)

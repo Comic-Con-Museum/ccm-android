@@ -23,8 +23,6 @@ class ContentActivity: AppCompatActivity() {
     @Inject
     lateinit var experienceViewModel: ExperienceViewModel
 
-    lateinit var experienceModel: ExhibitModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -35,10 +33,8 @@ class ContentActivity: AppCompatActivity() {
 
         // Get the content item associated with this activity
         val contentItemId = intent?.extras?.getString(CONTENT_ITEM_ID_KEY) ?: throw IllegalStateException("Content Activity was started with no ContentItemId")
-        this.experienceModel = experienceViewModel.experienceModelLiveData.value ?: return
         val contentItemModel = experienceViewModel.getSpecificContent(
-            experienceModel, contentItemId
-        ) ?: throw IllegalStateException("Content Activity started with invalid ContentItemId: $contentItemId")
+                    contentItemId) ?: throw IllegalStateException("Content Activity started with invalid ContentItemId: $contentItemId")
 
 
         // Set title
@@ -50,7 +46,7 @@ class ContentActivity: AppCompatActivity() {
     }
 
     fun showContent(contentId: String, isInitial: Boolean = false) {
-        val isCategory = experienceViewModel.isCategory(experienceModel, contentId)
+        val isCategory = experienceViewModel.isCategory(contentId)
         val targetFragment: ContentFragment = if( isCategory ) {
             ContentListingFragment()
         } else {

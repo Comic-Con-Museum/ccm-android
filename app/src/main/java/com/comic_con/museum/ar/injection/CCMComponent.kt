@@ -11,6 +11,7 @@ import com.comic_con.museum.ar.experience.progress.ProgressViewModel
 import com.comic_con.museum.ar.injection.sharedpreferences.SharedPreferencesModule
 import com.comic_con.museum.ar.loading.LoadingScreenFragment
 import com.comic_con.museum.ar.overview.OverviewFragment
+import com.comic_con.museum.ar.views.ProgressView
 import dagger.Component
 import javax.inject.Singleton
 
@@ -36,6 +37,8 @@ interface CCMComponent {
     fun inject(f: ContentListingFragment)
 
     fun inject(f: ContentActivity)
+
+    fun inject(v: ProgressView)
 
     // Context Injection
     fun inject(module: SharedPreferencesModule)

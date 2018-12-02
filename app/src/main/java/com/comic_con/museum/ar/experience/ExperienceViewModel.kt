@@ -15,13 +15,15 @@ class ExperienceViewModel @Inject constructor(repository: Repository) {
         experienceModelLiveData.postValue(model)
     }
 
-    fun getSpecificContent(experienceModel: ExhibitModel, contentItemId: String): ContentItem? {
-        return experienceModel.category.categories.union(experienceModel.content.contentItems).find { contentItem ->
+    fun getSpecificContent(contentItemId: String, experienceModel: ExhibitModel? = null): ContentItem? {
+        val thisModel = experienceModel ?: this.experienceModelLiveData.value ?: return null
+        return thisModel.category.categories.union(thisModel.content.contentItems).find { contentItem ->
             contentItem.id == contentItemId
         }
     }
 
-    fun isCategory(experienceModel: ExhibitModel, contentItemId: String): Boolean {
-        return experienceModel.category.categories.asSequence().map { it.id }.contains(contentItemId)
+    fun isCategory(contentItemId: String, experienceModel: ExhibitModel? = null): Boolean {
+        val thisModel = experienceModel ?: this.experienceModelLiveData.value ?: return false
+        return thisModel.category.categories.asSequence().map { it.id }.contains(contentItemId)
     }
 }

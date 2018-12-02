@@ -10,6 +10,7 @@ import android.widget.BaseAdapter
 import android.widget.ListView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.progress.ProgressModel
+import com.comic_con.museum.ar.overview.ExhibitModel
 
 class ProgressListView(c: Context, a: AttributeSet): ListView(c, a) {
 

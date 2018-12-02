@@ -3,16 +3,25 @@ package com.comic_con.museum.ar.views
 import android.content.Context
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
+import android.view.LayoutInflater
 import android.widget.TextView
 import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.experience.progress.Progress
 import android.view.View
-import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.comic_con.museum.ar.CCMApplication
+import com.comic_con.museum.ar.experience.ExperienceViewModel
 import com.comic_con.museum.ar.experience.progress.ProgressModel
+import com.comic_con.museum.ar.overview.ExhibitModel
+import net.cachapa.expandablelayout.ExpandableLayout
+import java.util.zip.Inflater
+import javax.inject.Inject
 
 
 class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
+
+    @Inject
+    lateinit var experienceViewModel: ExperienceViewModel
 
     private val titleText by lazy {
         this.findViewById<TextView>(R.id.progressTitle)
@@ -24,6 +33,10 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
         this.findViewById<LinearLayout>(R.id.progressBarContainer)
     }
 
+    init {
+        CCMApplication.getApplication().injectorComponent.inject(this)
+    }
+
     fun setProgress(progressModel: ProgressModel, progress: Progress?) {
         progress ?: return
         // Get the achieved items for this progress item
@@ -33,6 +46,30 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
         // Set text values
         titleText?.text = progress.progressName
+
+        // Set progress item contents
+//        this.findViewById<LinearLayout>(R.id.progress_item_holder)?.let { progressItemHolder ->
+//            // Clean up old values
+//            progressItemHolder.removeAllViews()
+//            // Populate with new values
+//            relevantAchievedItems.map { contentId ->
+//                experienceViewModel.getSpecificContent(contentId) ?: return@map
+//            }.forEach { collectedItem ->
+//                val thisContentView = LayoutInflater.from(this.context)?.inflate(
+//                    R.layout.component_progress_collected_item, progressItemHolder, false) ?: return@forEach
+//                // TODO populate view
+////                progressItemHolder.addView(thisContentView)
+//            }
+//        }
+
+        // Set dropdown listener
+        this.findViewById<View>(R.id.more_info_toggle)?.let { dropDownToggle ->
+            dropDownToggle.setOnClickListener {
+                this.findViewById<ExpandableLayout>(R.id.expandable_content)?.let { expandableLayout ->
+                    expandableLayout.toggle()
+                }
+            }
+        }
 
         // If progress complete
         if (relevantAchievedItems.size >= progress.contentItems.size) {

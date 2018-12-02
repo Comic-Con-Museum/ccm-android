@@ -48,7 +48,7 @@ class ProgressFragment: Fragment() {
 
     private fun updateFromProgressModel(progressModel: ProgressModel?) {
         progressModel?.let {
-            rootView?.findViewById<ProgressListView>(R.id.progress_grid)?.setUp(progressModel)
+            rootView?.findViewById<ProgressListView>(R.id.progress_list)?.setUp(it)
         }
     }
 }

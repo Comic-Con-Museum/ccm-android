@@ -7,6 +7,11 @@ import android.view.MotionEvent
 
 class SwipeDisabledViewPager(c: Context, a: AttributeSet): ViewPager(c, a) {
 
+    init {
+        // Prevent fragments off screen from being killed
+        this.offscreenPageLimit = 3
+    }
+
     override fun onInterceptTouchEvent(ev: MotionEvent?): Boolean {
         return false
     }
