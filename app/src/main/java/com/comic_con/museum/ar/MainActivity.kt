@@ -31,7 +31,8 @@ class MainActivity: AppCompatActivity() {
         transaction.commit()
     }
 
-    fun beginExperienceActivity(experienceId: String) {
+    fun beginExperienceActivity(experienceId: String?) {
+        experienceId ?: return
         val newExperienceIntent = ExperienceActivity.createIntent(this)
         newExperienceIntent.putExtra(EXPERIENCE_RESOURCE_KEY, overviewViewModel.getResId(experienceId))
         this.startActivity(newExperienceIntent)
