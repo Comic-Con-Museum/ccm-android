@@ -36,9 +36,7 @@ class ExperienceActivity: AppCompatActivity() {
     private var experienceModel: ExperienceModel? = null
 
     // The unity player for the AR component
-    val unityPlayer: UnityPlayer by lazy {
-        UnityPlayer(this)
-    }
+    lateinit var unityPlayer: UnityPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +45,9 @@ class ExperienceActivity: AppCompatActivity() {
 //        Debug.waitForDebugger()
 
         CCMApplication.getApplication().injectorComponent.inject(this)
+
+        // Init Unity Player
+        this.unityPlayer = UnityPlayer(this)
 
         // Get the experience model associated with the selected experience
         val experienceRes = intent?.extras?.getInt(MainActivity.EXPERIENCE_RESOURCE_KEY) ?: throw IllegalStateException("Experience was started with null experienceId")

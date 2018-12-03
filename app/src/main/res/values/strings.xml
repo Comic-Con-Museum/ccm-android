@@ -15,4 +15,7 @@
     <!-- Progress -->
     <string name="progress_completed">Done!</string>
 
+    <!-- Launch AR -->
+    <string name="launch_ar_go">Go!</string>
+
 </resources>

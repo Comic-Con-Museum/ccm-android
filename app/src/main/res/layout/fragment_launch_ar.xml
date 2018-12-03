@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/unity_player"
+              android:id="@+id/content_root"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="@color/colorPrimary"-->
-            <!--android:text="This is where you will see a loading screen before AR is launched"/>-->
-
-    <!--<Button-->
-            <!--android:id="@+id/launch_ar_button"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Launch AR"/>-->
+    <Button
+            android:id="@+id/launch_ar_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/launch_ar_go"/>
 
 </LinearLayout>
