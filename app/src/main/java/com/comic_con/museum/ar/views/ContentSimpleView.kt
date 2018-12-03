@@ -1,6 +1,7 @@
 package com.comic_con.museum.ar.views
 
 import android.content.Context
+import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
 import android.widget.ImageView
@@ -14,6 +15,8 @@ import com.comic_con.museum.ar.util.GlideHelper
 
 class ContentSimpleView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
+    private var onClickEnabled = true
+
     fun setContent(content: ContentItem) {
         this.findViewById<TextView>(R.id.content_title)?.text = content.title
         this.findViewById<TextView>(R.id.content_subtitle)?.text = getSubtitle(content)
@@ -23,6 +26,13 @@ class ContentSimpleView(c: Context, a: AttributeSet): LinearLayout(c, a) {
         }
 
         this.findViewById<View>(R.id.content_image)?.setOnClickListener {
+            if( !onClickEnabled ) return@setOnClickListener
+            // prevent multiple onClicks
+            onClickEnabled = false
+            Handler().postDelayed({
+                onClickEnabled = true
+            }, 1000)
+            // Start an activity with the related content
             this.context?.let { thisContext ->
                 ContentActivity.startContentActivity(thisContext, content.id)
             }
