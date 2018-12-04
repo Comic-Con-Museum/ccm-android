@@ -16,6 +16,8 @@
     <string name="progress_completed">Done!</string>
 
     <!-- Launch AR -->
+    <string name="launch_ar_tip">Tip:</string>
+    <string name="launch_ar_tip_content">Easter eggs are only located in the public areas of the museum.</string>
     <string name="launch_ar_go">Go!</string>
 
 </resources>

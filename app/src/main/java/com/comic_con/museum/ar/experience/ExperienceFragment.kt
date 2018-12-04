@@ -81,6 +81,10 @@ class ExperienceFragment: Fragment() {
         viewPager.currentItem = 1
     }
 
+    fun finishLoadingAr() {
+        this.launchArFragment?.finishLoading()
+    }
+
     inner class ViewPagerAdapter(fm: FragmentManager?): FragmentPagerAdapter(fm) {
 
         var fragments: List<Fragment> = listOf()

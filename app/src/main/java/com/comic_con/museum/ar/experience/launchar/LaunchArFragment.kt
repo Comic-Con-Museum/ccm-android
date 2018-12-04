@@ -24,6 +24,10 @@ class LaunchArFragment: Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_launch_ar, container, false)
         this.rootView = rootView
 
+        // Get UnityPlayer from activity
+        this.unityPlayer = (this.activity as? ExperienceActivity)?.unityPlayer
+        this.unityPlayer?.resume()
+
         rootView?.findViewById<Button>(R.id.launch_ar_button)?.setOnClickListener{
             if( !launchArOnClickEnabled ) return@setOnClickListener
             // prevent multiple onClicks
@@ -38,8 +42,6 @@ class LaunchArFragment: Fragment() {
     }
 
     private fun startUnityComponent() {
-        // Get UnityPlayer from activity
-        this.unityPlayer = (this.activity as ExperienceActivity).unityPlayer
         // Prepare the UnityPlayer view for placement on the screen
         val unityPlayerView = (this.activity as ExperienceActivity).unityPlayer.view
         unityPlayerView.layoutParams = ViewGroup.LayoutParams(
@@ -49,7 +51,15 @@ class LaunchArFragment: Fragment() {
         // Place the view on the screen
         rootView?.findViewById<ViewGroup>(R.id.content_root)?.removeAllViews()
         rootView?.findViewById<ViewGroup>(R.id.content_root)?.addView(unityPlayerView)
-        unityPlayer?.resume()
+    }
+
+    fun finishLoading() {
+        this.rootView?.findViewById<View>(R.id.progressBar)?.visibility = View.INVISIBLE
+        this.rootView?.findViewById<View>(R.id.launch_ar_button)?.let { button ->
+            button.alpha = 1f
+            button.isClickable = true
+            button.isEnabled = true
+        }
     }
 
     override fun onPause() {
