@@ -18,8 +18,6 @@ class LaunchArFragment: Fragment() {
 
     private var unityPlayer: UnityPlayer? = null
 
-    private var launchArOnClickEnabled = true
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_launch_ar, container, false)
         this.rootView = rootView
@@ -29,14 +27,10 @@ class LaunchArFragment: Fragment() {
         this.unityPlayer?.resume()
 
         rootView?.findViewById<Button>(R.id.launch_ar_button)?.setOnClickListener{
-            if( !launchArOnClickEnabled ) return@setOnClickListener
-            // prevent multiple onClicks
-            launchArOnClickEnabled = false
-            Handler().postDelayed({
-                launchArOnClickEnabled = true
-            }, 1000)
-            startUnityComponent()
+            showUnityComponent()
         }
+
+        startUnityComponent()
 
         return rootView
     }
@@ -49,8 +43,14 @@ class LaunchArFragment: Fragment() {
             ViewGroup.LayoutParams.MATCH_PARENT
         )
         // Place the view on the screen
-        rootView?.findViewById<ViewGroup>(R.id.content_root)?.removeAllViews()
-        rootView?.findViewById<ViewGroup>(R.id.content_root)?.addView(unityPlayerView)
+        rootView?.findViewById<ViewGroup>(R.id.unity_holder)?.removeAllViews()
+        rootView?.findViewById<ViewGroup>(R.id.unity_holder)?.addView(unityPlayerView)
+        unityPlayer?.resume()
+    }
+
+    private fun showUnityComponent() {
+        this.rootView?.findViewById<View>(R.id.unity_holder)?.visibility = View.VISIBLE
+        this.rootView?.findViewById<View>(R.id.loading_screen)?.visibility = View.GONE
     }
 
     fun finishLoading() {

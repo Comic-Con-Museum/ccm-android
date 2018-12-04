@@ -3,6 +3,7 @@ package com.comic_con.museum.ar.experience
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Debug
 import android.os.Handler
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
@@ -140,6 +141,7 @@ class ExperienceActivity: AppCompatActivity() {
      */
     @Suppress("unused")
     fun newLoadingCompletedEvent(eventCode: Int) {
+        Log.d("Unity", "Received Loading Completed Event ($eventCode)")
         if( eventCode == 0 ) {
             this.experienceFragment?.finishLoadingAr()
         }
