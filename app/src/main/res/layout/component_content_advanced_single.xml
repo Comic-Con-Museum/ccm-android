@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.comic_con.museum.ar.views.ContentAdvancedListView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+<com.comic_con.museum.ar.views.ContentAdvancedSingleView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+                                                       android:orientation="vertical"
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="match_parent">
 
     <android.support.design.widget.CoordinatorLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -78,22 +78,76 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <TextView
-                        android:id="@+id/content_description"
+                <com.comic_con.museum.ar.views.ContentAdvancedFeedView
+                        android:id="@+id/content_holder_primary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
-                        android:textSize="14sp"
-                        android:lineSpacingExtra="5sp"
-                        tools:text="This is a content Description that is long so it goes onto multiple lines so I can test line spacing"/>
+                        android:orientation="vertical"/>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:weightSum="10">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="8dp"
+                            android:textSize="13sp"
+                            android:textColor="@color/light_text"
+                            android:text="@string/content_single_description"/>
+
+                    <TextView
+                            android:id="@+id/content_description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:textSize="14sp"
+                            android:textColor="@color/dark_text"
+                            android:maxLines="3"
+                            android:ellipsize="end"
+                            android:lineSpacingExtra="5sp"
+                            tools:text="This is a content Description that is long so it goes onto multiple lines so I can test line spacing"/>
+
+                    <ImageView
+                            android:id="@+id/more_info_toggle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="48dp"
+                            android:src="@drawable/baseline_expand_more_black_48"
+                            android:layout_gravity="center"
+                            android:scaleY=".5"
+                            android:scaleX=".5"
+                            android:foreground="?selectableItemBackgroundBorderless"
+                            android:background="@drawable/transparent_circle"
+                            android:clickable="true"
+                            android:focusable="true"/>
+
+                </LinearLayout>
 
                 <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/light_gray"/>
 
+                <TextView
+                        android:id="@+id/related_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="13sp"
+                        android:textColor="@color/light_text"
+                        android:text="@string/content_single_related"/>
+
                 <com.comic_con.museum.ar.views.ContentAdvancedFeedView
-                        android:id="@+id/content_holder"
+                        android:id="@+id/content_holder_secondary"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"/>
@@ -104,4 +158,4 @@
 
     </android.support.design.widget.CoordinatorLayout>
 
-</com.comic_con.museum.ar.views.ContentAdvancedListView>
+</com.comic_con.museum.ar.views.ContentAdvancedSingleView>

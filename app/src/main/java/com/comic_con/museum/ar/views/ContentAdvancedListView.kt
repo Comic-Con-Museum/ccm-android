@@ -2,8 +2,6 @@ package com.comic_con.museum.ar.views
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.LayoutInflater
-import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -21,13 +19,6 @@ class ContentAdvancedListView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
         this.findViewById<TextView>(R.id.content_description)?.text = subjectContent.description
 
-        val holder = this.findViewById<ViewGroup>(R.id.content_holder) ?: return
-        holder.removeAllViews()
-
-        contentItems.forEach { thisItem ->
-            val newCard = LayoutInflater.from(context)?.inflate(R.layout.component_content_advanced_view, holder, false) as? ContentAdvancedView ?: return@forEach
-            newCard.setContent(thisItem)
-            holder.addView(newCard)
-        }
+        this.findViewById<ContentAdvancedFeedView>(R.id.content_holder)?.setup(contentItems)
     }
 }

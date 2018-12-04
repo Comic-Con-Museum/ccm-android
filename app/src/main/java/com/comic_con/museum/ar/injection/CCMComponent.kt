@@ -6,6 +6,7 @@ import com.comic_con.museum.ar.experience.ExperienceFragment
 import com.comic_con.museum.ar.experience.content.ContentActivity
 import com.comic_con.museum.ar.experience.content.ContentOverviewFragment
 import com.comic_con.museum.ar.experience.content.activityfragments.ContentListingFragment
+import com.comic_con.museum.ar.experience.content.activityfragments.ContentSingleFragment
 import com.comic_con.museum.ar.experience.progress.ProgressFragment
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
 import com.comic_con.museum.ar.injection.sharedpreferences.SharedPreferencesModule
@@ -35,6 +36,8 @@ interface CCMComponent {
     fun inject(f: ContentOverviewFragment)
 
     fun inject(f: ContentListingFragment)
+
+    fun inject(f: ContentSingleFragment)
 
     fun inject(f: ContentActivity)
 

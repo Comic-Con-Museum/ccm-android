@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-<include layout="@layout/component_content_advanced_list"
-         android:id="@+id/content_list"/>
+    <include layout="@layout/component_content_advanced_single"
+             android:id="@+id/content_single"/>
 
 </LinearLayout>

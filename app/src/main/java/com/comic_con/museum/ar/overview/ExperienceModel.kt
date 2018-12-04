@@ -2,6 +2,7 @@ package com.comic_con.museum.ar.overview
 
 import android.os.Parcelable
 import com.comic_con.museum.ar.experience.progress.ProgressModel
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 class ExperienceModel(
@@ -39,5 +40,13 @@ class ContentItem(
 class ContentPair(
     val label: String,
     val value: String,
-    val contentReferenceId: String
+    val contentReferenceId: String,
+    val priority: Priority
 ): Parcelable
+
+enum class Priority{
+    @SerializedName("1")
+    PRIMARY,
+    @SerializedName("2")
+    SECONDARY
+}
