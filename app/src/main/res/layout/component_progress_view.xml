@@ -80,7 +80,8 @@
                     android:layout_gravity="center_vertical"
                     android:scaleY=".5"
                     android:scaleX=".5"
-                    android:foreground="?android:attr/selectableItemBackground"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:background="@drawable/transparent_circle"
                     android:clickable="true"
                     android:focusable="true"
                     android:layout_weight="1"/>
