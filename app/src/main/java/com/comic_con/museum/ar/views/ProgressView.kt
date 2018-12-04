@@ -59,13 +59,14 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 //        }
 
         // Set dropdown listener
-//        this.findViewById<View>(R.id.more_info_toggle)?.let { dropDownToggle ->
+        this.findViewById<View>(R.id.more_info_toggle)?.let { dropDownToggle ->
+            dropDownToggle.clipToOutline = true
 //            dropDownToggle.setOnClickListener {
 //                this.findViewById<ExpandableLayout>(R.id.expandable_content)?.let { expandableLayout ->
 //                    expandableLayout.toggle()
 //                }
 //            }
-//        }
+        }
 
         // If progress complete
         if (relevantAchievedItems.size >= progress.contentItems.size) {
