@@ -42,6 +42,19 @@
                             android:scaleType="centerCrop"
                             android:src="@color/dark_blue"/>
 
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:scaleType="matrix"
+                            android:src="@drawable/content_image_top_gradient"/>
+
+                    <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:scaleType="matrix"
+                            android:layout_gravity="bottom"
+                            android:src="@drawable/content_image_bottom_gradient"/>
+
                 </FrameLayout>
 
                 <android.support.v7.widget.Toolbar
@@ -122,6 +135,7 @@
                         android:background="@color/light_gray"/>
 
                 <TextView
+                        android:id="@+id/related_label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"

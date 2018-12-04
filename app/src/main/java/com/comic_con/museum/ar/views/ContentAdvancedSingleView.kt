@@ -2,6 +2,7 @@ package com.comic_con.museum.ar.views
 
 import android.content.Context
 import android.util.AttributeSet
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -21,6 +22,10 @@ class ContentAdvancedSingleView(c: Context, a: AttributeSet): LinearLayout(c, a)
 
         this.findViewById<ContentAdvancedFeedView>(R.id.content_holder_primary)?.setup(primaryContentItems)
 
-        this.findViewById<ContentAdvancedFeedView>(R.id.content_holder_secondary)?.setup(secondaryContentItems)
+        if( secondaryContentItems.isEmpty() ) {
+            this.findViewById<View>(R.id.related_label).visibility = View.GONE
+        } else {
+            this.findViewById<ContentAdvancedFeedView>(R.id.content_holder_secondary)?.setup(secondaryContentItems)
+        }
     }
 }
