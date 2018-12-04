@@ -134,11 +134,15 @@
         "extraPairs": [
           {
             "label": "Writer",
-            "value": "Marjorie Liu"
+            "value": "Marjorie Liu",
+            "contentReferenceId": "10001",
+            "priority": "1"
           },
           {
             "label": "Artist",
-            "value": "Sana Takeda"
+            "value": "Sana Takeda",
+            "contentReferenceId": "00001",
+            "priority": "2"
           }
         ]
       },

@@ -20,4 +20,8 @@
     <string name="launch_ar_tip_content">Easter eggs are only located in the public areas of the museum.</string>
     <string name="launch_ar_go">Go!</string>
 
+    <!-- Content -->
+    <string name="content_single_description">Description</string>
+    <string name="content_single_related">Related</string>
+
 </resources>

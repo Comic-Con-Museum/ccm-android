@@ -88,9 +88,4 @@ class LaunchArFragment: Fragment() {
         unityPlayer?.windowFocusChanged(isInMultiWindowMode)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-//        unityPlayer?.quit()
-    }
-
 }

@@ -9,9 +9,9 @@ import com.comic_con.museum.ar.R
 import com.comic_con.museum.ar.overview.ContentItem
 import com.comic_con.museum.ar.util.GlideHelper
 
-class ContentAdvancedListView(c: Context, a: AttributeSet): LinearLayout(c, a) {
+class ContentAdvancedSingleView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
-    fun setUp(subjectContent: ContentItem, contentItems: List<ContentItem>) {
+    fun setUp(subjectContent: ContentItem, primaryContentItems: List<ContentItem>, secondaryContentItems: List<ContentItem>) {
 
         this.findViewById<ImageView>(R.id.content_image)?.let { imageView ->
             GlideHelper.loadImage(imageView, subjectContent.imageUrl)
@@ -19,6 +19,8 @@ class ContentAdvancedListView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
         this.findViewById<TextView>(R.id.content_description)?.text = subjectContent.description
 
-        this.findViewById<ContentAdvancedFeedView>(R.id.content_holder)?.setup(contentItems)
+        this.findViewById<ContentAdvancedFeedView>(R.id.content_holder_primary)?.setup(primaryContentItems)
+
+        this.findViewById<ContentAdvancedFeedView>(R.id.content_holder_secondary)?.setup(secondaryContentItems)
     }
 }

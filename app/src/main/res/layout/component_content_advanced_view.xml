@@ -33,10 +33,11 @@
                     android:id="@+id/content_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
                     android:maxLines="1"
                     android:ellipsize="end"
-                    android:textSize="18sp"
-                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textColor="@color/dark_text"
                     android:fontFamily="sans-serif-medium"
                     tools:text="Monstress"/>
 
@@ -46,7 +47,9 @@
                     android:layout_height="match_parent"
                     android:maxLines="1"
                     android:ellipsize="end"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
+                    android:textColor="@color/light_text"
+                    android:fontFamily="sans-serif-light"
                     tools:text="Marjorie Liu"/>
 
         </LinearLayout>
