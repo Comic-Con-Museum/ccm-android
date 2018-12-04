@@ -44,6 +44,7 @@ class LaunchArFragment: Fragment() {
         )
         // Place the view on the screen
         rootView?.findViewById<ViewGroup>(R.id.unity_holder)?.removeAllViews()
+        (unityPlayerView.parent as? ViewGroup)?.removeAllViews()
         rootView?.findViewById<ViewGroup>(R.id.unity_holder)?.addView(unityPlayerView)
         unityPlayer?.resume()
     }
