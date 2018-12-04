@@ -3,21 +3,27 @@ package com.comic_con.museum.ar.experience
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Debug
 import android.os.Handler
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.KeyEvent
 import android.view.MenuItem
 import com.comic_con.museum.ar.CCMApplication
 import com.comic_con.museum.ar.MainActivity
 import com.comic_con.museum.ar.R
+import com.comic_con.museum.ar.experience.content.ContentActivity
 import com.comic_con.museum.ar.experience.nav.BottomNavListener
 import com.comic_con.museum.ar.experience.nav.BottomNavOnPageChangeListener
 import com.comic_con.museum.ar.experience.progress.ProgressViewModel
+import com.comic_con.museum.ar.overview.ContentItem
 import com.comic_con.museum.ar.overview.ExperienceModel
+import com.comic_con.museum.ar.unity.UnityContentItem
+import com.comic_con.museum.ar.util.GlideHelper
 import com.google.gson.Gson
 import com.unity3d.player.UnityPlayer
 import javax.inject.Inject
@@ -35,10 +41,10 @@ class ExperienceActivity: AppCompatActivity() {
 
     private var experienceModel: ExperienceModel? = null
 
+    private var experienceFragment: ExperienceFragment? = null
+
     // The unity player for the AR component
-    val unityPlayer: UnityPlayer by lazy {
-        UnityPlayer(this)
-    }
+    lateinit var unityPlayer: UnityPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +59,9 @@ class ExperienceActivity: AppCompatActivity() {
         val experienceModel = Gson().fromJson(resources.openRawResource(experienceRes).bufferedReader(), ExperienceModel::class.java)
         experienceViewModel.setExperience(experienceModel)
         this.experienceModel = experienceModel
+
+        // Init Unity Player
+        this.unityPlayer = UnityPlayer(this)
 
         // Set activity title
         this.title = experienceModel.title
@@ -73,6 +82,7 @@ class ExperienceActivity: AppCompatActivity() {
         }, 5000)
 
         val frag = ExperienceFragment()
+        this.experienceFragment = frag
         switchToFragment(frag)
     }
 
@@ -131,16 +141,10 @@ class ExperienceActivity: AppCompatActivity() {
      */
     @Suppress("unused")
     fun newLoadingCompletedEvent(eventCode: Int) {
-        // TODO display unity
-    }
-
-    /**
-     * Called (from Unity) when the component has crashed
-     * @param eventCode
-     */
-    @Suppress("unused")
-    fun newCrashEvent(eventCode: Int) {
-        // TODO handle crash
+        Log.d("Unity", "Received Loading Completed Event ($eventCode)")
+        if( eventCode == 0 ) {
+            this.experienceFragment?.finishLoadingAr()
+        }
     }
 
     /**
@@ -149,15 +153,44 @@ class ExperienceActivity: AppCompatActivity() {
      * @return Int correlating to how the view event was handled
      * *Success Codes*
      * 0:   The content was successfully viewed
-     * TODO add more
      * *Error Codes*
      * 500: The content was not able to be viewed
      * TODO add more
      */
     @Suppress("unused")
     fun newViewContentEvent(contentId: String): Int {
-        // TODO bring user to content view
-        return 500
+        try {
+            ContentActivity.startContentActivity(this, contentId)
+        } catch( e: Exception ) {
+            Log.e("Unity", "Unity encountered an error when attempting to view contentItem($contentId): ${e.message}")
+            return 500
+        }
+        return 0
+    }
+
+    /**
+     * Called (from Unity) to get the name of the current experience
+     * @return A String that is the name of the experience
+     * This is potentially nullable, but this should only be the case when
+     * the activity is in a bad state
+     */
+    @Suppress("unused")
+    fun getExperience(): String? {
+        return experienceModel?.title
+    }
+
+    @Suppress("unused")
+    fun getContentModel(contentId: String): UnityContentItem? {
+        // Get the content item from the active experience
+        val contentItem = experienceModel?.category?.categories?.union(experienceModel?.content?.contentItems ?: return null )?.find { it.id == contentId }
+
+        // Get a byte array of the image for this content item
+        val imageByteArray = GlideHelper.getByteArray(this, contentId)
+
+        return UnityContentItem(
+            contentItem,
+            imageByteArray
+        )
     }
 
     private fun switchToFragment(fragment: Fragment) {

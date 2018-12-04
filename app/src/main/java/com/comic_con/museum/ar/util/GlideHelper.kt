@@ -14,6 +14,9 @@ class GlideHelper {
             .placeholder(R.color.light_blue)
             .error(R.color.dark_blue)
 
+        private val OPTIONS_CACHED = RequestOptions()
+            .onlyRetrieveFromCache(true)
+
         fun preloadImage(context: Context, url: String?) {
             Glide.with(context)
                 .load(url)
@@ -25,6 +28,16 @@ class GlideHelper {
                 .load(url)
                 .apply(OPTIONS)
                 .into(imageView)
+        }
+
+        fun getByteArray(context: Context, url: String?): ByteArray {
+            return Glide.with(context)
+                .asFile()
+                .load(url)
+                .apply(OPTIONS_CACHED)
+                .submit()
+                .get()
+                .readBytes()
         }
     }
 }

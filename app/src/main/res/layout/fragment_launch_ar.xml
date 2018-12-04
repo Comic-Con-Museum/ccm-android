@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/unity_player"
+              android:id="@+id/content_root"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <!--<TextView-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textColor="@color/colorPrimary"-->
-            <!--android:text="This is where you will see a loading screen before AR is launched"/>-->
+    <LinearLayout
+            android:id="@+id/loading_screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <!--<Button-->
-            <!--android:id="@+id/launch_ar_button"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Launch AR"/>-->
+        <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="120dp"
+                android:indeterminateTintMode="src_atop"
+                android:indeterminateTint="@color/light_blue"
+                android:layout_gravity="center"
+                android:scaleX="3"
+                android:scaleY="3"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="140dp"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="@string/launch_ar_tip"/>
+
+            <TextView
+                    android:id="@+id/tip_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="5sp"
+                    android:textColor="@color/dark_text"
+                    android:text="@string/launch_ar_tip_content"/>
+
+        </LinearLayout>
+
+
+        <Button
+                android:id="@+id/launch_ar_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="false"
+                android:enabled="true"
+                android:elevation="2dp"
+                android:alpha=".25"
+                android:textColor="@color/white"
+                android:text="@string/launch_ar_go"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/unity_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible"/>
 
 </LinearLayout>

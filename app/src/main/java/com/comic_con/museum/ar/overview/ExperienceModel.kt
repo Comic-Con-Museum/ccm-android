@@ -1,6 +1,8 @@
 package com.comic_con.museum.ar.overview
 
+import android.os.Parcelable
 import com.comic_con.museum.ar.experience.progress.ProgressModel
+import kotlinx.android.parcel.Parcelize
 
 class ExperienceModel(
     val title: String,
@@ -22,6 +24,7 @@ class ContentModel(
     val contentItems: List<ContentItem>
 )
 
+@Parcelize
 class ContentItem(
     val title: String,
     val id: String,
@@ -30,10 +33,11 @@ class ContentItem(
     val tags: List<String>,
     val categories: List<String>?,
     val extraPairs: List<ContentPair>?
-)
+): Parcelable
 
+@Parcelize
 class ContentPair(
     val label: String,
     val value: String,
     val contentReferenceId: String
-)
+): Parcelable
