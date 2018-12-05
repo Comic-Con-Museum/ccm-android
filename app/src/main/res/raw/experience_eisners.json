@@ -6,7 +6,6 @@
   "imageUrl": "https://doomrocket.com/wp-content/uploads/2018/07/eisners-header.png",
   "contentTags": [
     "Best of the Eisners",
-    "New this Year",
     "Digital Media",
     "Kids & Young Adults",
     "Most Creative"
@@ -48,7 +47,7 @@
         "id": "10003",
         "description": "Novels that whose release dated back to only a year in the past when they won an Eisner.",
         "tags": [
-          "New this Year"
+          "Most Creative"
         ],
         "imageUrl": "https://lvl41rogue.files.wordpress.com/2016/12/img_3868.png",
         "extraPairs": [
@@ -77,7 +76,9 @@
         "title": "Best Coloring",
         "id": "10005",
         "description": "The best choice and use of color.",
-        "tags": [],
+        "tags": [
+          "Most Creative"
+        ],
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6d/My_Favorite_Thing_Is_Monsters_cover.jpg",
         "extraPairs": [
           {
@@ -92,7 +93,7 @@
         "description": "The best of the eisner awards, limited to a digital medium.",
         "tags": [
           "Newly Added",
-          "Digital"
+          "Digital Media"
         ],
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/434069/434069._SX270_CLs%7C270,422%7Ccu/cmx-cu-sash-lg.png%7C0,0,271,423%20158,310,112,112_QL80_TTD_.jpg",
         "extraPairs": [
@@ -231,7 +232,7 @@
         "id": "00006",
         "description": "The only thing more exciting than pitting Hellboy against this Satanic spin on Santa is the team-up of Mike Mignola and Adam Hughes.",
         "tags": [
-          "Digital"
+          "Digital Media"
         ],
         "imageUrl": "http://www.comicsblog.fr/images/editeur/Corentin/rev/hllbkrmpsncht/Hellboy%20-%20Krampusnacht-016.jpg",
         "categories": [
