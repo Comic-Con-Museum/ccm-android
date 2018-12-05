@@ -225,6 +225,29 @@
             "value": "Tom Gauld (Drawn & Quarterly)"
           }
         ]
+      },
+      {
+        "title": "Hellboy: Krampusnacht",
+        "id": "00006",
+        "description": "The only thing more exciting than pitting Hellboy against this Satanic spin on Santa is the team-up of Mike Mignola and Adam Hughes.",
+        "tags": [
+          "Digital"
+        ],
+        "imageUrl": "http://www.comicsblog.fr/images/editeur/Corentin/rev/hllbkrmpsncht/Hellboy%20-%20Krampusnacht-016.jpg",
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
+          {
+            "label": "Author",
+            "value": "Mike Mignola"
+          },
+          {
+            "label": "Illustrator",
+            "value": "Adam Hughes"
+          }
+        ]
       }
     ]
   },
