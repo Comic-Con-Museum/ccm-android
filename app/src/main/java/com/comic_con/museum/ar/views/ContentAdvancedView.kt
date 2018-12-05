@@ -26,7 +26,7 @@ class ContentAdvancedView(c: Context, a: AttributeSet): LinearLayout(c, a) {
             }
         }
 
-        this.findViewById<View>(R.id.content_image)?.setOnClickListener {
+        this.setOnClickListener {
             this.context?.let { thisContext ->
                 ContentActivity.startContentActivity(thisContext, content.id)
             }
