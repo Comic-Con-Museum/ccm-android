@@ -19,6 +19,7 @@
         "tags": [
           "Best of the Eisners"
         ],
+        "imageIsPortrait": true,
         "imageUrl": "https://www.myjewishlearning.com/wp-content/uploads/2015/04/will-eisner_hp1.jpg",
         "extraPairs": [
           {
@@ -136,13 +137,13 @@
           {
             "label": "Writer",
             "value": "Marjorie Liu",
-            "contentReferenceId": "10001",
+            "contentReferenceId": "00008",
             "priority": "1"
           },
           {
             "label": "Artist",
             "value": "Sana Takeda",
-            "contentReferenceId": "00001",
+            "contentReferenceId": "00007",
             "priority": "1"
           }
         ]
@@ -247,6 +248,58 @@
           {
             "label": "Illustrator",
             "value": "Adam Hughes"
+          }
+        ]
+      },
+      {
+        "title": "Sana Takeda",
+        "id": "00007",
+        "description": "Sana Takeda is a Japanese illustrator and comic book artist known for her work on Hugo Award winning Monstress series. Takeda was born in Niigata, and now resides in Tokyo, Japan. At age 20 Takeda started working as a 3D CGI designer for Sega, creating pictures of soccer and NBA athletes.",
+        "tags": [
+          "Most Creative"
+        ],
+        "imageUrl": "https://images.gr-assets.com/authors/1505568866p5/377312.jpg",
+        "imageIsPortrait": true,
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
+          {
+            "label": "Profession",
+            "value": "Artist"
+          },
+          {
+            "label": "Work",
+            "value": "Monstress",
+            "contentReferenceId": "00001",
+            "priority": "2"
+          }
+        ]
+      },
+      {
+        "title": "Marjorie Liu",
+        "id": "00008",
+        "description": "Marjorie M. Liu is an American New York Times best-selling author and comic book writer. Her paranormal romance and urban fantasy novels include most notable The Hunter Kiss and Tiger Eye series. Her work for Marvel Comics include NYX, X-23, Dark Wolverine, and Astonishing X-Men.",
+        "tags": [
+          "Most Creative"
+        ],
+        "imageUrl": "https://imgix.bustle.com/uploads/image/2018/7/23/d180806f-b60e-48d2-8ed0-c21a721e1f63-author-photo.JPG?w=970&h=582&fit=crop&crop=faces&auto=format&q=70",
+        "imageIsPortrait": true,
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
+          {
+            "label": "Profession",
+            "value": "Writer"
+          },
+          {
+            "label": "Work",
+            "value": "Monstress",
+            "contentReferenceId": "00001",
+            "priority": "2"
           }
         ]
       }

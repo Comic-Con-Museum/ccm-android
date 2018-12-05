@@ -19,6 +19,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_margin="16dp"
+                android:background="@drawable/transparent_circle"
                 android:scaleType="centerCrop"
                 tools:src="@drawable/ic_trophy_black_48dp"/>
 

@@ -23,6 +23,10 @@ class ContentSimpleView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
         this.findViewById<ImageView>(R.id.content_image)?.let { imageView ->
             GlideHelper.loadImage(imageView, content.imageUrl)
+            if( content.imageIsPortrait == true ) {
+                // This causes the content image to clip to the transparent background circle
+                imageView.clipToOutline = true
+            }
         }
 
         this.findViewById<View>(R.id.content_image)?.setOnClickListener {
