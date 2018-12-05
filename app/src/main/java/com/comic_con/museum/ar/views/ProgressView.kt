@@ -72,18 +72,13 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 
         // If progress complete
         if (relevantAchievedItems.size >= progress.contentItems.size) {
-            // Update background
-            this.background = ContextCompat.getDrawable(this.context, R.drawable.progress_background_complete)
 
             // Update progress bar
             progressBarContainer.background = ContextCompat.getDrawable(this.context, R.drawable.progress_bar_complete)
 
-            // Update text color
-            titleText.setTextColor(ContextCompat.getColor(this.context, R.color.black))
-
             // Hide/update progress numbers
             achievedProgressText?.text = this.context.getString(R.string.progress_completed)
-            achievedProgressText?.setTextColor(ContextCompat.getColor(this.context, R.color.black))
+            achievedProgressText?.setTextColor(ContextCompat.getColor(this.context, R.color.dark_text))
         }
         // Else progress is not complete
         else {
