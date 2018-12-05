@@ -36,7 +36,7 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
     fun setProgress(progressModel: ProgressModel, progress: Progress?) {
         progress ?: return
         // Get the achieved items for this progress item
-        val relevantAchievedItems = progressModel.achievedContentItems.filter { achievedContentId ->
+        val relevantAchievedItems = progressModel.achievedContentItems?.filter { achievedContentId ->
             achievedContentId in (progress.contentItems)
         }
 
@@ -67,6 +67,8 @@ class ProgressView(c: Context, a: AttributeSet): LinearLayout(c, a) {
 //                }
 //            }
         }
+
+        relevantAchievedItems ?: return
 
         // If progress complete
         if (relevantAchievedItems.size >= progress.contentItems.size) {

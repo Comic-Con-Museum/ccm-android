@@ -1,54 +1,51 @@
 {
-  "experienceTitle": "May the Fourth",
-  "experienceId": "00002",
-  "experienceDescription": "May the Fourth be with you! Take a chance to celebrate the most influential sci-fi title of all time. The museum hosts a special screening of Star wars films and extras, as well as other events.",
-  "experienceAdditionDescription": "Find the ancient jedi texts, you must!",
-  "experienceImageUrl": "https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200",
+  "title": "May the Fourth",
+  "id": "00002",
+  "description": "May the Fourth be with you! Take a chance to celebrate the most influential sci-fi title of all time. The museum hosts a special screening of Star wars films and extras, as well as other events.",
+  "additionalDescription": "Find the ancient jedi texts, you must!",
+  "imageUrl": "https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200",
   "category": {
     "categories": [
       {
-        "categoryTitle": "Movies",
-        "categoryId": "00001",
-        "categoryDescription": "The most influential films of the generation.",
-        "categoryTags": [
+        "title": "Movies",
+        "id": "00001",
+        "description": "The most influential films of the generation.",
+        "tags": [
           "Classics"
         ],
-        "categoryImage": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_.jpg"
+        "imageUrl": "https://cms.qz.com/wp-content/uploads/2015/07/han-solo.jpg?quality=75&strip=all&w=410&h=231"
       },
       {
-        "categoryTitle": "Books",
-        "categoryId": "00002",
-        "categoryDescription": "Star wars has books too, who knew!?",
-        "categoryTags": [
+        "title": "Books",
+        "id": "00002",
+        "description": "Star wars has books too, who knew!?",
+        "tags": [
           "Classics"
         ],
-        "categoryImage": "https://nerdist.com/wp-content/uploads/2015/05/Lords-of-the-Sith-Cover-05292015-674x1024.jpg"
+        "imageUrl": "https://nerdist.com/wp-content/uploads/2015/05/Lords-of-the-Sith-Cover-05292015-674x1024.jpg"
       },
       {
-        "categoryTitle": "Games",
-        "categoryId": "00003",
-        "categoryDescription": "Top gaming content!",
-        "categoryTags": [
+        "title": "Games",
+        "id": "00003",
+        "description": "Top gaming content!",
+        "tags": [
           "Newly Added"
         ],
-        "categoryImage": "https://steamcdn-a.akamaihd.net/steam/apps/6060/header.jpg?t=1524018481"
+        "imageUrl": "https://steamcdn-a.akamaihd.net/steam/apps/6060/header.jpg?t=1524018481"
       }
-    ],
-    "allTags": [
-      "Classics",
-      "Newly Added"
     ]
   },
   "content": {
     "contentItems": [
       {
-        "contentTitle": "TODO",
-        "contentId": "00001",
-        "contentCategories": [
+        "title": "TODO",
+        "id": "00001",
+        "tags": [],
+        "categories": [
           "00003",
           "00005"
         ],
-        "contentPairs": [
+        "extraPairs": [
           {
             "label": "Writer",
             "value": "Marjorie Liu"
@@ -64,5 +61,9 @@
   "progress": {
     "progressItems": [],
     "achievedContentItems": []
-  }
+  },
+  "contentTags": [
+    "Classics",
+    "Newly Added"
+  ]
 }

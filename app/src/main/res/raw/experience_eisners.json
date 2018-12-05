@@ -6,23 +6,24 @@
   "imageUrl": "https://doomrocket.com/wp-content/uploads/2018/07/eisners-header.png",
   "contentTags": [
     "Best of the Eisners",
-    "Newly Added",
-    "Digital"
+    "Digital Media",
+    "Kids & Young Adults",
+    "Most Creative"
   ],
   "category": {
     "categories": [
       {
-        "title": "History Spotlight",
+        "title": "Will Eisner",
         "id": "10001",
-        "description": "The best the Eisners have to offer.",
+        "description": "Will Eisner popularized the term \"graphic novel\" with the publication of his book A Contract with God. He was an early contributor to formal comics studies with his book Comics and Sequential Art (1985)",
         "tags": [
           "Best of the Eisners"
         ],
         "imageUrl": "https://www.myjewishlearning.com/wp-content/uploads/2015/04/will-eisner_hp1.jpg",
         "extraPairs": [
           {
-            "label": "Artist",
-            "value": "Will Eisner"
+            "label": "spotlight",
+            "value": "History Spotlight"
           }
         ]
       },
@@ -31,10 +32,9 @@
         "id": "10002",
         "description": "The best stories, limited to 30 pages of content.",
         "tags": [
-          "Newly Added",
           "Best of the Eisners"
         ],
-        "imageUrl": "https://magazine.columbia.edu/sites/default/files/2018-09/KG-for-title-page.jpg",
+        "imageUrl": "https://comiconverse.com/wp-content/uploads/2016/11/stareoff-1.jpg",
         "extraPairs": [
           {
             "label": "This is an",
@@ -45,12 +45,11 @@
       {
         "title": "Best New Series",
         "id": "10003",
-        "description": "Novels arcs which didn't exist a year ago.",
+        "description": "Novels that whose release dated back to only a year in the past when they won an Eisner.",
         "tags": [
-          "Newly Added",
-          "Digital"
+          "Most Creative"
         ],
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/4/4e/WarofKings-5.jpg",
+        "imageUrl": "https://lvl41rogue.files.wordpress.com/2016/12/img_3868.png",
         "extraPairs": [
           {
             "label": "This is an",
@@ -65,7 +64,7 @@
         "tags": [
           "Best of the Eisners"
         ],
-        "imageUrl": "https://imagecomics.com/uploads/releases/Monstress_14-1.png",
+        "imageUrl": "https://comic-con.org/sites/default/files/styles/w850/public/drupal_upload/content_section/field_full_width_image/cci2016_eisnerjudges_01.jpg?itok=yuA-quw_",
         "extraPairs": [
           {
             "label": "This is an",
@@ -77,7 +76,9 @@
         "title": "Best Coloring",
         "id": "10005",
         "description": "The best choice and use of color.",
-        "tags": [],
+        "tags": [
+          "Most Creative"
+        ],
         "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/6d/My_Favorite_Thing_Is_Monsters_cover.jpg",
         "extraPairs": [
           {
@@ -92,7 +93,7 @@
         "description": "The best of the eisner awards, limited to a digital medium.",
         "tags": [
           "Newly Added",
-          "Digital"
+          "Digital Media"
         ],
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/434069/434069._SX270_CLs%7C270,422%7Ccu/cmx-cu-sash-lg.png%7C0,0,271,423%20158,310,112,112_QL80_TTD_.jpg",
         "extraPairs": [
@@ -142,7 +143,7 @@
             "label": "Artist",
             "value": "Sana Takeda",
             "contentReferenceId": "00001",
-            "priority": "2"
+            "priority": "1"
           }
         ]
       },
@@ -193,7 +194,7 @@
         "id": "00004",
         "description": "From the award-winning author of Princess Princess Ever After comes The Tea Dragon Society, a charming all-ages book that follows the story of Greta, a blacksmith apprentice, and the people she meets as she becomes entwined in the enchanting world of tea dragons.\n\nAfter discovering a lost tea dragon in the marketplace, Greta learns about the dying art form of tea dragon care-taking from the kind tea shop owners, Hesekiel and Erik. As she befriends them and their shy ward, Minette, Greta sees how the craft enriches their lives -- and eventually her own.",
         "tags": [
-          "Best of the Eisners"
+          "Kids & Young Adults"
         ],
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/510f0H%2B%2BcSL._SX362_BO1,204,203,200_.jpg",
         "categories": [
@@ -212,7 +213,7 @@
         "id": "00005",
         "description": "In his inimitable style, British cartoonist Tom Gauld has opened comics to a crossover audience and challenged perceptions of what the medium can be. Noted as a “book-lover’s cartoonist,” Gauld’s weekly strips in The Guardian, Britain’s most well-regarded newspaper, stitch together the worlds of literary criticism and pop culture to create brilliantly executed, concise comics. Simultaneously silly and serious, Gauld adds an undeniable lightness to traditionally highbrow themes. From sarcastic panels about the health hazards of being a best-selling writer to a list of magical items for fantasy writers (such as the Amulet of Attraction, which summons mainstream acceptance, Hollywood money, and fresh coffee), Gauld’s cartoons are timely and droll―his trademark British humour, impeccable timing, and distinctive visual style sets him apart from the rest.\n\nLauded both for his frequent contributions to New Scientist, The Guardian and The New York Times, and his Eisner-nominated graphic novels, Tom Gauld is one of the most celebrated cartoonists working today. In Baking with Kafka, he proves this with one witty, sly, ridiculous comic after another. //REMOVE AFTER THIS ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ridiculous comic after another. ",
         "tags": [
-          "Best of the Eisners"
+          "Kids & Young Adults"
         ],
         "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71b2zP%2Bz7SL.jpg",
         "categories": [
@@ -225,6 +226,29 @@
             "value": "Tom Gauld (Drawn & Quarterly)"
           }
         ]
+      },
+      {
+        "title": "Hellboy: Krampusnacht",
+        "id": "00006",
+        "description": "The only thing more exciting than pitting Hellboy against this Satanic spin on Santa is the team-up of Mike Mignola and Adam Hughes.",
+        "tags": [
+          "Digital Media"
+        ],
+        "imageUrl": "http://www.comicsblog.fr/images/editeur/Corentin/rev/hllbkrmpsncht/Hellboy%20-%20Krampusnacht-016.jpg",
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
+          {
+            "label": "Author",
+            "value": "Mike Mignola"
+          },
+          {
+            "label": "Illustrator",
+            "value": "Adam Hughes"
+          }
+        ]
       }
     ]
   },
@@ -234,42 +258,28 @@
         "progressId": "1",
         "progressName": "This year's winners",
         "contentItems": [
-          "00001", "00002", "00003", "00004", "00005"
+          "00001", "00002", "00003", "00004", "00005", "00006"
         ]
       },
       {
         "progressId": "2",
-        "progressName": "Collect Monstress!",
+        "progressName": "5 Awards in 2018!",
         "contentItems": [
           "00001"
         ]
       },
       {
         "progressId": "3",
-        "progressName": "A Child's Secret",
+        "progressName": "The Younger Audience",
         "contentItems": [
-          "00004"
+          "00003", "00004"
         ]
       },
       {
         "progressId": "4",
-        "progressName": "Spectacular Art",
-        "contentItems": [
-          "00001", "00002"
-        ]
-      },
-      {
-        "progressId": "5",
-        "progressName": "Empty Tummy",
-        "contentItems": [
-          "00005"
-        ]
-      },
-      {
-        "progressId": "6",
         "progressName": "Collect them all",
         "contentItems": [
-          "00001", "00002", "00003", "00004", "00005"
+          "00001", "00002", "00003", "00004", "00005", "00006"
         ]
       }
     ],

@@ -4,7 +4,7 @@ typealias ContentItemId = String
 
 class ProgressModel(
     val progressItems: List<Progress>,
-    val achievedContentItems: MutableList<ContentItemId>
+    val achievedContentItems: MutableList<ContentItemId>?
 )
 
 class Progress(
