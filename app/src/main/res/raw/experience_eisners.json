@@ -142,7 +142,7 @@
           {
             "label": "Artist",
             "value": "Sana Takeda",
-            "contentReferenceId": "00001",
+            "contentReferenceId": "00007",
             "priority": "1"
           }
         ]
@@ -247,6 +247,32 @@
           {
             "label": "Illustrator",
             "value": "Adam Hughes"
+          }
+        ]
+      },
+      {
+        "title": "Sana Takeda",
+        "id": "00007",
+        "description": "Sana Takeda is a Japanese illustrator and comic book artist known for her work on Hugo Award winning Monstress series. Takeda was born in Niigata, and now resides in Tokyo, Japan. At age 20 Takeda started working as a 3D CGI designer for Sega, creating pictures of soccer and NBA athletes.",
+        "tags": [
+          "Most Creative"
+        ],
+        "imageUrl": "https://images.gr-assets.com/authors/1505568866p5/377312.jpg",
+        "imageIsPortrait": true,
+        "categories": [
+          "10003",
+          "10005"
+        ],
+        "extraPairs": [
+          {
+            "label": "Profession",
+            "value": "Artist"
+          },
+          {
+            "label": "Work",
+            "value": "Monstress",
+            "contentReferenceId": "00001",
+            "priority": "2"
           }
         ]
       }

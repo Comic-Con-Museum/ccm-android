@@ -13,6 +13,7 @@
             android:layout_height="160dp"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
+            android:background="@drawable/transparent_circle"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"

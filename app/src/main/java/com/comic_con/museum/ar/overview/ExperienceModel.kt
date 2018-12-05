@@ -31,6 +31,7 @@ class ContentItem(
     val id: String,
     val description: String,
     val imageUrl: String,
+    val imageIsPortrait: Boolean? = false,
     val tags: List<String>,
     val categories: List<String>?,
     val extraPairs: List<ContentPair>?
